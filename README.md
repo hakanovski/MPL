@@ -1,7 +1,5 @@
 # MPL: Magick Programming Language
 
-![MPL Logo Placeholder](assets/logo_triform_seal.png)
-
 > **File Extension:** `*.ms` (MagickScript)  
 > **Current Version:** 0.1.0-alpha (Genesis)  
 > **Engine Core:** Python (Prototyping) -> Rust (Target Runtime)  
