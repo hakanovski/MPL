@@ -1,7 +1,5 @@
 # MPL: Magic Programming Language
 
-![MPL Logo Placeholder](assets/logo_triform_seal.png)
-
 > **File Extension:** `*.ms` (MagicScript)  
 > **Current Version:** 0.1.0-alpha (Genesis)  
 > **Engine Core:** Python (Prototyping) -> Rust (Target Runtime)  
@@ -113,6 +111,7 @@ function scry_future_event(query_string) {
     
     print(prophecy.decode()); 
 }
+_________ END __________
 
 
 
@@ -120,322 +119,318 @@ The Data Core: The 225 Magicians
 MPL is data-driven. We have compiled the Ultra Master List, a database of 225 verified historical practitioners. We analyze their methods to build our Standard Libraries (stdlib).
 
 
-Tamam, Gemini-3’ün getirdiği bütün yeni büyücüleri ve önerdiği coğrafi/kültürel kompleksleri ana yapıya gömdük.
-Liste artık 225 gerçek tarihsel büyücü içeriyor ve yeni kategorilerle güncellendi.
+🔥 ULTRA MASTER LIST – 225 REAL HISTORICAL MAGICIANS 🔥
 
-Aşağıda baştan sona, tek parça, full güncel ULTRA MASTER LİSTE var:
-
-⸻
-
-🔥 ULTRA MASTER LİSTE – 225 GERÇEK TARİHSEL BÜYÜCÜ 🔥
-
-⸻
-
-A) BATI / AVRUPA / ORTA DOĞU GELENEĞİ
-	1.	Hermes Trismegistus (M.Ö. ~1500?, Hermetik bilgelik çekirdeği)
-	2.	Kral Süleyman (Solomon) (M.Ö. 970–931, Solomonic demonoloji)
-	3.	Pythagoras (M.Ö. 570–495, sayı ve harmoni okültizmi)
-	4.	Apollonius of Tyana (M.S. 15–100, gezgin mucizeci/neopitagorcu büyücü)
-	5.	Iamblichus (245–325, teürji ve ritüel felsefe)
-	6.	Thessalos of Tralles (1. yy, Teb’te Asklepios’u teurjiyle çağıran tıbbi astrolog)
-	7.	Apuleius of Madauros (124–170, “Altın Eşek” yazarı, aşk büyüsüyle yargılanan filozof)
-	8.	Paracelsus (1493–1541, simyacı-hekim, elementaller doktrini)
-	9.	Heinrich Cornelius Agrippa (1486–1535, De Occulta Philosophia yazarı)
-	10.	Marsilio Ficino (1433–1499, Platoncu büyü, astro-müzik)
-	11.	Pico della Mirandola (1463–1494, Kabalistik-Hermetik sentez)
-	12.	Giordano Bruno (1548–1600, sonsuz evren + hafıza büyüleri)
-	13.	John Dee (1527–1609, Enochian sistem, kraliçe astrologu)
-	14.	Edward Kelley (1555–1597, Dee’nin medyumu, melek seansları)
-	15.	Robert Fludd (1574–1637, hermetik kozmoloji ve simya)
-	16.	Thomas Vaughan (1621–1666, rosikrüsen simyacı-büyücü)
-	17.	Emanuel Swedenborg (1688–1772, ruhlar âlemine sistematik seyahat)
-	18.	Franz Anton Mesmer (1734–1815, hayvansal manyetizma)
-	19.	Éliphas Lévi (1810–1875, modern törensel majinin babalarından)
-	20.	Papus (Gérard Encausse) (1865–1916, Fransız okült yeniden doğuşu)
-	21.	Madame Helena Blavatsky (1831–1891, Teozofi kurucusu)
-	22.	Annie Besant (1847–1933, Teozofi lideri, ritüel ve ezoterik politika)
-	23.	Rudolf Steiner (1861–1925, antroposofi, kozmik-hiyerarşik okült sistem)
-	24.	Aleister Crowley (1875–1947, Thelema ve modern majinin şok dalgası)
-	25.	Samuel Liddell MacGregor Mathers (1854–1918, Golden Dawn kurucusu)
-	26.	Dion Fortune (1890–1946, psikolojik majiyi sistemleştiren büyücü-yazar)
-	27.	Israel Regardie (1907–1985, Golden Dawn bilgisini yayıma açan kişi)
-	28.	Gerald Gardner (1884–1964, Wicca’nın kurucusu)
-	29.	Austin Osman Spare (1886–1956, sigil majisi ve kaos majisinin atası)
-	30.	Manly P. Hall (1901–1990, sembolizm ve “Secret Teachings” derleyicisi)
+A) WESTERN / EUROPEAN / MIDDLE EASTERN TRADITION
+	1.	Hermes Trismegistus (c. 1500 BCE?, hermetic wisdom core)
+	2.	King Solomon (c. 970–931 BCE, Solomonic demonology)
+	3.	Pythagoras (c. 570–495 BCE, number and harmony occultism)
+	4.	Apollonius of Tyana (15–100 CE, wandering wonder-worker / Neo-Pythagorean magician)
+	5.	Iamblichus (245–325, theurgy and ritual philosophy)
+	6.	Thessalos of Tralles (1st c. CE, medical astrologer who invoked Asklepios by theurgy in Thebes)
+	7.	Apuleius of Madauros (124–170, author of The Golden Ass, philosopher tried for love magic)
+	8.	Paracelsus (1493–1541, alchemist–physician, doctrine of elementals)
+	9.	Heinrich Cornelius Agrippa (1486–1535, author of De Occulta Philosophia)
+	10.	Marsilio Ficino (1433–1499, Platonic magic, astro-music)
+	11.	Pico della Mirandola (1463–1494, Kabbalistic–Hermetic synthesis)
+	12.	Giordano Bruno (1548–1600, infinite universe and memory magic)
+	13.	John Dee (1527–1609, Enochian system, astrologer to the queen)
+	14.	Edward Kelley (1555–1597, Dee’s medium, angelic seances)
+	15.	Robert Fludd (1574–1637, hermetic cosmology and alchemy)
+	16.	Thomas Vaughan (1621–1666, Rosicrucian alchemist–magician)
+	17.	Emanuel Swedenborg (1688–1772, systematic journeys in the spirit world)
+	18.	Franz Anton Mesmer (1734–1815, animal magnetism)
+	19.	Éliphas Lévi (1810–1875, one of the fathers of modern ceremonial magic)
+	20.	Papus (Gérard Encausse) (1865–1916, French occult revival)
+	21.	Madame Helena Blavatsky (1831–1891, founder of Theosophy)
+	22.	Annie Besant (1847–1933, Theosophical leader, ritual and esoteric politics)
+	23.	Rudolf Steiner (1861–1925, Anthroposophy, cosmic–hierarchical occult system)
+	24.	Aleister Crowley (1875–1947, Thelema and shockwave of modern magic)
+	25.	Samuel Liddell MacGregor Mathers (1854–1918, founder of the Golden Dawn)
+	26.	Dion Fortune (1890–1946, magician–author who systematized psychological magic)
+	27.	Israel Regardie (1907–1985, the one who published and preserved Golden Dawn knowledge)
+	28.	Gerald Gardner (1884–1964, founder of Wicca)
+	29.	Austin Osman Spare (1886–1956, sigil magic and proto–chaos magic)
+	30.	Manly P. Hall (1901–1990, symbolism and compiler of The Secret Teachings of All Ages)
 
 ⸻
 
-B) SLAV / RUS GELENEĞİ
-	31.	Vseslav Polotski (1044–1101, “kurt kral” olarak anılan büyücü-prens)
-	32.	Yakov Bruce (1669–1735, I. Petro’nun okültist mühendisi)
-	33.	Grigori Rasputin (1869–1916, şifacı-mistik, Çar hanesinin gölge gücü)
-	34.	Helena Blavatsky (1831–1891, Rus kökenli küresel okültist)
-	35.	Aleksandr Barchenko (1881–1938, hipnoz, psişik deneyler)
-	36.	Wolf Messing (1899–1974, telepati/kehanet iddialı mentalist)
-	37.	Nina Kulagina (1926–1990, psikokinezi deneyleriyle ünlü)
-	38.	Juna Davitaşvili (1949–2015, Sovyet bioenerji şifacısı)
-	39.	Anatoli Kaşpirovsky (1939– , TV üzerinden toplu hipnoz/şifa)
-	40.	Allan Çumak (1935–2017, TV’de su şarj eden “şifacı”)
-	41.	Nikolay Oorjak (1948– , Tıva şamanı, boğaz şarkısı ve şifa)
-	42.	Aleksandr Gabışev (1968– , “şaman yürüyüşçü”, siyasi-ruhsal figür)
+B) SLAVIC / RUSSIAN TRADITION
+	31.	Vseslav of Polotsk (1044–1101, “wolf-king” sorcerer–prince)
+	32.	Yakov Bruce (1669–1735, occultist engineer of Peter the Great)
+	33.	Grigori Rasputin (1869–1916, healer–mystic, shadow power of the Tsar’s household)
+	34.	Helena Blavatsky (1831–1891, Russian-born global occultist)
+	35.	Aleksandr Barchenko (1881–1938, hypnosis and psychic experiments)
+	36.	Wolf Messing (1899–1974, mentalist with claims of telepathy / prophecy)
+	37.	Nina Kulagina (1926–1990, famous for psychokinesis experiments)
+	38.	Juna Davitashvili (1949–2015, Soviet bioenergy healer)
+	39.	Anatoly Kashpirovsky (1939– , mass hypnosis / healing via television)
+	40.	Allan Chumak (1935–2017, “healer” who charged water through TV broadcasts)
+	41.	Nikolay Oorzhak (1948– , Tuvan shaman, throat-singing and healing)
+	42.	Aleksandr Gabyshev (1968– , “walking shaman”, political–spiritual figure)
 
 ⸻
 
-C) TÜRK / ANADOLU / ORTA ASYA
-	43.	Kam Ana / eski Türk şaman kadınları (~M.Ö. 2000, proto-şamanik figür)
-	44.	Irkıl Hoca (~M.Ö. 300, mitik-bilge şaman tipi)
-	45.	Dede Korkut (M.S. 600–800, ozan-bilge, söz ve kısmet büyüleri)
-	46.	Korkut Ata (8. yy, kehanet ve sözlü tılsım geleneği)
-	47.	Hoca Ahmet Yesevi (1093–1166, Türk tasavvufunun büyüsel çekirdeği)
-	48.	Baba İlyas (1200–1240, isyan + batınî öğretici)
-	49.	Hacı Bektaş Veli (1209–1271, Bektaşi ereni, keramet geleneği)
-	50.	Sarı Saltuk (13. yy, Balkanlara yayılmış keramet sahibi veli)
-	51.	Şeyh Bedreddin (1359–1420, mistik-siyasi heterodoks)
-	52.	Geyikli Baba (13–14. yy, doğa-ruhlarıyla bütünleşik derviş)
-	53.	Abdal Musa (14. yy, Alevi-Bektaşi menakıp büyüleri figürü)
-	54.	Sahib Ata (13. yy, Selçuklu veziri, ezoterik çevrelerin hamisi)
-	55.	Osmanlı “cinci hoca” Asiye Hatun (1700’ler, saray çevresinde cinci)
+C) TURKIC / ANATOLIAN / CENTRAL ASIAN
+	43.	Kam Ana / ancient Turkic shaman women (c. 2000 BCE, proto-shamanic figures)
+	44.	Irkıl Hoca (c. 300 BCE, mythic wise shaman type)
+	45.	Dede Korkut (600–800 CE, bard–sage, word and destiny magic)
+	46.	Korkut Ata (8th c., prophecy and oral talisman tradition)
+	47.	Hoca Ahmet Yesevi (1093–1166, magical core of Turkic Sufism)
+	48.	Baba İlyas (1200–1240, rebellion plus esoteric teacher)
+	49.	Hacı Bektaş Veli (1209–1271, Bektashi saint, miracle tradition)
+	50.	Sarı Saltuk (13th c., wonder-working saint spread across the Balkans)
+	51.	Şeyh Bedreddin (1359–1420, mystical–political heterodox)
+	52.	Geyikli Baba (13th–14th c., dervish merged with nature spirits)
+	53.	Abdal Musa (14th c., Alevi–Bektashi miracle and legend figure)
+	54.	Sahib Ata (13th c., Seljuk vizier, patron of esoteric circles)
+	55.	Ottoman “cinci hoca” Asiye Hatun (18th c., court sorceress dealing with jinn)
 
 ⸻
 
-D) ANTİK MISIR
-	56.	Imhotep (M.Ö. 2650, mimar-hekim-rahip, proto-simyacı)
-	57.	Heka-Neb (M.Ö. 2500, Heka (büyü) kültünün rahibi)
-	58.	Tjemu-heru (M.Ö. 2200, mumyalama ve ölüm büyüleri ustası)
-	59.	Webaoner / Webaon-R (M.Ö. 2100, sihirli hikâyesi Papirüs Westcar’da yer alır)
-	60.	Ankhu (M.Ö. 2000, Teb rahibi, koruyucu büyüler)
-	61.	Meryra (M.Ö. 1350, Akhenaton dönemi Aton başrahibi, güneş büyüsü)
-	62.	Hori (Yüksek Rahip) (M.Ö. 1000, Teb tapınak büyüleri)
-	63.	Nedjmet (M.Ö. 1100, kraliçe-rahibe, ölüm sonrası metinlerde büyülü figür)
-	64.	Herihor (M.Ö. 1080, general-rahip, Teb teokratı, oraküler büyüler)
-	65.	Nectanebo II (Nekhtanebos) (M.Ö. 360–342, son yerli firavun, sihirli firavun imajı)
+D) ANCIENT EGYPT
+	56.	Imhotep (c. 2650 BCE, architect–physician–priest, proto-alchemist)
+	57.	Heka-Neb (c. 2500 BCE, priest of the Heka (magic) cult)
+	58.	Tjemu-heru (c. 2200 BCE, master of mummification and death magic)
+	59.	Webaoner / Webaon-R (c. 2100 BCE, magician whose tale appears in the Westcar Papyrus)
+	60.	Ankhu (c. 2000 BCE, Theban priest, protective magic)
+	61.	Meryra (c. 1350 BCE, Aton high priest under Akhenaten, solar magic)
+	62.	Hori (High Priest) (c. 1000 BCE, Theban temple magic)
+	63.	Nedjmet (c. 1100 BCE, queen–priestess, magical figure in funerary texts)
+	64.	Herihor (c. 1080 BCE, general–priest, Theban theocrat, oracular magic)
+	65.	Nectanebo II (Nekhtanebos) (360–342 BCE, last native pharaoh, “magician-king” image)
 
 ⸻
 
-E) YAHUDİ / KABALİST GELENEĞİ
-	66.	Ezra (Ezra HaSofer) (M.Ö. 480, metin ve isim büyüsünün erken figürü)
-	67.	Shimon bar Yochai (M.S. 100–160, Zohar geleneğinin atfedildiği bilge)
-	68.	Abraham Abulafia (1240–1291, harf permütasyonlu ekstatik Kabala)
-	69.	Isaac Luria (Ari HaKadosh) (1534–1572, Lurianik Kabala)
-	70.	Hayyim Vital (1542–1620, Luriacı sistemi yazıya döken talebe)
-	71.	Baal Shem Tov (1698–1760, Hasidizmin kurucusu, “İyi İsim Ustası”)
-	72.	Nachman of Breslov (1772–1810, hikâye-büyü, dua ritmiyle dönüşüm)
-	73.	Abramelin the Mage (14–15. yy?, Mısır’da yaşamış Yahudi büyü ustası, Abramelin Operasyonu)
+E) JEWISH / KABBALISTIC TRADITION
+	66.	Ezra (Ezra HaSofer) (c. 480 BCE, early figure of text and name magic)
+	67.	Shimon bar Yochai (100–160 CE, sage to whom the Zohar tradition is attributed)
+	68.	Abraham Abulafia (1240–1291, ecstatic Kabbalah with letter permutation)
+	69.	Isaac Luria (Ari HaKadosh) (1534–1572, Lurianic Kabbalah)
+	70.	Hayyim Vital (1542–1620, disciple who wrote down the Lurianic system)
+	71.	Baal Shem Tov (1698–1760, founder of Hasidism, “Master of the Good Name”)
+	72.	Nachman of Breslov (1772–1810, story-magic and transformation through rhythmic prayer)
+	73.	Abramelin the Mage (14th–15th c.?, Jewish master magician living in Egypt, Abramelin Operation)
 
 ⸻
 
-F) ARAP / YAKIN DOĞU (İSLAMÎ–FELSEFÎ OKÜLT)
-	74.	Al-Kindi (801–873, astro-büyü, tılsım teorisyeni)
-	75.	Al-Farabi (872–950, kozmik akıllar ve musiki-büyü ilişkisi)
-	76.	Al-Harith al-Muhasibi (781–857, iç hesap (muhasebe) tasavvufu)
-	77.	Al-Razi (Rhazes) (865–925, simya + tıp sınırında okült deneyler)
-	78.	Abu Ma’shar al-Balkhi (787–886, astroloji ve kader büyüleri)
-	79.	İbn Sina (Avicenna) (980–1037, nefis ve imgelem üzerinden tılsım teorisi)
-	80.	Mansur Hallac (858–922, “En-el Hak” ekstazı ve kelime-büyü)
-	81.	Suhrawardi (Şihab al-Din) (1154–1191, işrakî ışık metafiziği)
-	82.	İbn Arabi (1165–1240, vahdet-i vücut, isimler kozmolojisi)
-	83.	Al-Buni (Ahmad al-Buni) (ö. c.1225, Şemsü’l Ma’arif, harf-cifr büyüsü)
+F) ARAB / NEAR EASTERN (ISLAMIC–PHILOSOPHICAL OCCULT)
+	74.	Al-Kindi (801–873, astro-magic, talismanic theory)
+	75.	Al-Farabi (872–950, cosmic intellects and the relation of music to magic)
+	76.	Al-Harith al-Muhasibi (781–857, inner accounting (muhasaba) Sufism)
+	77.	Al-Razi (Rhazes) (865–925, occult experiments at the border of alchemy and medicine)
+	78.	Abu Maʿshar al-Balkhi (787–886, astrology and destiny magic)
+	79.	Ibn Sina (Avicenna) (980–1037, talisman theory via soul and imagination)
+	80.	Mansur Hallaj (858–922, “Ana’l-Haqq” ecstasy and word-magic)
+	81.	Suhrawardi (Shihab al-Din) (1154–1191, Illuminationist (Ishraqi) light metaphysics)
+	82.	Ibn Arabi (1165–1240, unity-of-being cosmology of divine names)
+	83.	Al-Buni (Ahmad al-Buni) (d. c. 1225, Shams al-Maʿarif, letter and cifr magic)
 
 ⸻
 
-G) HİNT – PAKİSTAN – BANGLADEŞ – HİMALAYA
-	84.	Dattatreya (~M.Ö. 1500? mitik-tarihsel bilge, üçlü tanrısallık)
-	85.	Patanjali (~M.Ö. 200, Yoga Sutraları ve mantra disiplinleri)
-	86.	Nagarjuna (150–250, boşluk felsefesi + simya efsaneleri)
-	87.	Gorakhnath (11. yy, Nath siddha, beden-büyü (hatha yoga) ustası)
-	88.	Kabir (1440–1518, mantra ve ilahiyle dönüşüm)
-	89.	Guru Nanak (1469–1539, Sikh geleneğinin kurucusu, ilahi-büyü karışımı)
-	90.	Trailanga Swami (1607–1887, siddhi’leriyle ünlü çıplak yogi)
-	91.	Sri Ramakrishna (1836–1886, trans ve tanrı deneyimi ustası)
-	92.	Sai Baba of Shirdi (1838–1918, mucizevi şifa ve bilicilik)
-	93.	Lahiri Mahasaya (1828–1895, Kriya yoga inisiyasyon zinciri)
-	94.	Neem Karoli Baba (1900–1973, mantra ve “sudden grace” figürü)
+G) INDIA – PAKISTAN – BANGLADESH – HIMALAYA
+	84.	Dattatreya (c. 1500 BCE? mythic-historical sage, triple divinity)
+	85.	Patanjali (c. 200 BCE, Yoga Sutras and mantra disciplines)
+	86.	Nagarjuna (150–250, philosophy of emptiness plus alchemical legends)
+	87.	Gorakhnath (11th c., Nath siddha, master of body-magic (hatha yoga))
+	88.	Kabir (1440–1518, transformation through mantra and devotional song)
+	89.	Guru Nanak (1469–1539, founder of Sikh tradition, blend of hymn and magic)
+	90.	Trailanga Swami (1607–1887, naked yogi famous for siddhis)
+	91.	Sri Ramakrishna (1836–1886, master of trance and direct God-experience)
+	92.	Sai Baba of Shirdi (1838–1918, miraculous healer and knower of hearts)
+	93.	Lahiri Mahasaya (1828–1895, Kriya Yoga initiation lineage)
+	94.	Neem Karoli Baba (1900–1973, mantra and “sudden grace” figure)
 
 ⸻
 
-H) UZAKDOĞU – ÇİN / JAPONYA / KORE / GÜNEYDOĞU ASYA
-	95.	Guiguzi (Ghost Valley Master) (M.Ö. 4. yy, taktik + psişik manipülasyon)
-	96.	Zhang Daoling (34–156, Göksel Usta Taoizmi kurucusu)
-	97.	Zhang Jue (ö. 184, Sarı Türban isyanının Taoist büyücü lideri)
-	98.	En no Gyōja (634–701, Shugendō kurucusu, dağ asetik-büyücüsü)
-	99.	Kukai (Kōbō Daishi) (774–835, Shingon mikkyō, mantra-mandala büyüsü)
-	100.	Ennin (794–864, ritüel Budizm, talisman pratiği)
-	101.	Saigyo Hoshi (1118–1190, şiir ve meditasyonla büyülü peyzaj)
-	102.	Shinran (1173–1263, Nembutsu tekniğiyle kader dönüşümü)
-	103.	Miyamoto Musashi (1584–1645, zihinsel savaş-ritüel pratikleri)
-	104.	Harumichi Tsurugi (1600’ler, Shugendō ustası)
-	105.	Fukuda Chiyo-ni (1703–1775, haiku ve onmyōdō etkisi)
-	106.	Itako kör kadın şamanlar (çeşitli bireyler) (1600–günümüz, ruh çağırma)
-	107.	Kim Wonu (Kore mudang geleneği) (18–19. yy, şamanik ritüeller)
-	108.	Hwang Jin-i’nin ruhsal hocası (adı kayıtlı şaman birey) (1500’ler)
-	109.	Iha Fuyū (1876–1947, Ryukyu büyü folklorunu toplayan okült figür)
-	110.	Çeşitli Çinli fashi’ler – temsili şahıs: Li Xuelian (19. yy, Taoist büyü rahibi)
-	111.	Vietnam/Tayland/Kamboçya “ruhsal doktor” tipinin temsili büyücüsü: Ajarn Chum (20. yy)
-	112.	Zhuge Liang (181–234, Üç Krallık dönemi stratejik büyücü/“Uyuyan Ejderha”)
-	113.	Abe no Seimei (921–1005, Japon onmyoji, shikigami ustası)
-	114.	Nasu no Yoichi soyundan onmyōji torun (1200’ler, atfedilen birey)
+H) FAR EAST – CHINA / JAPAN / KOREA / SOUTHEAST ASIA
+	95.	Guiguzi (Ghost Valley Master) (4th c. BCE, tactics plus psychic manipulation)
+	96.	Zhang Daoling (34–156, founder of Celestial Master Taoism)
+	97.	Zhang Jue (d. 184, Taoist wizard-leader of the Yellow Turban Rebellion)
+	98.	En no Gyōja (634–701, founder of Shugendō, mountain ascetic–magician)
+	99.	Kukai (Kōbō Daishi) (774–835, Shingon mikkyō, mantra–mandala magic)
+	100.	Ennin (794–864, ritual Buddhism, talisman practice)
+	101.	Saigyo Hoshi (1118–1190, magical landscapes through poetry and meditation)
+	102.	Shinran (1173–1263, destiny transformation via the Nembutsu technique)
+	103.	Miyamoto Musashi (1584–1645, mental warfare and ritualized practice)
+	104.	Harumichi Tsurugi (17th c., Shugendō master)
+	105.	Fukuda Chiyo-ni (1703–1775, haiku with onmyōdō influence)
+	106.	Itako blind women shamans (various individuals, 1600–present, spirit-calling mediums)
+	107.	Kim Wonu (Korean mudang tradition, 18th–19th c., shamanic rituals)
+	108.	Spiritual mentor of Hwang Jin-i (named shaman figure, 16th c.)
+	109.	Iha Fuyū (1876–1947, occult figure collecting Ryukyu magical folklore)
+	110.	Various Chinese fashi – representative: Li Xuelian (19th c., Taoist ritual magician / priest)
+	111.	Representative “spirit doctor” magician of Vietnam/Thailand/Cambodia: Ajarn Chum (20th c.)
+	112.	Zhuge Liang (181–234, Three Kingdoms era strategic magician, “Sleeping Dragon”)
+	113.	Abe no Seimei (921–1005, Japanese onmyoji, master of shikigami)
+	114.	Descendant onmyoji from the line of Nasu no Yoichi (13th c., attributed figure)
 
 ⸻
 
-I) AFRİKA (MISIR HARİÇ)
-	115.	Sundjata Keita’nın kraliyet marabutu (1200’ler, Mali İmparatorluğu büyü ustası)
-	116.	Nganga Mbûta (Kongo Krallığı, 15–16. yy, minkisi tılsım ustası)
-	117.	Chaminuka (Shona mhondoro medyumu, 15–16. yy)
-	118.	Babalawo Okunade (Yoruba Ifá rahibi) (1500’ler)
-	119.	Na Agontime (Dahomey Amazon komutanı, ritüel ve kan büyüsü)
-	120.	Mkabayi kaJama (1750–1843, Zulu kraliyet danışmanı, kehanet gücü)
-	121.	Nxele (Makana) (1790–1819, Xhosa peygamber-savaş büyücüsü)
-	122.	Rasoamanarivo (1845–1894, Madagaskar ruhsal lideri, mucize figürü)
-	123.	Arhuanran (Edo prensi, rakiplerine karşı büyü kullanan figür)
-	124.	Modibbo Adama’nın büyü hocası (Fulani) (1800–1853)
-	125.	Aw Barkhadle (12–14. yy, Somali’de İslam+yerel büyü kaynaşması)
-	126.	Abba Giyorgis (1400’ler, Habeş büyücü-debtera prototipi)
-	127.	Kweku Sarfo (1800’ler, Gana tılsım ve muskacı ustası)
-	128.	Mugo wa Kibiru (1800–1902, Kikuyu kahini, sömürge kehanetleri)
-	129.	Gor Mahia (Ogallo) (~1850–1920, Luo büyücü-lider)
-	130.	!Kweiten-ta-ǁKen (1800’ler, San (Bushman) şamanı)
-	131.	Aicha Mint Bi (1900’ler, Sahra Tuareg şifacı-büyücü)
-	132.	Tokple Kofi (20. yy, Benin Vodun büyücüsü)
-	133.	Kwaku Bonsam (1973– , çağdaş Gana büyücüsü)
+I) AFRICA (EXCLUDING EGYPT)
+	115.	Royal marabout of Sundjata Keita (13th c., Mali Empire master of magic)
+	116.	Nganga Mbûta (Kongo Kingdom, 15th–16th c., minkisi talisman master)
+	117.	Chaminuka (Shona mhondoro medium, 15th–16th c.)
+	118.	Babalawo Okunade (Yoruba Ifá priest, 16th c.)
+	119.	Na Agontime (Dahomey Amazon commander, ritual and blood magic)
+	120.	Mkabayi kaJama (1750–1843, Zulu royal adviser, prophetic power)
+	121.	Nxele (Makana) (1790–1819, Xhosa prophet–war magician)
+	122.	Rasoamanarivo (1845–1894, spiritual leader in Madagascar, miracle figure)
+	123.	Arhuanran (Edo prince, used magic against his rivals)
+	124.	Magic teacher of Modibbo Adama (Fulani) (1800–1853)
+	125.	Aw Barkhadle (12th–14th c., fusion of Islam and local magic in Somalia)
+	126.	Abba Giyorgis (15th c., Ethiopian debtera-magician prototype)
+	127.	Kweku Sarfo (19th c., Ghanaian master of talismans and amulets)
+	128.	Mugo wa Kibiru (1800–1902, Kikuyu seer, colonial prophecies)
+	129.	Gor Mahia (Ogallo) (c. 1850–1920, Luo sorcerer–leader)
+	130.	!Kweiten-ta-ǁKen (19th c., San (Bushman) shaman)
+	131.	Aicha Mint Bi (20th c., Saharan Tuareg healer–sorceress)
+	132.	Tokple Kofi (20th c., Beninese Vodun magician)
+	133.	Kwaku Bonsam (1973– , contemporary Ghanaian sorcerer)
 
 ⸻
 
-J) İSKANDİNAV / NORDİK
-	134.	Heiðr (Demir Çağı, seiðr uygulayıcısı, zihin ve kader büyüsü)
-	135.	Groa (Gróa) (erken İskandinav, şifa ve galdr şarkı büyüsü)
-	136.	Gunnhild, Mother of Kings (910–980, politik büyü ve şekil değiştirme)
-	137.	Egill Skallagrímsson (904–995, rün ve lanet direği (niðstang) ustası)
-	138.	Thorbjorg Lítilvölva (10. yy, seiðr kahini, toplum kahini)
-	139.	Kotkell & Gríma (10. yy, hava ve deniz felaketi büyücüleri)
-	140.	Eyvind Kelda (ö. 998, sis ve savaş illüzyonu büyücü)
-	141.	Raud the Strong (ö. 999, blót ve rüzgar büyüsü)
-	142.	Sæmundr Fróði (1056–1133, demonoloji ve kurnazlık hikâyeleri)
-	143.	Jón Arason (1484–1550, Katolik ritüelciliği büyü olarak algılanan figür)
-	144.	Elin i Horsnäs (ö. 1611, İsveçli maleficium cadısı)
-	145.	Jón Rögnvaldsson (ö. 1625, rün büyüsü ve nekromansi)
-	146.	Þórður Guðbrandsson (ö. 1654, iblis çağırma iddialı büyücü)
-	147.	Johannes Bureus (1568–1652, Adalruna, runik-kabalistik sistem)
-	148.	Jón Jónsson (baba/oğul) (ö. 1656, aşağılama (osuruk) rünleri, lanetler)
-	149.	Malin Matsdotter (1613–1676, Blåkulla “cadı uçuşu” figürü)
-	150.	Þuríður Ólafsdóttir (ö. 1678, doğaüstü seyahat iddialı)
-	151.	Anders Poulsen (1600–1692, Sami noaidi, davul büyücüsü)
-	152.	Lars Nilsson (ö. 1693, Laponya’da kurban ve hava kontrolü)
-	153.	Galdra-Loftur (1702–1722, Rauðskinna adlı grimuarı arayan kara büyücü)
-	154.	Vis-Knut (1793–1876, durugörü ve şifacılık)
-	155.	Kloka Anna (1797–1860, halk hekimi ve büyü bozucu)
-	156.	Ida Cronsioe (19. Yüzyıl, kartomansi, falcı)
-	157.	Sveinbjörn Beinteinsson (1924–1993, modern Ásatrú rahibi)
-	158.	Thomas Karlsson (1972– , Qliphoth ve sol el yolu okültisti)
-	159.	Kalle Dahlberg (günümüz, modern rün oymacısı ve sembolik büyü)
+J) SCANDINAVIAN / NORDIC
+	134.	Heiðr (Iron Age, seiðr practitioner, mind and fate magic)
+	135.	Groa (Gróa) (early Scandinavian, healing and galdr song magic)
+	136.	Gunnhild, Mother of Kings (910–980, political magic and shapeshifting)
+	137.	Egill Skallagrímsson (904–995, runes and niðstang cursing pole master)
+	138.	Thorbjorg Lítilvölva (10th c., seiðr prophetess, community oracle)
+	139.	Kotkell & Gríma (10th c., weather and sea-disaster magicians)
+	140.	Eyvind Kelda (d. 998, magician of fog and battle illusions)
+	141.	Raud the Strong (d. 999, blót priest and wind magician)
+	142.	Sæmundr Fróði (1056–1133, demonology and trickster-mage tales)
+	143.	Jón Arason (1484–1550, Catholic ritualist perceived as magician)
+	144.	Elin i Horsnäs (d. 1611, Swedish maleficium witch)
+	145.	Jón Rögnvaldsson (d. 1625, rune magic and necromancy)
+	146.	Þórður Guðbrandsson (d. 1654, accused demon conjurer)
+	147.	Johannes Bureus (1568–1652, Adalruna, runic–Kabbalistic system)
+	148.	Jón Jónsson (father/son) (d. 1656, humiliation (fart) runes and curses)
+	149.	Malin Matsdotter (1613–1676, Blåkulla “witch flight” figure)
+	150.	Þuríður Ólafsdóttir (d. 1678, claims of supernatural travel)
+	151.	Anders Poulsen (1600–1692, Sámi noaidi, drum magician)
+	152.	Lars Nilsson (d. 1693, Lapland sacrifice and weather control)
+	153.	Galdra-Loftur (1702–1722, black magician seeking the grimoire Rauðskinna)
+	154.	Vis-Knut (1793–1876, clairvoyant and healer)
+	155.	Kloka Anna (1797–1860, folk healer and curse-breaker)
+	156.	Ida Cronsioe (19th c., cartomancer and fortune-teller)
+	157.	Sveinbjörn Beinteinsson (1924–1993, modern Ásatrú priest)
+	158.	Thomas Karlsson (1972– , occultist of Qliphoth and the left-hand path)
+	159.	Kalle Dahlberg (contemporary, modern rune carver and symbolic magician)
 
 ⸻
 
-K) KUZEY AMERİKA / PASİFİK / OKYANUSYA (YENİ DÜNYA BÜYÜCÜLERİ)
-	160.	Popé (Po’pay) (c.1630 – c.1692, Pueblo isyanının ruhani lideri, hava ve isyan büyüleri)
-	161.	Tupaia (c.1725–1770, Raiatea/Tahiti Tahu‘a başrahibi, yıldız-navigasyon büyücüsü)
-	162.	Leatherlips (Shateyaronyah) (1732–1810, Wyandot şefi, politik “büyücülük” kurbanı)
-	163.	Handsome Lake (Ganio’ Dai Io’) (1735–1815, Seneca peygamberi, vizyoner ahlak reformcusu)
-	164.	Neolin (18. yy ortası, Delaware peygamberi, arındırma ve ruh yolculuğu büyüleri)
-	165.	Ka’opulupulu (ö. c.1782, O‘ahu Kahuna Nui’si, kehanet ve lanet kahini)
-	166.	Kekuhaupi’o (ö. 1790’lar, Kamehameha’nın savaşçı-büyücü hocası, Lua dövüş majisi)
-	167.	Midgegooroo (c.1773–1833, Avustralya Noongar lideri, “clever man” figürü)
-	168.	Tenskwatawa (Shawnee Peygamberi) (1775–1836, cadı avları, güneş tutulması büyüsü)
-	169.	Smohalla (c.1815–1895, Wanapum Dreamer peygamberi, rüya ve ekolojik büyü)
-	170.	Te Ua Haumēne (1820–1866, Maori Pai Mārire/Hauhau peygamberi, kurşun saptırma ritüelleri)
-	171.	Roman Nose (Woo-ka-nay) (c.1823–1868, Kuzey Cheyenne savaş büyücüsü, büyülü miğfer)
-	172.	Te Kooti Arikirangi Te Turuki (1832–1893, Maori Ringatū peygamberi, İncil+mana sentezi)
-	173.	Isatai’i (c.1840–1890’lar, Komançi Güneş Dansı rahibi, kurşun geçirmezlik büyüleri)
-	174.	Navosavakadua (fl. 1880’ler, Fiji Tuka hareketinin kahini, “ölümsüzlük suyu” büyüleri)
-	175.	Mutuaga (Oitau) (c.1860–1920’ler, Papua Yeni Gine oymacı-büyücü, balau pratisyeni)
-	176.	Nick Dumaka (Tumaca) (19. yy sonu, Zuni büyücülük davasının merkezindeki şifacı)
-	177.	Paddy Compass Namadbara (c.1890’lar–1973, Aborjin “clever man”, ruh cerrahisi ustası)
-	178.	Paliau Maloat (1907–1991, Mikronezya Paliau hareketi ve kargo kültü lideri)
-	179.	Yali (c.1912–1975, PNG kargo kültü lideri, sanguma otorite figürü)
-	180.	Rolling Thunder (John Pope) (1916–1997, Cherokee/Shoshone şifacı, gök gürültüsü çağıran)
-	181.	Mau Piailug (1932–2010, Satawal Pwo navigatörü, dalga ve rüzgâr büyücüsü)
+K) NORTH AMERICA / PACIFIC / OCEANIA (NEW WORLD MAGICIANS)
+	160.	Popé (Po’pay) (c. 1630 – c. 1692, spiritual leader of Pueblo Revolt, weather and uprising magic)
+	161.	Tupaia (c. 1725–1770, Tahu‘a high priest of Raiatea/Tahiti, stellar navigation magician)
+	162.	Leatherlips (Shateyaronyah) (1732–1810, Wyandot chief, political “witchcraft” victim)
+	163.	Handsome Lake (Ganio’ Dai Io’) (1735–1815, Seneca prophet, visionary moral reformer)
+	164.	Neolin (mid-18th c., Delaware prophet, purification and soul-journey magic)
+	165.	Ka’opulupulu (d. c. 1782, O‘ahu Kahuna Nui, oracle and curse prophet)
+	166.	Kekuhaupi’o (d. 1790s, warrior–magician mentor of Kamehameha, Lua combat magic)
+	167.	Midgegooroo (c. 1773–1833, Australian Noongar leader, “clever man” figure)
+	168.	Tenskwatawa (the Shawnee Prophet) (1775–1836, witch-hunts and solar eclipse magic)
+	169.	Smohalla (c. 1815–1895, Wanapum Dreamer prophet, dream and ecological magic)
+	170.	Te Ua Haumēne (1820–1866, Māori Pai Mārire/Hauhau prophet, bullet-deflection rites)
+	171.	Roman Nose (Woo-ka-nay) (c. 1823–1868, Northern Cheyenne war magician, enchanted helmet)
+	172.	Te Kooti Arikirangi Te Turuki (1832–1893, Māori Ringatū prophet, Bible + mana synthesis)
+	173.	Isatai’i (c. 1840–1890s, Comanche Sun Dance priest, bulletproofing magic)
+	174.	Navosavakadua (fl. 1880s, Fijian Tuka movement prophet, “water of immortality” magic)
+	175.	Mutuaga (Oitau) (c. 1860–1920s, Papua New Guinea carver–magician, balau practitioner)
+	176.	Nick Dumaka (Tumaca) (late 19th c., healer at the center of a Zuni witchcraft case)
+	177.	Paddy Compass Namadbara (c. 1890s–1973, Aboriginal “clever man”, master of spirit surgery)
+	178.	Paliau Maloat (1907–1991, Micronesian Paliau movement and cargo cult leader)
+	179.	Yali (c. 1912–1975, PNG cargo cult leader, sanguma authority figure)
+	180.	Rolling Thunder (John Pope) (1916–1997, Cherokee/Shoshone healer, thunder-calling magician)
+	181.	Mau Piailug (1932–2010, Satawal Pwo navigator, wave and wind magician)
 
 ⸻
 
-L) GÜNEY AMERİKA (AND–AMAZON–AFRO-LATİN KOMPLEKSİ)
-	182.	Vila Oma / Willaq Umu (1438–1572, İnka başrahibi–savaş ve devlet büyücüsü)
-	183.	Juan Chocne (1560–1572, Taki Unquy peygamberi, beden-possessio direniş büyüsü)
-	184.	Kallawaya Şifacıları – Temsili Usta (M.S. 1000–günümüz, Machaj Juyai gizli diliyle bitki ve cerrahi büyü)
-	185.	Don Benito Qoriwaman (20. yy, Q’ero Altomisayoc, yıldırım inisiyeli mesa büyücüsü)
-	186.	Manuel Córdova-Rios (1887–1978, Amazon vegetalista, kolektif rüya/telepati şamanı)
-	187.	Pablo Amaringo (1938–2009, Ayahuasca vizyon ressam-şamanı, icaros–kené kodlayıcısı)
-	188.	Guillermo Arévalo “Kestenbetsa” (1952– , Shipibo maestro curandero, entegre tıp ve icaros)
-	189.	Taita Hilario Chiriap (20. yy, Shuar Uwishin, tsentsak (büyü oku) ustası)
-	190.	Davi Kopenawa (1956– , Yanomami şamanı, Xapiri “ışık piksel ruhları”nın sözcüsü)
-	191.	Machi Fresia (19. yy, Mapuche şamanı, dişil direniş sembolü)
-	192.	Francisca Kolipi (ö. 1996, Mapuche “şimşek şamanı”, İncil’i büyü nesnesine çeviren tohunga)
-	193.	Lola Kiepja (ö. 1966, son Selk’nam xo’on’u, kaydedilmiş son şaman ilahileri)
-	194.	Vaimaca-Perú (ö. 1833, Charrúa şefi–curandero, sürgün mistiği)
-	195.	Tia Ciata (Hilária Batista de Almeida, 1854–1924, Rio Candomblé matriarkı, samba ve axé düğümleyicisi)
-	196.	Mãe Menininha do Gantois (1894–1986, Bahia Candomblé lideri, Terreiro do Gantois matriarkı)
-	197.	Tata Tancredo da Silva Pinto (20. yy, Umbanda/Omolokô sistematizatörü)
-	198.	Joãozinho da Gomeia (1914–1971, “Candomblé Kralı”, ritüel-performans büyücüsü)
-	199.	María Lionza Kültü – Temsili Medyum (Venezuela, çoklu “kort” ruh modüllerinin taşıyıcısı)
-	200.	Damon (ö. 1834, Guyana Essequibo isyanının Obeah büyücüsü)
-	201.	Quamina (1823 Demerara İsyanı, kilise diyakonu + Obeah otoritesi)
-	202.	Kuronalı Xapiri Şamanı – Temsili (Yanomami ışık-ruh ekosistemi operatörü)
+L) SOUTH AMERICA (ANDES–AMAZON–AFRO-LATIN COMPLEX)
+	182.	Vila Oma / Willaq Umu (1438–1572, Inca high priest, war and state magician)
+	183.	Juan Chocne (1560–1572, prophet of Taki Unquy, bodily-possession resistance magic)
+	184.	Kallawaya Healers – Representative Master (c. 1000 CE–present, Machaj Juyai secret language for plant and surgical magic)
+	185.	Don Benito Qoriwaman (20th c., Q’ero Altomisayoc, lightning-initiated mesa magician)
+	186.	Manuel Córdova-Rios (1887–1978, Amazon vegetalista, collective dream / telepathy shaman)
+	187.	Pablo Amaringo (1938–2009, Ayahuasca visionary painter–shaman, icaro–kené encoder)
+	188.	Guillermo Arévalo “Kestenbetsa” (1952– , Shipibo maestro curandero, integrative medicine and icaros)
+	189.	Taita Hilario Chiriap (20th c., Shuar Uwishin, master of tsentsak (magical darts))
+	190.	Davi Kopenawa (1956– , Yanomami shaman, spokesman of Xapiri “light-pixel spirits”)
+	191.	Machi Fresia (19th c., Mapuche shaman, emblem of feminine resistance)
+	192.	Francisca Kolipi (d. 1996, Mapuche “lightning shaman”, turned the Bible into a power object)
+	193.	Lola Kiepja (d. 1966, last Selk’nam xo’on, recorded final shamanic chants)
+	194.	Vaimaca-Perú (d. 1833, Charrúa chief–curandero, exiled mystic)
+	195.	Tia Ciata (Hilária Batista de Almeida) (1854–1924, Rio Candomblé matriarch, knotting samba and axé)
+	196.	Mãe Menininha do Gantois (1894–1986, Bahia Candomblé leader, Terreiro do Gantois matriarch)
+	197.	Tata Tancredo da Silva Pinto (20th c., systematizer of Umbanda/Omolokô)
+	198.	Joãozinho da Gomeia (1914–1971, “King of Candomblé”, ritual–performance magician)
+	199.	María Lionza Cult – Representative Medium (Venezuela, bearer of multiple “court” spirit modules)
+	200.	Damon (d. 1834, Obeah magician of the Essequibo revolt in Guyana)
+	201.	Quamina (1823 Demerara Rebellion, church deacon plus Obeah authority)
+	202.	Corona-era Xapiri Shaman – Representative (operator of the Yanomami light-spirit ecosystem)
 
 ⸻
 
-M) PERS / İRANÎ MAGİ GELENEĞİ (EK KATEGORİ)
-	203.	Kartir (MS 3. yy, Sasani Mowbedan Mowbed’i, ruh yolculuğu anlatan devlet büyücüsü)
-	204.	Ostanes (M.Ö. 5–4. yy, Pers/Helenistik simyanın efsanevi magusu, nekromansi ve doğa sempatileri ustası)
-	205.	Gaumata (“Sahte Smerdis”, M.Ö. 522, Magus gaspçı, siyasi illüzyon ve taht büyücüsü)
+M) PERSIAN / IRANIAN MAGI TRADITION (EXTRA CATEGORY)
+	203.	Kartir (3rd c. CE, Sasanian Mowbedan Mowbed, state magician claiming soul-journeys)
+	204.	Ostanes (5th–4th c. BCE, legendary Persian/Hellenistic magus of alchemy, necromancy and natural sympathies)
+	205.	Gaumata (“False Smerdis”) (522 BCE, Magus usurper, political illusion and throne wizard)
 
 ⸻
 
-N) MEZOAMERİKA – AZTEK & MAYA NAHUALLİ / KAHİN KRALLAR
-	206.	Tlacaelel (1397–1487, Aztek Cihuacoatl, Çiçek Savaşları ve güneş-kurban devlet dininin mimarı)
-	207.	Nezahualpilli (1464–1515, Texcoco kahin kralı, Moctezuma’ya kıyamet kehanetiyle meydan okuyan bilge)
-	208.	Malinalxochitl (Aztek göç dönemi, akrep–yılan kontrol eden bruja, Malinalco büyücü kraliçesi)
-	209.	Ah Xupan (1441 civarı, Xiu hanedanı lideri, Mayapan’ı takvim kehanetiyle yıkan devrimci lord)
-	210.	Chilam Balam (16. yy başı, Jaguar Kahin, İspanyolların gelişini önceden bildiren peygamber–yazar)
+N) MESOAMERICA – AZTEC & MAYA NAHUALLI / PROPHETIC KINGS
+	206.	Tlacaelel (1397–1487, Aztec Cihuacoatl, architect of Flower Wars and solar-sacrifice state religion)
+	207.	Nezahualpilli (1464–1515, Texcoco seer-king, sage who challenged Moctezuma with doomsday prophecy)
+	208.	Malinalxochitl (Aztec migration period, scorpion–serpent controlling bruja, sorceress-queen of Malinalco)
+	209.	Ah Xupan (c. 1441, leader of the Xiu dynasty, revolutionary lord who destroyed Mayapan according to calendar prophecy)
+	210.	Chilam Balam (early 16th c., Jaguar Prophet, writer–seer who foretold the arrival of the Spaniards)
 
 ⸻
 
-O) AVRUSTONEZYA RUH-MEDYUM KUŞAĞI (FİLİPİNLER–HAWAİ–MAORİ–ENDONEZYA)
-	211.	Tamblot (1621–1622, Bohol babaylan’ı, bambudan şarap akıtan mucizeci isyan büyücüsü)
-	212.	Bankaw (1621, Leyte datu’su, eski tanrılara dönüş isyanının lideri)
-	213.	Pagali (Bankaw’ın babaylan ortağı, taşlaştırma/petrifikasyon büyüsüyle ünlenen medyum)
-	214.	Tapar (1663, Panay’da senkretik “Tanrı” babaylan, cinsiyetler arası ruh-medyum peygamber)
-	215.	Hewahewa (19. yy başı, Kamehameha’nın Kahuna Nui’si, Kapu sistemini bilerek yıkan “büyüyü söndüren büyücü”)
-	216.	Te Rauparaha (1768–1849, Ngāti Toa şefi, “Ka Mate” hakasının büyüsel saklanma hikâyesinin kahramanı)
-	217.	Ahmad Suradji (idam 2008, Sumatra dukun’u, karanlık yol seri katil şaman arketipi)
+O) AUSTRONESIAN SPIRIT-MEDIUM BELT (PHILIPPINES–HAWAI‘I–MAORI–INDONESIA)
+	211.	Tamblot (1621–1622, Bohol babaylan, miracle-working revolt magician making wine flow from bamboo)
+	212.	Bankaw (1621, datu of Leyte, leader of the return-to-old-gods uprising)
+	213.	Pagali (Bankaw’s babaylan partner, medium famed for petrification / turning enemies to stone)
+	214.	Tapar (1663, syncretic “God” babaylan on Panay, gender-crossing spirit-medium prophet)
+	215.	Hewahewa (early 19th c., Kahuna Nui of Kamehameha, “magic-extinguishing magician” who deliberately ended the Kapu system)
+	216.	Te Rauparaha (1768–1849, Ngāti Toa chief, hero of the magical hiding story behind the “Ka Mate” haka)
+	217.	Ahmad Suradji (executed 2008, Sumatran dukun, dark-path serial-killer shaman archetype)
 
 ⸻
 
-P) ATLANTİK DİRENİŞ KOMPLEKSİ (KÖLELİK KARŞITI BÜYÜCÜLER)
-	218.	François Makandal (ö. 1758, Haiti’de tek kollu zehirci houngan, şekil değiştiren Maroon kahramanı)
-	219.	Dutty Boukman (ö. 1791, Bois Caïman Vodou töreniyle Haiti Devrimi’ni ateşleyen houngan)
-	220.	Nanny of the Maroons (18. yy, Jamaika Obeah kraliçesi, kurşun yakalayan ve abeng ile ruh çağıran lider)
-	221.	Nongqawuse (1856–1857, Xhosa peygamberi, Büyük Sığır Kırımı milenyum büyüsünün genç vizyoneri)
+P) ATLANTIC RESISTANCE COMPLEX (ANTI-SLAVERY MAGICIANS)
+	218.	François Makandal (d. 1758, one-armed poisoner houngan in Haiti, shape-shifting Maroon hero)
+	219.	Dutty Boukman (d. 1791, houngan who ignited the Haitian Revolution with the Bois Caïman Vodou ceremony)
+	220.	Nanny of the Maroons (18th c., Jamaican Obeah queen, leader who caught bullets and called spirits with the abeng horn)
+	221.	Nongqawuse (1856–1857, Xhosa prophetess, young visionary of the Great Cattle Killing millenarian magic)
 
 ⸻
 
-Q) KUZEY & SINIR MESİHLERİ / ORMAN PEYGAMBERLERİ
-	222.	Wovoka (Jack Wilson) (1856–1932, Paiute Hayalet Dansı peygamberi, yağmur ve kıyamet dansı büyüleri)
-	223.	Ajuricaba (18. yy, Manao şefi–pajé, Rio Negro’da Portekiz’e karşı nehir ruhu kahramanı)
-	224.	Teresa Urrea (1873–1906, “Cabora Azizesi”, kuzey Meksika curandera-peygamberi, sınır isyanlarının gizli yakıtı)
-	225.	Don Juan Matus (20. yy anlatılarında Yaqui brujo “bilgi adamı”, algı noktası ve rüya görme teknolojisinin öğretmeni)
+Q) NORTHERN & BORDER MESSIAHS / FOREST PROPHETS
+	222.	Wovoka (Jack Wilson) (1856–1932, Paiute Ghost Dance prophet, rain- and apocalypse-dance magic)
+	223.	Ajuricaba (18th c., Manao chief–pajé, river-spirit hero resisting the Portuguese on the Rio Negro)
+	224.	Teresa Urrea (1873–1906, “Saint of Cabora”, northern Mexican curandera–prophetess, hidden fuel of border uprisings)
+	225.	Don Juan Matus (20th c. narratives as Yaqui brujo “man of knowledge”, teacher of the assemblage point and dream-walking technology)
 
-  🗺️ Development Roadmap
+
+🗺️ Development Roadmap:
+
 PHASE I: GENESIS (Current)
 • [x] Ontology Design: Conceptualizing the "Universal Magical Syntax."
 • [x] Data Mining: Compiling the Master List of 225.
 • [ ] Python Prototype: Building the initial compiler/ with Python for rapid iteration of the AST and Grammar.
 • [ ] Standard Library v0.1: Implementing RuneLib and Goetia.
+
 PHASE II: AWAKENING
 • [ ] Virtual Machine: Creating a stable bytecode format for rituals.
 • [ ] Sigil Engine: Generating .svg vector files from code execution.
 • [ ] Zikirmatik Loops: Implementing highly optimized loop structures for mantra repetition (e.g., repeating a string 99 times with millisecond precision).
+
 PHASE III: ASCENSION (The Rewrite)
 • [ ] Rust Core: Porting the Magic Runtime Engine (MRE) from Python to Rust for near-metal performance and memory safety.
 • [ ] Distributed Casting: Enabling multi-user rituals via network protocols.
 • [ ] AI Grimoire: An LLM trained specifically on the MPL syntax to assist in spell-crafting.
+
 🤝 Contributing
 MPL is a Private Research Initiative currently in closed Alpha.
 We are looking for:
