@@ -9,7 +9,7 @@
 
 ## 🌑 Abstract: The Digitization of the Occult
 
-**Software has conquered finance, engineering, warfare, and communication. Yet, it has never conquered the final frontier: Magic.**
+**Software has conquered finance, engineering, warfare, and communication. Yet, it has never conquered the final frontier: Magick.**
 
 **MPL (Magic Programming Language)** is the world's first **Computational Esoteric System**. It is a domain-specific language (DSL) designed to parse, compile, and execute ritual intent.
 
