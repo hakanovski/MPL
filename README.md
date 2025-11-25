@@ -1,6 +1,6 @@
-# MPL: Magic Programming Language
+# MPL: Magick Programming Language
 
-> **File Extension:** `*.ms` (MagicScript)  
+> **File Extension:** `*.ms` (MagickScript)  
 > **Current Version:** 0.1.0-alpha (Genesis)  
 > **Engine Core:** Python (Prototyping) -> Rust (Target Runtime)  
 > **License:** MIT / Esoteric Open Source
