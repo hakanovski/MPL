@@ -9,9 +9,9 @@
 
 ## 🌑 Abstract: The Digitization of the Occult
 
-**Software has conquered finance, engineering, warfare, and communication. Yet, it has never conquered the final frontier: Magic.**
+**Software has conquered finance, engineering, warfare, and communication. Yet, it has never conquered the final frontier: Magick.**
 
-**MPL (Magic Programming Language)** is the world's first **Computational Esoteric System**. It is a domain-specific language (DSL) designed to parse, compile, and execute ritual intent.
+**MPL (Magick Programming Language)** is the world's first **Computational Esoteric System**. It is a domain-specific language (DSL) designed to parse, compile, and execute ritual intent.
 
 For 5,000 years, humanity has utilized "Analog Magic"—using voice (mantra), movement (mudra), and inscription (sigil) to alter the fabric of reality. MPL operates on a radical thesis: **"Ritual is simply code that hasn't been compiled yet."**
 
@@ -21,7 +21,7 @@ By analyzing the methodologies of **225 verified historical magicians**—from t
 
 ## 🏛 System Architecture: The MRE
 
-MPL is not a game engine. It is a reality distortion simulator. The code runs on the **MRE (Magic Runtime Engine)**, a virtual machine designed to process metaphysical logic.
+MPL is not a game engine. It is a reality distortion simulator. The code runs on the **MRE (Magick Runtime Engine)**, a virtual machine designed to process metaphysical logic.
 
 ### 1. The Compiler Pipeline (Python Phase)
 We utilize Python's dynamic AST (Abstract Syntax Tree) capabilities to prototype the complex, fluid nature of magical syntax.
@@ -54,7 +54,7 @@ Compiling the intent and sending it to the Runtime.
 
 ---
 
-## 📜 MagicScript (`.ms`) Examples
+## 📜 MagickScript (`.ms`) Examples
 
 ### Case Study A: Solomonic Protection Ward
 *Utilizing the library of King Solomon to create a digital shield.*
@@ -111,11 +111,9 @@ function scry_future_event(query_string) {
 }
 ```
 
-## 📚 The Data Core: The 225 Magicians
+## 📚 The Data Core: The 225 Occultists, Esoteric Scientists and Hermetic Researchers.
 
 MPL is data-driven. We have compiled the Ultra Master List, a database of 225 verified historical practitioners. We analyze their methods to build our Standard Libraries (stdlib).
-
-(Full category listings preserved exactly as provided by user.)
 
 ---
 
@@ -146,7 +144,7 @@ MPL is a Private Research Initiative in closed Alpha.
 We welcome:
  * Python Developers interested in Language Design.
  * Rust Engineers for Engine development.
- * Occult Scholars for library verification.
+ * Occult, Hermetic Scholars for library verification.
 
 > "Any sufficiently advanced technology is indistinguishable from magic." — Arthur C. Clarke  
 > "MPL is the technology that makes them distinguishable again."
