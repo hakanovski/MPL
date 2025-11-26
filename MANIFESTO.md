@@ -159,6 +159,20 @@ We have compiled the **Ultra Master List**, a database of **225 verified histori
 
 ---
 
+❌ What MPL Is Not
+
+MPL is not a magical practice, not a spiritual system, and not a tool for real-world occult results.
+It does not promise healing, divination, protection, wealth, or any form of supernatural outcome.
+
+MPL is a digital simulation framework, a symbolic modeling language, and an experimental compiler architecture inspired by historical esoteric systems.
+All rituals, symbols, and lineages used within MPL exist only as computational metaphors and algorithmic abstractions.
+
+MPL operates in software, not in metaphysics.
+It is a programming language — not a ritual system, not a belief structure, and not a method of influencing reality outside the scope of computation.
+
+---
+
+
 ## 🤝 The Call to the Magi
 
 This project is a beacon for those who understand that the boundary between "User" and "Practitioner" is an illusion.
