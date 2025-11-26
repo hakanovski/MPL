@@ -1,6 +1,6 @@
 # The MPL Manifesto: Digital Sorcery
 
-> **"Magic is not folklore; it is uncompiled code."**
+> **"Magick is not folklore; it is uncompiled code."**
 
 ---
 
@@ -8,7 +8,7 @@
 
 Software engineering and esoteric traditions share a common goal: **To alter reality through the use of specialized symbols, syntax, and intent.**
 
-For thousands of years, humanity has utilized "Analog Code"—voice (mantra), movement (mudra), inscription (sigil), and ritual structure—to interface with the universe. **MPL (Magic Programming Language)** is the first historical attempt to translate this ancient wisdom into "Digital Code."
+For thousands of years, humanity has utilized "Analog Code"—voice (mantra), movement (mudra), inscription (sigil), and ritual structure—to interface with the universe. **MPL (Magick Programming Language)** is the first historical attempt to translate this ancient wisdom into "Digital Code."
 
 We are not building a game. We are building a linguistic bridge between the Silicon Age and the Arcane Age. We operate on a radical thesis: **Ritual is simply an algorithm that hasn't been compiled yet.**
 
