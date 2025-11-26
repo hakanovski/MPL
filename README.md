@@ -124,5 +124,6 @@ MPL is currently in Alpha Prototype stage. We welcome developers to help build t
  * Commit your changes.
  * Push to the branch.
  * Open a Pull Request.
-Copyright © 2025 MPL Project. Released under the MIT License.
+
+Copyright © 2025 MPL Project. Released under the MIT License. 🧙🏻‍♂️ Hakan Yorganci
 
