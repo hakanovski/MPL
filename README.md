@@ -1,21 +1,15 @@
-Harika. İşte sadece teknik detayları, kurulumu ve dil yapısını içeren, "hype" teknolojilerden (Blockchain, AI vb.) arındırılmış, profesyonel ve mühendis işi README.md dosyası.
-Bunu kopyalayıp direkt yapıştırabilirsin.
-# MPL: Magic Programming Language
-
-![MPL Logo Placeholder](assets/logo_triform_seal.png)
-
 > **Current Version:** 0.1.0-alpha
 > **Engine Core:** Python 3.8+
-> **File Extension:** `*.ms` (MagicScript)
+> **File Extension:** `*.ms` (MagickScript)
 > **License:** MIT
 
 ---
 
 ## 📋 Overview
 
-**MPL (Magic Programming Language)** is an interpreted, domain-specific language (DSL) designed to structure abstract esoteric intent into executable logic.
+**MPL (Magick Programming Language)** is an interpreted, domain-specific language (DSL) designed to structure abstract esoteric intent into executable logic.
 
-While traditional programming languages manipulate data to perform calculations, MPL manipulates **Symbols and Syntax** to simulate ritual operations. It treats "Magic" as a rigorous set of logical steps: defining dependencies (Invoke), assigning pointers (Bind), configuring parameters (Shape), and executing threads (Release).
+While traditional programming languages manipulate data to perform calculations, MPL manipulates **Symbols and Syntax** to simulate ritual operations. It treats "Magick" as a rigorous set of logical steps: defining dependencies (Invoke), assigning pointers (Bind), configuring parameters (Shape), and executing threads (Release).
 
 This repository contains the prototype interpreter and the core Standard Library definitions.
 
