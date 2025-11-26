@@ -185,13 +185,14 @@ loop (Vortex.MATERIAL) {
     // It skips 3, 6, and 9 to maintain physical stability.
     grow_matter();
 }
-
+```
 3. The Flux Fields: 3 and 6
 Tesla described 3 and 6 as the oscillating poles (Yin/Yang, Magnetism/Electricity) that govern the physical world but are separate from it.
 In MPL, this defines the Input/Output (I/O) & Control Flow:
  * 3 (The Transmitter): Handles all Output operations (Release, Print, Cast).
  * 6 (The Receiver): Handles all Input operations (Invoke, Listen, Read).
  * Oscillation Logic: The compiler checks for balance. You cannot have a 6 (Input) without a corresponding 3 (Output). Unbalanced code throws a ResonanceError.
+   
 4. The Sovereign Singularity: 9
 "9 is the Universe itself." — The void, the source, the sum of all parts.
 In MPL, 9 represents the Compiler Core (The God Node):
@@ -199,6 +200,7 @@ In MPL, 9 represents the Compiler Core (The God Node):
    * Rule: If the digital root is 9, the spell is perfectly balanced and executes instantly (The Golden Path).
    * Rule: If the digital root is not harmonic (e.g., fits into a dissonant array), the spell may backfire (Entropy Cost).
  * The Release Command: The keyword release is internally mapped to the index 9. It is the return to the source.
+   
 🧬 Technical Implementation Summary
 | Concept | Tesla Value | MPL Component | Function |
 |---|---|---|---|
