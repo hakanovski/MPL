@@ -275,7 +275,7 @@ solomonic.banish(server_pid)
 
 ---
 
-🤝 Contributing
+## 🤝 Contributing
 MPL is currently in Alpha Prototype stage. We welcome developers to help build the core interpreter.
  * Fork the repo.
  * Create your feature branch (git checkout -b feature/new-parser).
