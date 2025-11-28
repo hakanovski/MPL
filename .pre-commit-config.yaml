@@ -1,0 +1,25 @@
+# 🛡️ MPL Pre-Commit Hooks (The Purification Rituals)
+# This configuration ensures code and data integrity before every commit.
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      # Standard Purification Protocols
+      - id: trailing-whitespace   # Trims unnecessary whitespace
+      - id: end-of-file-fixer     # Ensures files end with a newline
+      - id: check-yaml            # Validates YAML syntax
+      - id: check-added-large-files # Prevents accidental commit of massive binaries
+      - id: check-json            # CRITICAL: Validates magi_225.json structure
+
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        # Automatically formats Python code to PEP 8 standards
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        # Checks for logic errors and unused variables in Python code
