@@ -1,0 +1,31 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# Indicates this is the root configuration
+root = true
+
+# Universal Rules (Applies to all files)
+[*]
+charset = utf-8
+end_of_line = lf              # Unix-style line endings (consistent across OS)
+insert_final_newline = true   # Always end file with a newline
+trim_trailing_whitespace = true # Remove unnecessary whitespace at end of lines
+indent_style = space          # Use spaces instead of tabs
+indent_size = 4               # Default indentation size
+
+# Python Specific Settings
+[*.py]
+indent_size = 4
+
+# Data Files (JSON, YAML) - 2 spaces is standard for readability
+[*.{json,yaml,yml}]
+indent_size = 2
+
+# Markdown Documentation
+[*.md]
+trim_trailing_whitespace = false # Markdown line breaks sometimes require trailing spaces
+
+# ✨ MPL (Magick Programming Language) Script Files ✨
+[*.ms]
+indent_style = space
+indent_size = 4
+charset = utf-8
