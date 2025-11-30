@@ -39,6 +39,7 @@ casting         = "cast" , spell_name , [ "with" , parameters ] ;
 transmutation   = "transmute" , target , "->" , result_type ;
 
 (* Tesla Protocol Loops (Resonance Cycles) *)
+(* Note: While 'frequency' accepts any integer, using 3, 6, or 9 enables the Resonance Engine. *)
 loop_block      = "cycle" , "(", frequency , ")" , block ;
 
 (* Logic Control *)
@@ -70,17 +71,19 @@ target          = identifier ;
 
 result_type     = "Sigil" | "Flux" | "Mana" | "Vessel" | "Void" ;
 
-frequency       = integer ; (* strictly: 3, 6, or 9 in Tesla Protocol *)
+(* Frequency: The number of iterations for a cycle *)
+(* Any integer is valid (Mundane Loop). 3, 6, 9 trigger Tesla Optimization (Resonant Loop). *)
+frequency       = integer ; 
 
 identifier      = letter , { letter | digit | "_" } ;
 literal         = string | number | boolean ;
 
 string          = '"' , { character } , '"' ;
-number          = digit , { digit } , [ "." , { digit } ] ;
+integer         = digit , { digit } ;
+number          = integer , [ "." , { digit } ] ;
 boolean         = "True" | "False" ;
 
 comment         = "#" , { character } ;
-
 
 🔮 Syntax Examples
 Below are valid code snippets derived from the grammar above.
@@ -93,13 +96,23 @@ invoke.hermes(intent="clarity", duration=300)
 bind mana_pool to 100
 bind target_sigil to "PROTECT"
 
-3. Tesla Cycle (Loop)
-# A loop that repeats based on the Tesla 3-6-9 key
+3. Tesla Cycle (Resonant Loop)
+# A loop that uses the Tesla Key (3). 
+# The engine will treat this as a High-Priority Creation Cycle.
 cycle(3) {
     cast cleanse_memory
     bind entropy to entropy + 1
 }
 
-4. Transmutation (Type Conversion)
+4. Mundane Cycle (Standard Loop)
+# A standard loop repeating 10 times.
+# Valid, but runs without Tesla Optimization.
+cycle(10) {
+    divination.inscribe("Iterating data...")
+}
+
+5. Transmutation (Type Conversion)
 # Converts a string (Sigil) into an integer (Mana)
 transmute input_text -> Mana
+
+
