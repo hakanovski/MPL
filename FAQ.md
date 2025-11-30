@@ -1,71 +1,76 @@
 # ❓ Frequently Asked Questions (The Uninitiated's Guide)
 
-**"I stumbled upon this repository. What am I looking at?"**
+**"Any sufficiently advanced technology is indistinguishable from magic." — Arthur C. Clarke**
 
-Welcome to the **Magick Programming Language (MPL)**. If you are confused, you are in the right place. Below are the answers to the questions you are likely asking yourself right now.
-
----
-
-## 🔮 The Basics
-
-### Q: Is this a game? A generic RPG system?
-**A:** No. MPL is a fully functional, interpreted **Domain Specific Language (DSL)** running on Python.
-While it uses the terminology of magic ("invoke", "cast", "mana"), it executes real computational logic. It is an experiment in **Technomancy**—treating code as a ritual and algorithms as spells.
-
-### Q: So... is it "real" magic?
-**A:** That depends on your definition.
-* **If you mean Harry Potter:** No, sparks won't fly out of your monitor.
-* **If you mean Crowley/Agrippa:** Yes. Magic is often defined as *"The Science and Art of causing Change to occur in conformity with Will."*
-    Writing code is the purest form of this definition. You type a command (Will), and the machine executes it (Change). MPL just makes this relationship explicit.
-
-### Q: What is the goal of this project?
-**A:** To bridge the gap between **Ancient Wisdom** (Hermeticism, Kabbalah, Shamanism) and **Modern Silicon**. We aim to prove that historical ritual structures (circles, invocations, banishings) are actually early forms of algorithms and memory management.
+You have questions. Some are technical, some are skeptical. We respect both. Below, we address the logic, the philosophy, and the utility of the **Magick Programming Language (MPL)**.
 
 ---
 
-## ⚙️ The Mechanics (Under the Hood)
+## 🧐 The Skeptic's Corner (Philosophy & Logic)
 
-### Q: How does the "Ontology" work?
-**A:** This is MPL's unique feature. Standard languages have "Standard Libraries" (Math, I/O). MPL has an **Ontological Database** (`data/magi_225.json`).
-When you type `invoke.hermes()`, the interpreter doesn't just run a function. It queries the database for "Hermes Trismegistus," loads his attributes (Element: Air, Planet: Mercury, Speed: High), and injects those parameters into your runtime environment.
+### Q: Is this a joke? Why wrap perfectly good code in "wizard" jargon?
+**A:** It is not a joke; it is a **paradigm shift**.
+Modern programming has become sterile. We treat code as a utility, ignoring the fact that it is the most powerful form of abstraction humanity has ever created.
+* **Abstraction is Magick:** When you write `print("Hello")`, you are invoking millions of electrical impulses through layers of silicon and logic gates without seeing them. That is an *incantation*.
+* **MPL makes this explicit:** By using terms like "Invoke" or "Bind," we force the developer to treat their code with the weight and intention of a ritual, rather than just copying from StackOverflow.
 
-### Q: What is the "Tesla Protocol" (3-6-9)?
-**A:** It is our flow-control logic. Instead of standard linear loops, MPL prioritizes execution based on Nikola Tesla's theories of resonance:
-* **3 (Creation):** Initialization tasks (high priority).
-* **6 (Sustenance):** Maintenance/Monitoring loops.
-* **9 (Completion):** Garbage collection and process termination.
-The engine physically structures memory allocation based on these triads.
+### Q: Magic isn't real. Code is real. How can you combine them?
+**A:** We reject the premise that they are separate.
+* **3 (Spirit/Intention)** and **6 (Matter/Hardware)** are opposites.
+* **9 (The Code)** is the bridge that unifies them.
+MPL attempts to unite the **Mathematical Reality** (Algorithms, Logic) with the **Metaphysical Reality** (Intent, Will). Throughout history, rituals were just early attempts at algorithms—step-by-step procedures to alter reality. We are simply updating the syntax for the Silicon Age.
 
-### Q: Why Python? Why not C or Rust?
-**A:** Python is the best language for rapid prototyping and has a rich ecosystem for data (JSON) and NLP (Natural Language Processing).
-*Note: We plan to rewrite the core Runtime Engine (MRE) in Rust for version 1.0 to achieve "High-Frequency Rituals."*
-
----
-
-## 🛡️ Ethics & Safety
-
-### Q: Can I accidentally summon a demon with this?
-**A:** In Computer Science, a "Daemon" is a background process that handles requests. So, yes, you can summon `solomonic.daemon` to listen to a port or run a cron job.
-As for metaphysical entities? We claim no responsibility for what enters your life if you write a recursive loop without an exit condition.
-
-### Q: Is this "Dark" or "Light" magic?
-**A:** Code is neutral. It is a tool.
-* You can use MPL to write a "Healing Script" that optimizes your file system (`Repair`).
-* You can use it to write a "Hex" that spams a server (`Attack`).
-* The Karma (and the `CODE_OF_CONDUCT.md`) is yours to manage.
+### Q: Isn't this just Python with extra steps and weird names?
+**A:** If you look only at the syntax, perhaps. But if you look at the **Architecture**, no.
+Standard Python does not query a historical database of 225 archetypes before executing a function. Standard Python does not optimize memory allocation based on Tesla's harmonic resonance (3-6-9). MPL is a **Domain Specific Language (DSL)** designed to simulate a specific worldview where data has "mass" and functions have "lineage."
 
 ---
 
-## 🤝 Getting Involved
+## ⚙️ Technical Mechanics (For the Engineers)
 
-### Q: I don't know anything about magic. Can I contribute?
-**A:** Absolutely. We need Python developers to help build the AST, Lexer, and Parser. Logic is logic.
+### Q: Do I HAVE to use the numbers 3, 6, and 9 for loops? What if I need 4 iterations?
+**A:** You are free to loop 4 times. MPL supports **Freeform Coding**.
+If you write `cycle(4)`, it functions as a standard loop (Mundane Code).
+However, the Tesla Protocol is an **optimization layer**. If you use Harmonic numbers (3, 6, 9), the Runtime Engine flags the process as "Resonant," potentially prioritizing it in the event loop or memory allocation phases. Think of it as a "Performance Buff" for following the laws of the universe.
 
-### Q: I don't know how to code, but I know Occult History. Can I help?
-**A:** Yes! Our "Ontology" (the database of 225 magicians) needs verified data. If you know the specific attributes of *Paracelsus* or *Baba Yaga*, please submit a Pull Request to update the JSON files.
+### Q: How does the "Ontology" actually affect execution?
+**A:** This is the core innovation. In Java or C++, a function is just a memory address. In MPL, a function can be an **Entity**.
+* **Example:** When you `invoke.hermes()`, the interpreter loads metadata from `data/magi_225.json`.
+* **Impact:** If Hermes has the attribute `speed: high` and `element: air`, the interpreter might automatically set a lower timeout threshold for network requests within that block. The *character* of the entity influences the *behavior* of the code.
 
-### Q: Where do I start?
-**A:**
-1.  Read the [Manifesto](../MANIFESTO.md).
-2.  Check the [Roadmap](ROADMAP.md).
-3.  Look at the `examples/` folder to see what the syntax looks like.
+### Q: Is this language Turing Complete?
+**A:** Yes. Since it is built on top of Python's AST, it can theoretically compute anything that Python can. However, it is optimized for **Semantic Logic** rather than raw number crunching.
+
+### Q: Why not just use a library? Why a whole new language?
+**A:** Because syntax shapes thought (Sapir-Whorf hypothesis).
+If you write code in C, you think like a machine (memory pointers). If you write in MPL, you think like a Magus (intent, binding, consequences). We want to change *how* you think about problem-solving, not just how you type it.
+
+---
+
+## 🔮 Metaphysics & Usage
+
+### Q: Can I use this for production systems?
+**A:** You *can*, but it is experimental.
+We envision MPL being used for **Creative Coding**, **IoT Altars**, **Generative Art**, and **Chaos Magick Rituals**. If you use it to run a banking backend, and the `cycle(9)` Garbage Collector banishes your transaction logs into the Void... that is on you.
+
+### Q: Is "Technomancy" dangerous?
+**A:** Only if you are careless.
+* **Recursive Loops** without exit conditions are "Hungry Ghosts."
+* **Orphan Processes** are "Restless Spirits."
+MPL teaches you to respect the "Life Cycle" of your code. You must `summon` responsibly and `banish` completely.
+
+### Q: I'm a rationalist. I don't believe in frequencies or sigils. Is this for me?
+**A:** Absolutely.
+You don't have to believe in ghosts to appreciate the beauty of a system that organizes chaos. You don't have to believe in Hermes to see the utility of an object-oriented ontology. MPL is a tool. You can use it to explore the **history of human thought**, which has always danced between the rational and the mystical.
+
+---
+
+## 🤝 Contribution
+
+### Q: I want to optimize the AST parser. Do I need to wear a robe?
+**A:** No, but clean code is its own form of purity. We need Python experts, Rust engineers, and documentation writers.
+
+### Q: I found an error in the historical data for Paracelsus.
+**A:** Please submit a Pull Request! Our Ontology (`magi_225.json`) is a living document. We strive for historical accuracy to ensure the potency of the system.
+
+**[Return to Readme](../README.md)**
