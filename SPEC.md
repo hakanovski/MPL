@@ -49,18 +49,21 @@ cycle(3) {
 
 # Accessing 'secret' here causes DissipationError.
 
-4. The Tesla Protocol (Execution Logic)
-MPL does not use a standard binary execution loop. It utilizes the Tesla Protocol, a priority-based event loop governed by the numbers 3, 6, and 9.
-4.1 Resonance Keys
- * Key 3 (Creation): High priority. Used for initialization, allocation, and summoning.
- * Key 6 (Sustenance): Medium priority. Used for maintaining state, monitoring, and standard operations.
- * Key 9 (Completion): Absolute priority. Used for garbage collection, closing connections, and banishing.
-4.2 The cycle(n) Construct
-Loops in MPL must be declared with a frequency (n).
-cycle(3) { ... }  # Runs 3 times (Creation Phase)
-cycle(6) { ... }  # Runs 6 times (Oscillation Phase)
-cycle(9) { ... }  # Runs 9 times (Release Phase)
-
+4. The Tesla Protocol (Flow Control & Resonance)
+MPL allows for standard looping mechanics but rewards adherence to the Tesla Protocol (3-6-9).
+4.1 Loop Behavior
+The cycle(n) construct accepts any integer n. However, the Runtime Engine processes them differently based on their harmonic properties.
+ * Standard Cycles (Dissonant): Any non-harmonic number (e.g., 4, 7, 10).
+   * Behavior: Executes strictly as a linear loop (similar to for loops in Python).
+   * System Impact: Standard memory usage. No special priority.
+ * Resonant Cycles (Harmonic): Numbers 3, 6, and 9.
+   * Behavior: Triggers the "Resonance Engine."
+   * System Impact:
+     * 3 (Creation): High Priority allocation. Optimized for initialization.
+     * 6 (Sustenance): Balanced execution. Optimized for monitoring.
+     * 9 (Release): Critical Priority. Triggers immediate Garbage Collection after completion.
+> Note: You are free to write cycle(100), but the system treats it as "Mundane Code" without the optimization benefits of the Tesla Protocol.
+> 
 5. Ontology Resolution
 MPL is "Ontology-Aware." It does not view functions as mere code blocks, but as entities with attributes.
 When the interpreter encounters invoke.entity_id():
@@ -81,4 +84,3 @@ Comments are marked with the # symbol.
  * Single line: # This is a comment
  * They are treated as "Silent Intent" and are ignored by the Lexer but preserved in the AST for documentation.
 <!-- end list -->
-
