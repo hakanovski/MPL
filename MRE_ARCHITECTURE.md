@@ -54,7 +54,7 @@ D. The Interpreter (src/interpreter.py)
  * Function: Traverses the AST and executes nodes recursively.
  * Key Modules:
    * BindingHandler: Assigns values to variables.
-   * TeslaLooper: Manages cycle(n) loops based on the 3-6-9 priority logic.
+   * TeslaLooper: Manages cycle(n) loops based on the priority logic.
    * Transmuter: Handles dynamic type casting.
 3. Memory Model (The Ether)
 Memory in MRE is managed via a stack of scopes, referred to as Circles.
@@ -66,14 +66,17 @@ Memory in MRE is managed via a stack of scopes, referred to as Circles.
    * Created when entering a function or a cycle block.
    * Variables (Vessels) bound here are private.
    * When the block ends, the Circle is "dissipated" (popped from the stack), and memory is freed.
-4. The Tesla Protocol (Event Loop)
-Standard interpreters often use a simple while loop. The MRE uses the Tesla Protocol for flow control, prioritizing operations based on their harmonic frequency (3, 6, or 9).
-| Frequency | Priority | Usage |
-|---|---|---|
-| 3 (Creation) | High | Initializing variables, loading imports. |
-| 6 (Sustenance) | Medium | Standard logic, monitoring, I/O operations. |
-| 9 (Completion) | Critical | Garbage collection, closing streams, terminating rituals. |
-Implementation Note: In v0.1, this is simulated via Python's logic flow. In future versions, this will be an async event loop scheduler.
+4. The Tesla Protocol (Event Loop & Scheduler)
+The MRE utilizes a Priority-Based Scheduler that adapts to the input frequency.
+A. The Resonance Check
+Before executing a cycle(n), the Interpreter checks if n is a Tesla Key (3, 6, 9).
+ * If Harmonic (3, 6, 9):
+   * The task is pushed to the Priority Queue.
+   * Metaphysical attributes (Creation, Sustenance, Destruction) are applied to memory management.
+ * If Mundane (Any other int):
+   * The task is pushed to the Standard Queue.
+   * It executes with standard FIFO (First-In, First-Out) logic.
+Design Philosophy: This allows the language to be "Turing Complete" and flexible for general use, while preserving the esoteric advantages for "Initiated" code.
 5. File Structure Reference
 src/
 ├── mpl.py              # Entry point (CLI)
