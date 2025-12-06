@@ -1,9 +1,9 @@
 """
 src/parser.py
 ====================================
-The Parser.
+The Parser (Architect).
 It takes a list of Tokens from the Lexer and constructs an Abstract Syntax Tree (AST).
-This transforms a flat list of words into a structured hierarchy of intent.
+This transforms a flat list of words into a structured hierarchy of 13 Sealed Actions.
 """
 
 from dataclasses import dataclass
@@ -24,21 +24,11 @@ class Expr:
     """Base class for all Expressions."""
     pass
 
-# --- Statements ---
+# --- Structural Statements ---
 
 @dataclass
 class Block(Stmt):
     statements: List[Stmt]
-
-@dataclass
-class Invocation(Stmt):
-    entity: str
-    params: List['Param']
-
-@dataclass
-class Binding(Stmt):
-    name: str
-    value: Expr
 
 @dataclass
 class Cycle(Stmt):
@@ -46,20 +36,69 @@ class Cycle(Stmt):
     body: Stmt
 
 @dataclass
-class Transmutation(Stmt):
-    target: str
-    target_type: str
-
-@dataclass
 class Conditional(Stmt):
     condition: Expr
     then_branch: Stmt
     else_branch: Optional[Stmt] = None
 
+# --- The 13 Sealed Actions (Nodes) ---
+
 @dataclass
-class Casting(Stmt):
-    spell_name: str
+class Invoke(Stmt):
+    entity: str
     params: List['Param']
+
+@dataclass
+class Bind(Stmt):
+    name: str
+    value: Expr
+
+@dataclass
+class Summon(Stmt):
+    module_name: str
+
+@dataclass
+class Circle(Stmt):
+    body: Stmt  # The protected block (try/catch equivalent)
+
+@dataclass
+class Seal(Stmt):
+    target: str # Variable to lock/protect
+
+@dataclass
+class Omen(Stmt):
+    target: str # Variable to store the read data into
+
+@dataclass
+class Hex(Stmt):
+    target: str
+    params: List['Param']
+
+@dataclass
+class Morph(Stmt):
+    target: str
+    target_type: TokenType
+
+@dataclass
+class Pact(Stmt):
+    target: str
+    request: Expr
+
+@dataclass
+class Banish(Stmt):
+    target: str
+
+@dataclass
+class Purge(Stmt):
+    target: Optional[str] = None # If None, clear everything
+
+@dataclass
+class Abyss(Stmt):
+    message: Expr
+
+@dataclass
+class Echo(Stmt):
+    message: Expr
 
 # --- Expressions ---
 
@@ -110,85 +149,134 @@ class Parser:
         try:
             return self.statement()
         except ParserError as e:
-            # In a full compiler, we might synchronize here to recover.
-            # For now, we stop at the first error.
+            # In a production compiler, we would synchronize here.
             print(f"Syntax Error: {e}")
             return None
 
     def statement(self) -> Stmt:
-        if self.match(TokenType.INVOKE):
-            return self.invocation_statement()
-        if self.match(TokenType.BIND):
-            return self.binding_statement()
-        if self.match(TokenType.CYCLE):
-            return self.cycle_statement()
-        if self.match(TokenType.TRANSMUTE):
-            return self.transmutation_statement()
-        if self.match(TokenType.CAST):
-            return self.casting_statement()
-        if self.match(TokenType.IF):
-            return self.if_statement()
-        if self.match(TokenType.LBRACE):
-            return self.block()
-        
-        # If no statement matches, it might be an expression statement
-        # (For now, we enforce statements strictly)
-        raise self.error(self.peek(), "Expect valid ritual statement (invoke, bind, cycle, etc.)")
+        # --- Dispatcher for The 13 Sealed Verbs ---
+        if self.match(TokenType.INVOKE): return self.invoke_stmt()
+        if self.match(TokenType.BIND): return self.bind_stmt()
+        if self.match(TokenType.SUMMON): return self.summon_stmt()
+        if self.match(TokenType.CIRCLE): return self.circle_stmt()
+        if self.match(TokenType.SEAL): return self.seal_stmt()
+        if self.match(TokenType.OMEN): return self.omen_stmt()
+        if self.match(TokenType.HEX): return self.hex_stmt()
+        if self.match(TokenType.MORPH): return self.morph_stmt()
+        if self.match(TokenType.PACT): return self.pact_stmt()
+        if self.match(TokenType.BANISH): return self.banish_stmt()
+        if self.match(TokenType.PURGE): return self.purge_stmt()
+        if self.match(TokenType.ABYSS): return self.abyss_stmt()
+        if self.match(TokenType.ECHO): return self.echo_stmt()
+
+        # --- Structural ---
+        if self.match(TokenType.CYCLE): return self.cycle_stmt()
+        if self.match(TokenType.IF): return self.if_stmt()
+        if self.match(TokenType.LBRACE): return self.block()
+
+        raise self.error(self.peek(), "Expect valid ritual command.")
 
     # --- Statement Handlers ---
 
-    def invocation_statement(self) -> Stmt:
-        # Grammar: invoke . entity ( params )
+    def invoke_stmt(self) -> Stmt:
+        # invoke . entity ( params )
         self.consume(TokenType.DOT, "Expect '.' after 'invoke'.")
-        entity_token = self.consume(TokenType.IDENTIFIER, "Expect entity name after '.'.")
-        
-        self.consume(TokenType.LPAREN, "Expect '(' after entity name.")
+        entity = self.consume(TokenType.IDENTIFIER, "Expect entity name.")
+        self.consume(TokenType.LPAREN, "Expect '(' after entity.")
         params = []
         if not self.check(TokenType.RPAREN):
             params = self.parameters()
         self.consume(TokenType.RPAREN, "Expect ')' after parameters.")
-        
-        return Invocation(entity_token.lexeme, params)
+        return Invoke(entity.lexeme, params)
 
-    def binding_statement(self) -> Stmt:
-        # Grammar: bind name to value
+    def bind_stmt(self) -> Stmt:
+        # bind name to value
         name = self.consume(TokenType.IDENTIFIER, "Expect variable name.")
-        self.consume(TokenType.TO, "Expect 'to' after variable name.")
+        self.consume(TokenType.TO, "Expect 'to' assignment.")
         value = self.expression()
-        return Binding(name.lexeme, value)
+        return Bind(name.lexeme, value)
 
-    def cycle_statement(self) -> Stmt:
-        # Grammar: cycle ( frequency ) { ... }
-        self.consume(TokenType.LPAREN, "Expect '(' after 'cycle'.")
-        frequency = self.expression() # This will be the number (3, 6, 9, or other)
-        self.consume(TokenType.RPAREN, "Expect ')' after cycle frequency.")
-        
-        body = self.statement() # Usually a Block
-        return Cycle(frequency, body)
+    def summon_stmt(self) -> Stmt:
+        # summon library_name
+        module = self.consume(TokenType.IDENTIFIER, "Expect library name to summon.")
+        return Summon(module.lexeme)
 
-    def transmutation_statement(self) -> Stmt:
-        # Grammar: transmute target -> type
-        target = self.consume(TokenType.IDENTIFIER, "Expect target variable.")
-        self.consume(TokenType.ARROW, "Expect '->' operator.")
+    def circle_stmt(self) -> Stmt:
+        # circle { statements }
+        # Used for error handling / safe execution
+        body = self.statement() # Expects a block
+        return Circle(body)
+
+    def seal_stmt(self) -> Stmt:
+        # seal variable_name
+        target = self.consume(TokenType.IDENTIFIER, "Expect variable to seal.")
+        return Seal(target.lexeme)
+
+    def omen_stmt(self) -> Stmt:
+        # omen variable_name
+        # Reads input/system data into the variable
+        target = self.consume(TokenType.IDENTIFIER, "Expect variable to receive the omen.")
+        return Omen(target.lexeme)
+
+    def hex_stmt(self) -> Stmt:
+        # hex target with params
+        target = self.consume(TokenType.IDENTIFIER, "Expect target to hex.")
+        self.consume(TokenType.WITH, "Expect 'with' params.")
+        params = self.parameters()
+        return Hex(target.lexeme, params)
+
+    def morph_stmt(self) -> Stmt:
+        # morph target into Type
+        target = self.consume(TokenType.IDENTIFIER, "Expect target to morph.")
+        self.consume(TokenType.INTO, "Expect 'into'.")
         
-        # Expect a Type Token (Sigil, Mana, etc.)
-        if self.match(TokenType.TYPE_SIGIL, TokenType.TYPE_MANA, TokenType.TYPE_FLUX, TokenType.TYPE_VESSEL):
-            target_type = self.previous().lexeme
+        valid_types = [TokenType.TYPE_SIGIL, TokenType.TYPE_MANA, TokenType.TYPE_FLUX, TokenType.TYPE_VESSEL]
+        if self.peek().type in valid_types:
+            target_type = self.advance().type
         else:
-            raise self.error(self.peek(), "Expect valid type (Sigil, Mana, Flux, Vessel).")
+            raise self.error(self.peek(), "Expect valid element type (Sigil, Mana, Flux, Vessel).")
             
-        return Transmutation(target.lexeme, target_type)
+        return Morph(target.lexeme, target_type)
 
-    def casting_statement(self) -> Stmt:
-        # Grammar: cast spell_name [with params]
-        spell = self.consume(TokenType.IDENTIFIER, "Expect spell name.")
-        params = []
-        if self.match(TokenType.WITH):
-            params = self.parameters()
-        return Casting(spell.lexeme, params)
+    def pact_stmt(self) -> Stmt:
+        # pact target with request
+        target = self.consume(TokenType.IDENTIFIER, "Expect entity/url for pact.")
+        self.consume(TokenType.WITH, "Expect 'with' request data.")
+        request = self.expression()
+        return Pact(target.lexeme, request)
 
-    def if_statement(self) -> Stmt:
-        # Grammar: if condition block [else block]
+    def banish_stmt(self) -> Stmt:
+        # banish target
+        target = self.consume(TokenType.IDENTIFIER, "Expect target to banish.")
+        return Banish(target.lexeme)
+
+    def purge_stmt(self) -> Stmt:
+        # purge (optional target)
+        target = None
+        if self.match(TokenType.IDENTIFIER):
+            target = self.previous().lexeme
+        return Purge(target)
+
+    def abyss_stmt(self) -> Stmt:
+        # abyss "Error Message"
+        msg = self.expression()
+        return Abyss(msg)
+
+    def echo_stmt(self) -> Stmt:
+        # echo expression
+        msg = self.expression()
+        return Echo(msg)
+
+    # --- Structural Handlers ---
+
+    def cycle_stmt(self) -> Stmt:
+        self.consume(TokenType.LPAREN, "Expect '(' after cycle.")
+        freq = self.expression()
+        self.consume(TokenType.RPAREN, "Expect ')' after frequency.")
+        body = self.statement()
+        return Cycle(freq, body)
+
+    def if_stmt(self) -> Stmt:
         condition = self.expression()
         then_branch = self.statement()
         else_branch = None
@@ -200,15 +288,19 @@ class Parser:
         statements = []
         while not self.check(TokenType.RBRACE) and not self.is_at_end():
             statements.append(self.declaration())
-        
         self.consume(TokenType.RBRACE, "Expect '}' after block.")
         return Block(statements)
 
     def parameters(self) -> List[Param]:
         params = []
+        # Support loose parameter format for now (identifier = expr)
         while True:
+            # Break if next token is NOT an identifier (safety check)
+            if not self.check(TokenType.IDENTIFIER):
+                break
+                
             name = self.consume(TokenType.IDENTIFIER, "Expect parameter name.")
-            self.consume(TokenType.ASSIGN, "Expect '=' after parameter name.")
+            self.consume(TokenType.ASSIGN, "Expect '='.")
             value = self.expression()
             params.append(Param(name.lexeme, value))
             
@@ -216,7 +308,7 @@ class Parser:
                 break
         return params
 
-    # --- Expression Handlers (Simplified for 0.1.0) ---
+    # --- Expression Logic ---
 
     def expression(self) -> Expr:
         return self.equality()
@@ -231,8 +323,10 @@ class Parser:
 
     def comparison(self) -> Expr:
         expr = self.primary()
-        # Handle basic comparison logic if needed
-        # For now, sticking to simple expressions
+        if self.match(TokenType.GT, TokenType.LT, TokenType.GTE, TokenType.LTE):
+            operator = self.previous()
+            right = self.primary()
+            expr = Binary(expr, operator, right)
         return expr
 
     def primary(self) -> Expr:
@@ -243,7 +337,7 @@ class Parser:
         
         raise self.error(self.peek(), "Expect expression.")
 
-    # --- Helpers ---
+    # --- Helper Methods ---
 
     def match(self, *types: TokenType) -> bool:
         for type_ in types:
@@ -276,4 +370,3 @@ class Parser:
     def error(self, token: Token, message: str) -> ParserError:
         location = "at end" if token.type == TokenType.EOF else f"at '{token.lexeme}'"
         return ParserError(f"[Line {token.line}] Error {location}: {message}")
-
