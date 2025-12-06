@@ -3,7 +3,7 @@ src/lexer.py
 ====================================
 The Lexer (Tokenizer) for MPL.
 Responsible for breaking down raw ritual scripts into meaningful Tokens.
-This is the first stage of the Magic Runtime Engine (MRE).
+This constitutes the first stage of the Magic Runtime Engine (MRE).
 """
 
 from enum import Enum, auto
@@ -11,31 +11,43 @@ from dataclasses import dataclass
 from typing import Any, List, Optional
 
 class TokenType(Enum):
-    # Core Keywords (The Words of Power)
-    INVOKE = auto()       # invoke
-    BIND = auto()         # bind
-    TO = auto()           # to
-    CAST = auto()         # cast
-    WITH = auto()         # with
-    TRANSMUTE = auto()    # transmute
-    CYCLE = auto()        # cycle
-    IF = auto()           # if
-    ELSE = auto()         # else
-    
-    # Types (The Elements)
-    TYPE_SIGIL = auto()   # Sigil
-    TYPE_FLUX = auto()    # Flux
-    TYPE_MANA = auto()    # Mana
-    TYPE_VESSEL = auto()  # Vessel
-    TYPE_VOID = auto()    # Void
+    # --- THE 13 SEALED VERBS (Core Actions) ---
+    INVOKE = auto()   # Execute functions/rituals
+    BIND = auto()     # Assign variables
+    SUMMON = auto()   # Import modules/libraries
+    CIRCLE = auto()   # Error handling block (try/catch)
+    SEAL = auto()     # Make immutable / Protect data
+    OMEN = auto()     # Read input / System signals
+    HEX = auto()      # Manipulate/Set properties
+    MORPH = auto()    # Type conversion (casting)
+    PACT = auto()     # Network/API requests
+    BANISH = auto()   # Delete/Destroy variables
+    PURGE = auto()    # Clear buffers/memory
+    ABYSS = auto()    # Raise exceptions
+    ECHO = auto()     # Output to console (print)
 
-    # Literals (Raw Materials)
-    IDENTIFIER = auto()   # variable_names, spell_names
+    # --- Structural Keywords ---
+    CYCLE = auto()    # Loops (Tesla Protocol)
+    IF = auto()       # Conditional
+    ELSE = auto()     # Conditional fallback
+    TO = auto()       # Preposition (bind x TO y)
+    WITH = auto()     # Preposition (invoke x WITH params)
+    INTO = auto()     # Preposition (morph x INTO y)
+    
+    # --- Data Types (The Elements) ---
+    TYPE_SIGIL = auto()   # String
+    TYPE_FLUX = auto()    # Float
+    TYPE_MANA = auto()    # Integer
+    TYPE_VESSEL = auto()  # Dictionary/Object
+    TYPE_VOID = auto()    # NoneType
+
+    # --- Literals ---
+    IDENTIFIER = auto()   # Variable/Function names
     STRING = auto()       # "text"
-    NUMBER = auto()       # 123, 3.14 (Integer or Float)
+    NUMBER = auto()       # 123, 3.14
     BOOLEAN = auto()      # True, False
 
-    # Symbols & Operators (The Glyphs)
+    # --- Symbols & Operators ---
     DOT = auto()          # .
     COMMA = auto()        # ,
     LPAREN = auto()       # (
@@ -43,9 +55,9 @@ class TokenType(Enum):
     LBRACE = auto()       # {
     RBRACE = auto()       # }
     ASSIGN = auto()       # =
-    ARROW = auto()        # -> (Transformation)
+    ARROW = auto()        # ->
     
-    # Comparison
+    # --- Comparison Operators ---
     EQ = auto()           # ==
     NEQ = auto()          # !=
     GT = auto()           # >
@@ -53,7 +65,7 @@ class TokenType(Enum):
     GTE = auto()          # >=
     LTE = auto()          # <=
 
-    # End of File
+    # --- End of File ---
     EOF = auto()
 
 @dataclass
@@ -85,22 +97,39 @@ class Lexer:
         self.current = 0
         self.line = 1
 
-        # Keywords mapping
+        # Keywords mapping (The Words of Power)
         self.keywords = {
+            # Actions
             "invoke": TokenType.INVOKE,
             "bind": TokenType.BIND,
-            "to": TokenType.TO,
-            "cast": TokenType.CAST,
-            "with": TokenType.WITH,
-            "transmute": TokenType.TRANSMUTE,
+            "summon": TokenType.SUMMON,
+            "circle": TokenType.CIRCLE,
+            "seal": TokenType.SEAL,
+            "omen": TokenType.OMEN,
+            "hex": TokenType.HEX,
+            "morph": TokenType.MORPH,
+            "pact": TokenType.PACT,
+            "banish": TokenType.BANISH,
+            "purge": TokenType.PURGE,
+            "abyss": TokenType.ABYSS,
+            "echo": TokenType.ECHO,
+
+            # Structure
             "cycle": TokenType.CYCLE,
             "if": TokenType.IF,
             "else": TokenType.ELSE,
+            "to": TokenType.TO,
+            "with": TokenType.WITH,
+            "into": TokenType.INTO,
+
+            # Types
             "Sigil": TokenType.TYPE_SIGIL,
             "Flux": TokenType.TYPE_FLUX,
             "Mana": TokenType.TYPE_MANA,
             "Vessel": TokenType.TYPE_VESSEL,
             "Void": TokenType.TYPE_VOID,
+            
+            # Booleans
             "True": TokenType.BOOLEAN,
             "False": TokenType.BOOLEAN,
         }
@@ -137,9 +166,6 @@ class Lexer:
             if self.match('>'):
                 self.add_token(TokenType.ARROW)
             else:
-                # MPL does not strictly support negative numbers as unary yet 
-                # in this version, but we can treat '-' as valid if needed later.
-                # For now, raise error or ignore. 
                 raise LexerError(f"Unexpected character '-' at line {self.line}. Did you mean '->'?")
         elif c == '=':
             self.add_token(TokenType.EQ if self.match('=') else TokenType.ASSIGN)
@@ -175,7 +201,7 @@ class Lexer:
             else:
                 raise LexerError(f"Unknown glyph '{c}' at line {self.line}")
 
-    # --- Helper Methods (The Mechanics) ---
+    # --- Helper Methods ---
 
     def identifier(self):
         while self.is_alpha_numeric(self.peek()):
@@ -253,4 +279,3 @@ class Lexer:
 
     def is_alpha_numeric(self, c: str) -> bool:
         return self.is_alpha(c) or c.isdigit()
-
