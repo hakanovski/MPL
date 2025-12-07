@@ -11,49 +11,55 @@ This document outlines the development trajectory, future milestones, and overar
 | Version | Code Name | Status | Primary Focus |
 | :--- | :--- | :--- | :--- |
 | **v0.1.0** | *The Awakening* | ✅ Completed | Manifesto, Ontology, and Core Concepts |
-| **v0.2.0** | *The Structure* | 🚧 In Progress | Data Structures, Grammar, and Lexer |
-| **v0.3.0** | *The Engine* | 📅 Planned | Parser, AST, and Core Interpreter |
-| **v0.5.0** | *The Ritual* | 📅 Planned | Standard Library (StdLib) and Tesla Protocol |
-| **v1.0.0** | *The Manifestation* | 📅 Goal | First Stable Release, Packaging, and Docs |
+| **v0.2.0** | *The Structure* | ✅ Completed | Data Structures, Grammar, and Lexer |
+| **v0.3.0** | *The Engine* | ✅ Completed | Parser, AST, and Core Interpreter |
+| **v0.5.0** | *The Ritual* | ✅ Completed | Standard Library (StdLib) and Tesla Protocol |
+| **v0.9.0** | *The Grimoire* | 🚧 In Progress | Advanced Examples, Unit Tests, CLI Polish |
+| **v1.0.0** | *The Manifestation* | 📅 Goal | First Stable Release, Packaging (PyPI), and Docs |
 
 ---
 
 ## 🛠️ Detailed Milestones
 
-### 🌱 v0.1.0 - The Awakening (Current State)
+### 🌱 v0.1.0 - The Awakening (Completed)
 Laying the philosophical and theoretical foundations of the project.
 - [x] **Manifesto:** Publication of the philosophical vision (`MANIFESTO.md`).
 - [x] **Ontology:** Compilation of the 225 Historical Magi list (`MAGI.md`).
 - [x] **Repo Structure:** Establishment of the basic GitHub directory hierarchy.
 
-### 🏗️ v0.2.0 - The Structure (Next Steps)
+### 🏗️ v0.2.0 - The Structure (Completed)
 Structuring the data and defining the language rules.
-- [ ] **Data Transformation:** Converting the `MAGI.md` text into machine-readable `data/magi_225.json` format.
-- [ ] **Grammar Definition:** Writing the formal grammar of the language in EBNF format (`docs/grammar.md`).
-- [ ] **Asset Creation:** Adding system architecture and Tesla 3-6-9 flow diagrams to the `assets/` folder.
-- [ ] **Lexer Prototype:** Developing a basic Lexer in Python to tokenize MPL syntax.
+- [x] **Data Transformation:** Converting the `MAGI.md` text into machine-readable `data/magi_225.json` format.
+- [x] **Grammar Definition:** Writing the formal grammar of the language in EBNF format (`docs/grammar.md`).
+- [x] **Lexer Prototype:** Developing a basic Lexer in Python to tokenize MPL syntax (`src/lexer.py`).
 
-### ⚙️ v0.3.0 - The Engine (Magic Runtime Environment)
+### ⚙️ v0.3.0 - The Engine (Completed)
 Making the code executable.
-- [ ] **Parser:** Module to convert tokens into Abstract Syntax Trees (AST).
-- [ ] **Interpreter Core:** Python-side implementation of core commands like `invoke`, `bind`, and `cast`.
-- [ ] **Error Handling:** treating errors as "Corruption" or "Backfire" events and implementing "Healer" modules for recovery.
+- [x] **Parser:** Module to convert tokens into Abstract Syntax Trees (AST) (`src/parser.py`).
+- [x] **Interpreter Core:** Python-side implementation of core commands like `invoke`, `bind`, and `cast` (`src/interpreter.py`).
+- [x] **Error Handling:** Treating errors as "Corruption" or "Backfire" events (`RuntimeException`).
 
-### ⚡ v0.5.0 - The Ritual (Advanced Features)
+### ⚡ v0.5.0 - The Ritual (Completed)
 The phase where the language develops its unique character.
-- [ ] **Tesla Protocol:** Implementation of the 3-6-9 cyclical logic loops.
-- [ ] **StdLib (Standard Library):**
+- [x] **Tesla Protocol:** Implementation of the 3-6-9 cyclical logic loops inside the Interpreter.
+- [x] **StdLib (Standard Library):** Implemented in `src/stdlib.py`.
     - `import hermetic` (Elemental manipulation)
     - `import solomonic` (Daemon/Process management)
     - `import divination` (Data prediction and Random Seed generation)
-- [ ] **Sigil Generator:** An algorithm that converts intent strings into geometric shapes (ASCII or SVG).
+- [x] **Sigil Generator:** An algorithm that converts intent strings into sigils (`Runic.forge_sigil`).
 
-### 🚀 v1.0.0 - The Manifestation (First Official Release)
+### 📜 v0.9.0 - The Grimoire (Current Focus)
+Polishing the experience before public release.
+- [ ] **Interactive Shell:** Improving the `mpl_shell.py` REPL experience.
+- [ ] **Unit Tests:** Writing `tests/` to ensure the magic doesn't backfire.
+- [ ] **Advanced Examples:** Creating complex ritual scripts in `examples/`.
+- [ ] **Refactoring:** Connecting `72_solomon_sigil_shapes.json` fully to the Resolver.
+
+### 🚀 v1.0.0 - The Manifestation (Goal)
 Opening up to the community and ensuring usability.
 - [ ] **PIP Package:** Making the language installable via `pip install mpl-ms`.
 - [ ] **CLI Tool:** Enabling execution via terminal commands like `mpl run ritual.ms`.
 - [ ] **Full Documentation:** Detailed documentation for all functions and historical magi.
-- [ ] **Examples:** Functional, educational code examples stored in the `examples/` folder.
 
 ---
 
