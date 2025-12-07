@@ -9,10 +9,10 @@ Usage: python src/main.py <ritual_file.ms>
 import sys
 import os
 import argparse
-from resolver import Resolver, OntologyError
-from lexer import Lexer, LexerError
-from parser import Parser, ParserError
-from interpreter import Interpreter, RuntimeException
+from .resolver import Resolver, OntologyError
+from .lexer import Lexer, LexerError
+from .parser import Parser, ParserError
+from .interpreter import Interpreter, RuntimeException
 
 def main():
     # 1. Setup Arguments (Dosya yolunu al)
