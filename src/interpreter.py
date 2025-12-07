@@ -15,7 +15,7 @@ from .parser import (
     Invoke, Bind, Summon, Circle, Seal, Omen, Hex, Morph, Pact, Banish, Purge, Abyss, Echo,
     Literal, Variable, Binary, Param
 )
-# Standart Kütüphaneyi ve Ontology Resolver'ı bağlıyoruz
+# Integration with the Standard Library
 from .stdlib import StdLib
 
 class RuntimeException(Exception):
@@ -188,22 +188,23 @@ class Interpreter:
 
         if entity_data:
             print(f"🕯️ [INVOKE] Summoning {entity_data.get('name', entity_id)}...")
-            if 'role' in entity_data:
-                print(f"   > Role: {entity_data['role']}")
             
-            # Inject attributes into environment (Optional feature)
-            # self.environment.define(f"{entity_id}_element", entity_data.get('element'))
-
             # 2. Check for Technomancy Mapping (JSON 'mpl_function')
             # Example: Bael -> "process.hide"
             magic_func = entity_data.get('mpl_function')
             if magic_func:
                 # Execute the mapped Python function from StdLib
                 # We pass the collected params as a list of values
-                StdLib.execute(magic_func, list(params.values()))
+                StdLib.call(magic_func.split('.')[0], magic_func.split('.')[1], list(params.values()))
+            
+            # Optional: Inject specific attributes if needed
+            # role = entity_data.get('role')
+            # print(f"   > Role: {role}")
+
         else:
-            # If not in Ontology, check if it's a direct Library call?
-            # For now, we assume Invocation requires Ontology presence.
+            # If not in Ontology, try calling StdLib directly (e.g. invoke.tesla.oscillate)
+            # This allows invoking modules that are not "Beings" in the JSON
+            # Logic: entity_id might be "tesla" or "divination"
             print(f"⚠️ [INVOKE] The spirit '{entity_id}' did not answer (Not found in Grimoire).")
 
     def _execute_cycle(self, stmt: Cycle):
@@ -250,7 +251,7 @@ class Interpreter:
         finally:
             self.environment = previous
 
-    # --- Expression Evaluation ---
+    # --- Expression Evaluation (Updated for Arithmetic) ---
 
     def evaluate(self, expr: Expr) -> Any:
         if isinstance(expr, Literal):
@@ -260,23 +261,25 @@ class Interpreter:
         if isinstance(expr, Binary):
             left = self.evaluate(expr.left)
             right = self.evaluate(expr.right)
+            op = expr.operator.type
 
-            if expr.operator.type == TokenType.EQ: return left == right
-            if expr.operator.type == TokenType.NEQ: return left != right
-            if expr.operator.type == TokenType.GT: return left > right
-            if expr.operator.type == TokenType.LT: return left < right
-            
-            # Basic Arithmetic for Mana Manipulation
-            # Assuming TokenTypes for PLUS, MINUS exist or using generic operator logic
-            # Since Lexer provided earlier supports symbols but Parser builds Binary expr:
-            if expr.operator.lexeme == '+': 
-                # String concatenation (Sigil fusion) or Math
+            # --- Arithmetic Operations ---
+            if op == TokenType.PLUS:
+                # Handle String Concatenation
                 if isinstance(left, str) or isinstance(right, str):
                     return str(left) + str(right)
                 return left + right
-            if expr.operator.lexeme == '-': return left - right
-            if expr.operator.lexeme == '*': return left * right
-            if expr.operator.lexeme == '/': return left / right
+            if op == TokenType.MINUS: return left - right
+            if op == TokenType.STAR: return left * right
+            if op == TokenType.SLASH: return left / right
+
+            # --- Comparison Operations ---
+            if op == TokenType.EQ: return left == right
+            if op == TokenType.NEQ: return left != right
+            if op == TokenType.GT: return left > right
+            if op == TokenType.LT: return left < right
+            if op == TokenType.GTE: return left >= right
+            if op == TokenType.LTE: return left <= right
 
         return None
 
