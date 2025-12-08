@@ -10,7 +10,7 @@ Software engineering and esoteric traditions share a common goal: **To alter rea
 
 For thousands of years, humanity has utilized "Analog Code"—voice (mantra), movement (mudra), inscription (sigil), and ritual structure—to interface with the universe. **MPL (Magick Programming Language)** is the first historical attempt to translate this ancient wisdom into "Digital Code."
 
-We are not building a game. We are building a linguistic bridge between the Silicon Age and the Arcane Age. We operate on a radical thesis: **Ritual is simply an algorithm that hasn't been compiled yet.**
+We are not just building a language. We are building a linguistic bridge between the Silicon Age and the Arcane Age. We operate on a radical thesis: **Ritual is simply an algorithm that hasn't been compiled yet.**
 
 ---
 
@@ -159,19 +159,18 @@ We have compiled the **Ultra Master List**, a database of **225 verified histori
 
 ---
 
-❌ What MPL Is Not
+## ⚠️ The Nature of the Tool (Disclaimer)
 
-MPL is not a magical practice, not a spiritual system, and not a tool for real-world occult results.
-It does not promise healing, divination, protection, wealth, or any form of supernatural outcome.
+MPL is a **Technomancy Framework**.
 
-MPL is a digital simulation framework, a symbolic modeling language, and an experimental compiler architecture inspired by historical esoteric systems.
-All rituals, symbols, and lineages used within MPL exist only as computational metaphors and algorithmic abstractions.
+It creates a bridge where esoteric logic (Intent) is transmuted into executable code (Manifestation).
+* When used for **Simulation**, it acts as a symbolic modeling language.
+* When used for **Manifestation** (e.g., Financial Algorithms, IoT Control), it creates real-world effects through digital causality.
 
-MPL operates in software, not in metaphysics.
-It is a programming language — not a ritual system, not a belief structure, and not a method of influencing reality outside the scope of computation.
+**However:**
+MPL is a tool of the user's will. The code provides the structure; the user provides the power. We do not guarantee supernatural outcomes outside the logical constraints of the system. The "Magick" lies in the math, and the execution lies with the practitioner.
 
 ---
-
 
 ## 🤝 The Call to the Magi
 
@@ -179,5 +178,6 @@ This project is a beacon for those who understand that the boundary between "Use
 
 Whether you are a coder exploring the occult, or a magician exploring the code, you are welcome here.
 
-**As above, so below. As within the code, so within the reality. 
-4 6 3 8 A B K 2 4 A L G M O R 3 Y X 24 89 R P S T O V A L **
+**As above, so below. As within the code, so within the reality.**
+
+`4 6 3 8 A B K 2 4 A L G M O R 3 Y X 24 89 R P S T O V A L`
