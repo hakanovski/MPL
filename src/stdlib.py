@@ -84,7 +84,6 @@ class Solomonic:
         return False
 
     # --- TECHNOMANCY MAPPINGS FOR GOETIA (JSON SUPPORT) ---
-    # These methods map directly to 72_solomon_sigil_shapes.json functions
     
     @staticmethod
     def hide(pid=None):
@@ -124,8 +123,29 @@ class Divination:
     
     @staticmethod
     def scry(url):
-        # ... (mevcut kod aynı kalabilir)
-        return "Data"
+        print(f"👁️ [DIVINATION] Scrying into the Aether: {url}")
+        try:
+            with urllib.request.urlopen(url) as response:
+                data = response.read().decode('utf-8')
+                try: return json.loads(data)
+                except: return data
+        except Exception as e:
+            return f"Void (Error: {e})"
+            
+    @staticmethod
+    def cast_lots(min_val, max_val):
+        return random.randint(min_val, max_val)
+
+# ==========================================
+# 5. RUNIC (Text & Sigils)
+# ==========================================
+class Runic:
+    @staticmethod
+    def forge_sigil(intent):
+        text = intent.upper()
+        text = re.sub(r'[AEIOU\s]', '', text)
+        sigil = "".join(dict.fromkeys(text))
+        return sigil
 
 # ==========================================
 # THE GATEWAY (Standard Library Registry)
@@ -133,7 +153,7 @@ class Divination:
 class StdLib:
     """
     The main registry. 
-    UPDATED: Includes aliases for JSON compatibility.
+    Includes aliases for JSON compatibility.
     """
     modules = {
         # Core Modules
@@ -141,14 +161,13 @@ class StdLib:
         "solomonic": Solomonic,
         "tesla": Tesla,
         "divination": Divination,
-        # "runic": Runic, # (Eğer runic sınıfı varsa ekle)
+        "runic": Runic,
 
         # --- JSON Mapping Aliases ---
-        # 72_solomon.json calls "process.hide", so we map "process" -> Solomonic
-        "process": Solomonic,
-        "system": Solomonic,
-        "network": Divination, # Orobas 'network.sniffer' kullanıyor
-        "alchemy": Hermetic    # Zagan 'alchemy.master' kullanıyor
+        "process": Solomonic,  # Maps 'process.hide' to Solomonic.hide
+        "system": Solomonic,   # Maps 'system.root_access' to Solomonic.root_access
+        "network": Divination, # Maps 'network.sniffer'
+        "alchemy": Hermetic    # Maps 'alchemy.master'
     }
 
     @staticmethod

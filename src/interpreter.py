@@ -61,10 +61,18 @@ class Environment:
         raise RuntimeException(f"Undefined variable '{name.lexeme}'.")
 
     def seal(self, name: str):
+        # 1. Check local scope
         if name in self.values:
             self.sealed.append(name)
-        else:
-            raise RuntimeException(f"Cannot seal undefined variable '{name}'.")
+            return
+        
+        # 2. Check outer scope (Recursive Fix)
+        if self.enclosing:
+            self.enclosing.seal(name)
+            return
+
+        # 3. Not found anywhere
+        raise RuntimeException(f"Cannot seal undefined variable '{name}'.")
 
     def banish(self, name: str):
         if name in self.values:
