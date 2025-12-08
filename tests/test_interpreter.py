@@ -25,7 +25,10 @@ class TestMPLEngine(unittest.TestCase):
         and returns the final state of the Environment (Memory).
         """
         lexer = Lexer(code)
-        tokens = lexer.tokenize()
+        
+        # FIX: Changed 'tokenize()' to 'scan_tokens()' to match the Lexer class definition.
+        tokens = lexer.scan_tokens() 
+        
         parser = Parser(tokens)
         ast = parser.parse()
         self.interpreter.interpret(ast)
