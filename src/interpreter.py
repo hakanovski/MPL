@@ -88,7 +88,6 @@ class Environment:
 class Interpreter:
     def __init__(self):
         self.environment = Environment()
-        # The Resolver (Ontology) will be injected from main.py or mpl_shell.py
         self.resolver = None
 
     def interpret(self, statements: List[Stmt]):
@@ -102,35 +101,27 @@ class Interpreter:
         """
         The Dispatcher. Routes the statement to the correct handler.
         """
-        # --- 13 Sealed Verbs ---
         if isinstance(stmt, Echo):
             value = self.evaluate(stmt.message)
             print(f"👁️‍🗨️ [ECHO]: {value}")
 
         elif isinstance(stmt, Bind):
             value = self.evaluate(stmt.value)
-            
-            # --- CRITICAL FIX FOR SCOPE/MEMORY ---
-            # Try to update an existing variable first (Assign).
-            # If it doesn't exist, create a new one (Define).
+            # Try to update existing variable first, else define new
             try:
-                # Create a temporary token for assignment lookup
                 dummy_token = Token(TokenType.IDENTIFIER, stmt.name, None, 0)
                 self.environment.assign(dummy_token, value)
             except RuntimeException:
-                # Variable does not exist in any scope, so we define it here.
                 self.environment.define(stmt.name, value)
 
         elif isinstance(stmt, Invoke):
             self._execute_invoke(stmt)
 
         elif isinstance(stmt, Omen):
-            # Reads input from the user
             val = input(f"🔮 [OMEN] Enter value for '{stmt.target}': ")
             self.environment.define(stmt.target, val)
 
         elif isinstance(stmt, Circle):
-            # Error Handling Block (Try/Catch)
             try:
                 self.execute(stmt.body)
             except Exception as e:
@@ -141,14 +132,11 @@ class Interpreter:
             print(f"🔒 [SEAL] Variable '{stmt.target}' is now immutable.")
 
         elif isinstance(stmt, Hex):
-            # hex target with val=newValue
             val = None
             for p in stmt.params:
                 if p.name in ["val", "value"]:
                     val = self.evaluate(p.value)
-
             if val is not None:
-                # Create a temporary token for assignment lookup
                 dummy_token = Token(TokenType.IDENTIFIER, stmt.target, None, 0)
                 self.environment.assign(dummy_token, val)
             else:
@@ -172,7 +160,6 @@ class Interpreter:
         elif isinstance(stmt, Morph):
             self._execute_morph(stmt)
 
-        # --- Structural ---
         elif isinstance(stmt, Block):
             self.execute_block(stmt.statements, Environment(self.environment))
 
@@ -185,21 +172,12 @@ class Interpreter:
     # --- Specific Execution Logic ---
 
     def _execute_invoke(self, stmt: Invoke):
-        """
-        Handles the INVOKE command.
-        1. Checks Ontology (Resolver) for the entity.
-        2. Injects Entity attributes into scope.
-        3. Triggers mapped Standard Library functions (Technomancy).
-        """
         entity_id = stmt.entity
-        
-        # Evaluate parameters (e.g., intent="heal")
         params = {}
         if stmt.params:
             for p in stmt.params:
                 params[p.name] = self.evaluate(p.value)
 
-        # 1. Query Ontology
         entity_data = None
         if self.resolver:
             entity_data = self.resolver.resolve(entity_id)
@@ -207,22 +185,19 @@ class Interpreter:
         if entity_data:
             print(f"🕯️ [INVOKE] Summoning {entity_data.get('name', entity_id)}...")
             
-            # 2. Check for Technomancy Mapping (JSON 'mpl_function')
-            # Example: Bael -> "process.hide"
             magic_func = entity_data.get('mpl_function')
             if magic_func:
-                # Execute the mapped Python function from StdLib
-                # We pass the collected params as a list of values
-                StdLib.call(magic_func.split('.')[0], magic_func.split('.')[1], list(params.values()))
+                # --- CRITICAL FIX FOR JSON PARSING ---
+                # JSON data often includes '()' (e.g., "process.hide()").
+                # We must remove '()' to find the correct function name in Python.
+                clean_func = magic_func.replace('()', '')
+                
+                module_name = clean_func.split('.')[0]
+                func_name = clean_func.split('.')[1]
+                
+                StdLib.call(module_name, func_name, list(params.values()))
             
-            # Optional: Inject specific attributes if needed
-            # role = entity_data.get('role')
-            # print(f"   > Role: {role}")
-
         else:
-            # If not in Ontology, try calling StdLib directly (e.g. invoke.tesla.oscillate)
-            # This allows invoking modules that are not "Beings" in the JSON
-            # Logic: entity_id might be "tesla" or "divination"
             print(f"⚠️ [INVOKE] The spirit '{entity_id}' did not answer (Not found in Grimoire).")
 
     def _execute_cycle(self, stmt: Cycle):
@@ -230,32 +205,28 @@ class Interpreter:
         if not isinstance(count, int):
             raise RuntimeException("Cycle frequency must be an integer.")
 
-        # --- THE TESLA PROTOCOL (3-6-9) ---
         is_resonant = count in [3, 6, 9]
 
         if is_resonant:
             print(f"⚡ [TESLA PROTOCOL] Resonant Frequency {count} detected. Optimizing ritual...")
-            time.sleep(0.1) # Simulating energy gathering
+            time.sleep(0.1) 
 
         for i in range(count):
             self.execute(stmt.body)
 
     def _execute_morph(self, stmt: Morph):
-        # Transmutes variable to another type
         dummy_token = Token(TokenType.IDENTIFIER, stmt.target, None, 0)
         current_val = self.environment.get(dummy_token)
 
-        new_val = current_val
         try:
-            if stmt.target_type == TokenType.TYPE_MANA: # Int
+            if stmt.target_type == TokenType.TYPE_MANA: 
                 new_val = int(current_val)
-            elif stmt.target_type == TokenType.TYPE_FLUX: # Float
+            elif stmt.target_type == TokenType.TYPE_FLUX: 
                 new_val = float(current_val)
-            elif stmt.target_type == TokenType.TYPE_SIGIL: # String
+            elif stmt.target_type == TokenType.TYPE_SIGIL: 
                 new_val = str(current_val)
             
             self.environment.assign(dummy_token, new_val)
-            # print(f"⚗️ [MORPH] '{stmt.target}' transmuted.")
 
         except ValueError:
             raise RuntimeException(f"Failed to morph '{stmt.target}'. Incompatible essence.")
@@ -269,29 +240,21 @@ class Interpreter:
         finally:
             self.environment = previous
 
-    # --- Expression Evaluation (Updated for Arithmetic) ---
-
     def evaluate(self, expr: Expr) -> Any:
-        if isinstance(expr, Literal):
-            return expr.value
-        if isinstance(expr, Variable):
-            return self.environment.get(expr.name)
+        if isinstance(expr, Literal): return expr.value
+        if isinstance(expr, Variable): return self.environment.get(expr.name)
         if isinstance(expr, Binary):
             left = self.evaluate(expr.left)
             right = self.evaluate(expr.right)
             op = expr.operator.type
 
-            # --- Arithmetic Operations ---
             if op == TokenType.PLUS:
-                # Handle String Concatenation
-                if isinstance(left, str) or isinstance(right, str):
-                    return str(left) + str(right)
+                if isinstance(left, str) or isinstance(right, str): return str(left) + str(right)
                 return left + right
             if op == TokenType.MINUS: return left - right
             if op == TokenType.STAR: return left * right
             if op == TokenType.SLASH: return left / right
 
-            # --- Comparison Operations ---
             if op == TokenType.EQ: return left == right
             if op == TokenType.NEQ: return left != right
             if op == TokenType.GT: return left > right
