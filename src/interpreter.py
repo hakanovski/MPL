@@ -101,7 +101,17 @@ class Interpreter:
 
         elif isinstance(stmt, Bind):
             value = self.evaluate(stmt.value)
-            self.environment.define(stmt.name, value)
+            
+            # --- CRITICAL FIX FOR SCOPE/MEMORY ---
+            # Try to update an existing variable first (Assign).
+            # If it doesn't exist, create a new one (Define).
+            try:
+                # Create a temporary token for assignment lookup
+                dummy_token = Token(TokenType.IDENTIFIER, stmt.name, None, 0)
+                self.environment.assign(dummy_token, value)
+            except RuntimeException:
+                # Variable does not exist in any scope, so we define it here.
+                self.environment.define(stmt.name, value)
 
         elif isinstance(stmt, Invoke):
             self._execute_invoke(stmt)
