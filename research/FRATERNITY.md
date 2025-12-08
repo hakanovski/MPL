@@ -1,4 +1,4 @@
-## FRATERNITY
+# FRATERNITY
 
 1. Terry A. Davis
  * Developed Technology: TempleOS (Operating System).
