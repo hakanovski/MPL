@@ -179,4 +179,5 @@ This project is a beacon for those who understand that the boundary between "Use
 
 Whether you are a coder exploring the occult, or a magician exploring the code, you are welcome here.
 
-**As above, so below. As within the code, so within the reality.**
+**As above, so below. As within the code, so within the reality. 
+4 6 3 8 A B K 2 4 A L G M O R 3 Y X 24 89 R P S T O V A L **
