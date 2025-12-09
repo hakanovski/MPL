@@ -31,6 +31,24 @@ Currently, the engine runs on a **Python Host** (`src/main.py`), acting as a tra
 
 ---
 
+## 🌌 The Grand Vision: Digitizing the 225 Magi
+
+MPL is currently in **Phase 1 (Solomonic/Financial)**. However, the core architecture is designed to support a vast array of "Technomantic" applications by digitizing the logic of **225 historical archetypes** listed in the Manifesto.
+
+We are building a **Transpiler Engine** where different modules target different outputs:
+
+| Archetype | Domain | Target Output | Status |
+| :--- | :--- | :--- | :--- |
+| **King Solomon (Vassago)** | Prediction & Strategy | Pine Script (TradingView) | ✅ **Active** |
+| **John Dee (Enochian)** | Cryptography & Security | Python / Rust (Encryption) | 🚧 *Concept* |
+| **Paracelsus (Alchemy)** | Data Transformation (ETL) | Pandas / SQL | 📅 *Planned* |
+| **Shamanic Roots** | IoT & Hardware Control | C++ / Arduino | 📅 *Planned* |
+| **Chaos Magick** | Entropy & Randomness | System Testing / Fuzzing | 📅 *Planned* |
+
+*MPL is not just a trading tool; it is a universal interface for Programmable Reality.*
+
+---
+
 ## 📦 Installation
 
 ### Prerequisites
@@ -40,7 +58,7 @@ Currently, the engine runs on a **Python Host** (`src/main.py`), acting as a tra
 
 ```bash
 # 1. Clone the Grimoire
-git clone https://github.com/hakanovski/MPL.git
+git clone [https://github.com/hakanovski/MPL.git](https://github.com/hakanovski/MPL.git)
 
 # 2. Enter the Sanctum
 cd MPL
@@ -107,7 +125,7 @@ The MRE (Magic Runtime Engine) follows a 4-stage pipeline:
  * v0.5.0: Standard Library & Tesla Protocol ✅
  * v0.9.5: Financial Oracle & Hybrid Logic ✅
  * v1.0.0: CLI Tool (mpl run) & PyPI Package ✅
- * v2.0.0: The Transmutation (Rewrite in Rust/C++) 📅
+ * v2.0.0: The Transmutation (Expansion Packs & Rust Rewrite) 📅
 See ROADMAP.md for details.
 🤝 Contributing
 The Grimoire is open to fellow Technomancers.
@@ -117,3 +135,27 @@ The Grimoire is open to fellow Technomancers.
  * Open a Pull Request.
 License: MIT
 Copyright © 2025 Hakan Yorganci
+
+---
+
+
+```markdown
+# 🔮 MPL (Magick Programming Language) Roadmap
+
+This document outlines the development trajectory, future milestones, and overarching vision of the **Magick Programming Language (MPL)**. The project aims to synthesize esoteric ritual logic (Hermetic, Qabbalistic, Shamanic) with modern computer science principles (Interpreter, AST, Bytecode).
+
+> **Motto:** "Code is the modern spellbook."
+
+---
+
+## 🗺️ Overview
+
+| Version | Code Name | Status | Primary Focus |
+| :--- | :--- | :--- | :--- |
+| **v0.5.0** | *The Ritual* | ✅ Completed | Standard Library (StdLib) and Tesla Protocol |
+| **v0.9.0** | *The Grimoire* | ✅ Completed | JSON Integration, Shell, and Daemonic Resolvers |
+| **v0.9.5** | *The Oracle* | ✅ Completed | **Financial Technomancy**, Pine Script Generation, Hybrid Logic |
+| **v1.0.0** | *The Manifestation* | ✅ Ready | Packaging (PyPI), CLI Polish, and Documentation |
+| **v2.0.0** | *The Transmutation* | 📅 Future Goal | **Multi-Target Transpilation** (Rust, C++, IoT), Expansion Packs |
+
+---

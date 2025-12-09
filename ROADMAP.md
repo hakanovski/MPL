@@ -1,24 +1,3 @@
-🗺️ Roadmap
- * v0.5.0: Standard Library & Tesla Protocol ✅
- * v0.9.5: Financial Oracle & Hybrid Logic ✅
- * v1.0.0: CLI Tool (mpl run) & PyPI Package ✅
- * v2.0.0: The Transmutation (Rewrite in Rust/C++) 📅
-See ROADMAP.md for details.
-🤝 Contributing
-The Grimoire is open to fellow Technomancers.
- * Fork the repo.
- * Create your branch (git checkout -b feature/new-spell).
- * Commit your changes.
- * Open a Pull Request.
-License: MIT
-Copyright © 2025 Hakan Yorganci
-
----
-
-### 2. File: `ROADMAP.md`
-*(Changes: Updated v1.0.0 status to "Ready".)*
-
-```markdown
 # 🔮 MPL (Magick Programming Language) Roadmap
 
 This document outlines the development trajectory, future milestones, and overarching vision of the **Magick Programming Language (MPL)**. The project aims to synthesize esoteric ritual logic (Hermetic, Qabbalistic, Shamanic) with modern computer science principles (Interpreter, AST, Bytecode).
@@ -35,7 +14,7 @@ This document outlines the development trajectory, future milestones, and overar
 | **v0.9.0** | *The Grimoire* | ✅ Completed | JSON Integration, Shell, and Daemonic Resolvers |
 | **v0.9.5** | *The Oracle* | ✅ Completed | **Financial Technomancy**, Pine Script Generation, Hybrid Logic |
 | **v1.0.0** | *The Manifestation* | ✅ Ready | Packaging (PyPI), CLI Polish, and Documentation |
-| **v2.0.0** | *The Transmutation* | 📅 Future Goal | **Rewrite in Rust/C++**, LLVM Backend, Native OS Integration |
+| **v2.0.0** | *The Transmutation* | 📅 Future Goal | **Multi-Target Transpilation** (Rust, C++, IoT), Expansion Packs |
 
 ---
 
@@ -75,16 +54,29 @@ Opening up to the community and ensuring usability.
 
 ## 🔮 Future Vision (v2.0+): The Transmutation
 
-**"From Python Shell to Metal Kernel"**
-The ultimate goal is to move away from the Python dependency to achieve native speed and hardware-level control.
+**"From Transpiler to Universal Interface"**
+The ultimate goal is to expand MPL into a framework that can "invoke" logic in multiple domains, utilizing the 225 Magi archetypes.
 
-* **Rust/C++ Core:** Re-writing the Interpreter and VM in a low-level language (likely Rust) for maximum performance and memory safety.
-* **LLVM Compilation:** Instead of interpreting, compiling MPL code directly to machine code (`.exe`/binary).
-* **MagickOS (Concept):** A Unikernel or minimal Linux distro that boots directly into the MPL Shell, removing the OS abstraction layer.
-* **IoT Integration:** Controlling physical altars (Lights, Sound) via GPIO pins.
+### 1. The Enochian Module (John Dee)
+* **Domain:** Cryptography & Cyber-Security.
+* **Goal:** Transmute `invoke.dee` commands into Python/Rust encryption algorithms (AES, RSA).
+* **Concept:** "Sealing" data packets with digital sigils.
+
+### 2. The Alchemist Module (Paracelsus)
+* **Domain:** Data Science (ETL).
+* **Goal:** Transmute raw data (Lead) into structured insights (Gold).
+* **Target:** Compiling rituals into Pandas/SQL queries.
+
+### 3. The Shamanic Module (Animism)
+* **Domain:** Internet of Things (IoT) & Hardware.
+* **Goal:** Talking to "Machine Spirits" (Sensors, LEDs, Motors).
+* **Target:** Transpiling logic to C++ for Arduino/ESP32.
+
+### 4. Core Rewrite
+* **Rust/C++ Core:** Re-writing the Interpreter for maximum performance.
+* **LLVM Compilation:** Compiling MPL directly to machine binary.
 
 ---
 
 ## 🤝 Contributing
 This roadmap is dynamic. As the ritual evolves, so does the path. Share your grimoires and issues in the `Discussions` tab.
-
