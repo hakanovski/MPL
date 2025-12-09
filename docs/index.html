@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPL | The Magick Programming Language</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #e0e0e0;
+            --accent-purple: #9d00ff;
+            --accent-green: #00ff41;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a0b2e 0%, #000000 70%);
+            position: relative;
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+            letter-spacing: -2px;
+            background: linear-gradient(90deg, #fff, var(--accent-purple));
+            
+            /* FIX APPLIED HERE: Standard property added to remove warning */
+            background-clip: text;
+            -webkit-background-clip: text;
+            
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(157, 0, 255, 0.5);
+            animation: pulse 3s infinite;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            opacity: 0.8;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            border: 1px solid var(--accent-purple);
+            background: transparent;
+            color: var(--accent-purple);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            box-shadow: 0 0 20px var(--accent-purple);
+        }
+
+        /* --- TERMINAL INSTALL BOX --- */
+        .terminal-container {
+            margin-top: 3rem;
+            background: #000;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: left;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .terminal-code {
+            color: var(--accent-green);
+            font-family: 'Consolas', monospace;
+        }
+        
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background: var(--accent-green);
+            animation: blink 1s step-end infinite;
+        }
+
+        /* --- FEATURES GRID --- */
+        .features {
+            padding: 5rem 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            padding: 2rem;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-5px);
+        }
+
+        .card h3 { color: var(--accent-purple); }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid #222;
+            opacity: 0.6;
+        }
+
+        a { color: inherit; text-decoration: none; border-bottom: 1px dotted #666; }
+
+        /* --- ANIMATIONS --- */
+        @keyframes pulse {
+            0% { text-shadow: 0 0 20px rgba(157, 0, 255, 0.3); }
+            50% { text-shadow: 0 0 40px rgba(157, 0, 255, 0.6); }
+            100% { text-shadow: 0 0 20px rgba(157, 0, 255, 0.3); }
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MPL</h1>
+        <p class="tagline">Magick is not folklore. It is uncompiled code.</p>
+        
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="terminal-code">
+                $ pip install -e .<span class="cursor"></span>
+            </div>
+        </div>
+
+        <a href="https://github.com/hakanovski/MPL" class="cta-button">Enter the Grimoire</a>
+    </header>
+
+    <section class="features">
+        <div class="card">
+            <h3>⚡ The Tesla Protocol</h3>
+            <p>Loops are linear no more. MPL utilizes 3-6-9 harmonic resonance to optimize logic execution cycles.</p>
+        </div>
+        <div class="card">
+            <h3>🕯️ Solomonic Ontology</h3>
+            <p>Invoke historical archetypes like <b>Vassago</b> directly from the JSON database to power your algorithms.</p>
+        </div>
+        <div class="card">
+            <h3>📈 Financial Technomancy</h3>
+            <p>Transmute esoteric intent into valid <b>Pine Script</b> strategies for TradingView automatically.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>MPL v0.9.6 - The Robust Oracle</p>
+        <p>Created by <a href="https://github.com/hakanovski">Hakan Yorganci</a></p>
+        <p><i>"Code is the modern spellbook."</i></p>
+    </footer>
+
+</body>
+</html>
