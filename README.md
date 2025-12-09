@@ -40,10 +40,10 @@ Currently, the engine runs on a **Python Host** (`src/main.py`), acting as a tra
 
 ```bash
 # 1. Clone the Grimoire
-git clone [https://github.com/hknyrgnc/mpl.git](https://github.com/hknyrgnc/mpl.git)
+git clone [https://github.com/hakanovski/MPL.git](https://github.com/hakanovski/MPL.git)
 
 # 2. Enter the Sanctum
-cd mpl
+cd MPL
 
 # 3. Create a Virtual Environment (Recommended)
 python3 -m venv venv
@@ -103,3 +103,19 @@ The MRE (Magic Runtime Engine) follows a 4-stage pipeline:
  * Parser (src/parser.py): Constructs the AST (Abstract Syntax Tree) and validates ritual structure.
  * Resolver (src/resolver.py): Connects the AST to the data/ ontology (JSON Database).
  * Interpreter (src/interpreter.py): Executes logic and calls the src/stdlib.py (Standard Library).
+🗺️ Roadmap
+ * v0.5.0: Standard Library & Tesla Protocol ✅
+ * v0.9.5: Financial Oracle & Hybrid Logic ✅
+ * v1.0.0: CLI Tool (mpl run) & PyPI Package ✅
+ * v2.0.0: The Transmutation (Rewrite in Rust/C++) 📅
+See ROADMAP.md for details.
+
+🤝 Contributing
+The Grimoire is open to fellow Technomancers.
+ * Fork the repo.
+ * Create your branch (git checkout -b feature/new-spell).
+ * Commit your changes.
+ * Open a Pull Request.
+License: MIT
+Copyright © 2025 Hakan Yorganci
+
