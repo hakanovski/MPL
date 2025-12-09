@@ -25,13 +25,10 @@ class TestMPLEngine(unittest.TestCase):
         and returns the final state of the Environment (Memory).
         """
         lexer = Lexer(code)
-        
-        # FIX: Changed 'tokenize()' to 'scan_tokens()' to match the Lexer class definition.
-        tokens = lexer.scan_tokens() 
-        
+        tokens = lexer.scan_tokens() # Scans the code into tokens
         parser = Parser(tokens)
-        ast = parser.parse()
-        self.interpreter.interpret(ast)
+        ast = parser.parse()         # Converts tokens into an Abstract Syntax Tree
+        self.interpreter.interpret(ast) # Executes the ritual
         return self.interpreter.environment
 
     def test_bind_variable(self):
@@ -61,6 +58,21 @@ class TestMPLEngine(unittest.TestCase):
         # Expectation: Strings should be joined correctly.
         self.assertEqual(env.values['greeting'], "Hello World")
         print("✅ [TEST] String Weaving Passed.")
+
+    def test_tesla_cycle(self):
+        """TEST 4: Does the Tesla Protocol (Loops) work correctly?"""
+        # We start with 0 and add 1 exactly 3 times. The result must be 3.
+        code = """
+        bind counter to 0
+        cycle(3) {
+            bind counter to counter + 1
+        }
+        """
+        env = self.run_script(code)
+        
+        # Expectation: The loop must iterate 3 times, making counter = 3.
+        self.assertEqual(env.values['counter'], 3)
+        print("✅ [TEST] Tesla Cycle (3-6-9) Passed.")
 
 if __name__ == '__main__':
     print("⚡ [TESTING] Initiating Safety Seals...")

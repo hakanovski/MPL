@@ -172,33 +172,58 @@ class Interpreter:
     # --- Specific Execution Logic ---
 
     def _execute_invoke(self, stmt: Invoke):
+        """
+        Executes an invocation. It first checks the JSON Ontology (Resolver).
+        If the entity is not in the JSON, it falls back to the Standard Library.
+        """
         entity_id = stmt.entity
         params = {}
         if stmt.params:
             for p in stmt.params:
                 params[p.name] = self.evaluate(p.value)
+        
+        args_list = list(params.values())
 
+        # 1. Try to find the Entity in the JSON Database (Grimoire)
         entity_data = None
         if self.resolver:
             entity_data = self.resolver.resolve(entity_id)
 
+        # SCENARIO A: Found in JSON (e.g., Historical figures)
         if entity_data:
             print(f"🕯️ [INVOKE] Summoning {entity_data.get('name', entity_id)}...")
             
             magic_func = entity_data.get('mpl_function')
             if magic_func:
-                # --- CRITICAL FIX FOR JSON PARSING ---
-                # JSON data often includes '()' (e.g., "process.hide()").
-                # We must remove '()' to find the correct function name in Python.
+                # Remove parentheses if present (e.g., "process.hide()")
                 clean_func = magic_func.replace('()', '')
                 
-                module_name = clean_func.split('.')[0]
-                func_name = clean_func.split('.')[1]
-                
-                StdLib.call(module_name, func_name, list(params.values()))
-            
-        else:
-            print(f"⚠️ [INVOKE] The spirit '{entity_id}' did not answer (Not found in Grimoire).")
+                if '.' in clean_func:
+                    module_name = clean_func.split('.')[0]
+                    func_name = clean_func.split('.')[1]
+                    StdLib.call(module_name, func_name, args_list)
+                else:
+                     StdLib.call(clean_func, None, args_list)
+            return
+
+        # SCENARIO B: Not in JSON, Fallback to Standard Library directly
+        # This handles cases like 'invoke.vassago' or 'market.divine' directly.
+        
+        # Clean the name (remove 'invoke.' prefix if parser included it)
+        clean_name = entity_id.replace("invoke.", "")
+        
+        module_name = clean_name
+        func_name = None
+
+        if '.' in clean_name:
+            parts = clean_name.split('.')
+            module_name = parts[0]
+            func_name = parts[1]
+
+        # Call the Standard Library
+        result = StdLib.call(module_name, func_name, args_list)
+        
+        # Note: StdLib.call handles printing error messages if the module is unknown.
 
     def _execute_cycle(self, stmt: Cycle):
         count = self.evaluate(stmt.frequency)
