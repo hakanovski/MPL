@@ -40,7 +40,7 @@ Currently, the engine runs on a **Python Host** (`src/main.py`), acting as a tra
 
 ```bash
 # 1. Clone the Grimoire
-git clone [https://github.com/hakanovski/MPL.git](https://github.com/hakanovski/MPL.git)
+git clone https://github.com/hakanovski/MPL.git
 
 # 2. Enter the Sanctum
 cd MPL
@@ -109,7 +109,6 @@ The MRE (Magic Runtime Engine) follows a 4-stage pipeline:
  * v1.0.0: CLI Tool (mpl run) & PyPI Package ✅
  * v2.0.0: The Transmutation (Rewrite in Rust/C++) 📅
 See ROADMAP.md for details.
-
 🤝 Contributing
 The Grimoire is open to fellow Technomancers.
  * Fork the repo.
@@ -118,4 +117,3 @@ The Grimoire is open to fellow Technomancers.
  * Open a Pull Request.
 License: MIT
 Copyright © 2025 Hakan Yorganci
-
