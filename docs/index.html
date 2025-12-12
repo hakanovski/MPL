@@ -3,106 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPL | The Magick Programming Language</title>
+    <meta name="description" content="MPL: The Magic Programming Language. Bridging esoteric logic with modern computation.">
+    <title>MPL | The Technomancy Hub</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        /* --- CORE VARIABLES --- */
         :root {
             --bg-color: #050505;
-            --text-color: #e0e0e0;
+            --card-bg: #0a0a0a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #888888;
+            
+            /* BRAND COLORS */
             --accent-purple: #9d00ff;
             --accent-green: #00ff41;
-            --glass-bg: rgba(255, 255, 255, 0.05);
+            --accent-crimson: #dc143c; /* Added for ABADDON */
+            --accent-blue: #00f3ff;
+            
+            /* UI EFFECTS */
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: 1px solid rgba(255, 255, 255, 0.1);
+            --glow: 0 0 20px rgba(157, 0, 255, 0.2);
         }
 
+        /* --- GLOBAL RESET --- */
+        * { box-sizing: border-box; }
+        
         body {
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Courier New', Courier, monospace;
+            color: var(--text-primary);
+            font-family: 'Space Grotesk', sans-serif; /* Modern Headers */
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(157, 0, 255, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 255, 65, 0.05), transparent 25%);
         }
+
+        h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: -1px; }
+        p { line-height: 1.6; color: var(--text-secondary); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent-purple); font-family: 'JetBrains Mono'; }
+        
+        .social-links { display: flex; gap: 1.5rem; }
+        .social-links a:hover { color: var(--accent-purple); transform: scale(1.1); }
 
         /* --- HERO SECTION --- */
         header {
-            height: 100vh;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #1a0b2e 0%, #000000 70%);
-            position: relative;
+            padding: 0 1rem;
         }
 
-        h1 {
-            font-size: 5rem;
-            margin: 0;
-            letter-spacing: -2px;
+        h1.glitch {
+            font-size: clamp(3rem, 10vw, 6rem);
             background: linear-gradient(90deg, #fff, var(--accent-purple));
-            
-            /* FIX APPLIED HERE: Standard property added to remove warning */
-            background-clip: text;
             -webkit-background-clip: text;
-            
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(157, 0, 255, 0.5);
-            animation: pulse 3s infinite;
+            position: relative;
+            animation: pulseText 4s infinite alternate;
         }
 
         .tagline {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-            opacity: 0.8;
-            max-width: 600px;
-        }
-
-        .cta-button {
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            border: 1px solid var(--accent-purple);
-            background: transparent;
-            color: var(--accent-purple);
             font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            font-family: inherit;
+            margin-top: 1rem;
+            max-width: 600px;
+            color: var(--text-primary);
         }
 
-        .cta-button:hover {
-            background: var(--accent-purple);
-            color: #fff;
-            box-shadow: 0 0 20px var(--accent-purple);
-        }
-
-        /* --- TERMINAL INSTALL BOX --- */
+        /* --- TERMINAL BOX --- */
         .terminal-container {
             margin-top: 3rem;
-            background: #000;
-            border: 1px solid #333;
+            background: rgba(0,0,0,0.8);
+            border: var(--border);
             border-radius: 8px;
             padding: 1rem;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            text-align: left;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
         }
 
-        .terminal-header {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
+        .terminal-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-green));
         }
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .red { background: #ff5f56; }
-        .yellow { background: #ffbd2e; }
-        .green { background: #27c93f; }
 
         .terminal-code {
             color: var(--accent-green);
-            font-family: 'Consolas', monospace;
+            font-family: 'JetBrains Mono', monospace;
+            text-align: left;
         }
-        
+
         .cursor {
             display: inline-block;
             width: 8px;
@@ -111,87 +131,231 @@
             animation: blink 1s step-end infinite;
         }
 
-        /* --- FEATURES GRID --- */
-        .features {
+        /* --- PROJECT SECTION (THE FOUNDRY) --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+        .section-title span { color: var(--accent-purple); }
+
+        .foundry {
             padding: 5rem 10%;
+            background: linear-gradient(to bottom, var(--bg-color), #080808);
+        }
+
+        /* CATEGORY LABELS */
+        .category-label {
+            font-family: 'JetBrains Mono';
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+            border-left: 2px solid var(--accent-purple);
+            padding-left: 10px;
+        }
+
+        /* BENTO GRID LAYOUT */
+        .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .card {
-            background: var(--glass-bg);
+        .project-card {
+            background: var(--glass);
+            border: var(--border);
+            border-radius: 12px;
             padding: 2rem;
-            border: 1px solid #333;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-purple);
+            box-shadow: var(--glow);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* SPECIFIC CARD STYLES */
+        .card-tradingview { border-top: 2px solid var(--accent-blue); }
+        .card-app { border-top: 2px solid var(--accent-crimson); }
+        
+        .project-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .card-tradingview .project-icon { color: var(--accent-blue); }
+        .card-app .project-icon { color: var(--accent-crimson); }
+
+        .status-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono';
+            text-transform: uppercase;
+        }
+
+        .status-live { background: rgba(0, 255, 65, 0.1); color: var(--accent-green); border: 1px solid var(--accent-green); }
+        .status-dev { background: rgba(220, 20, 60, 0.1); color: var(--accent-crimson); border: 1px solid var(--accent-crimson); }
+
+        .btn-link {
+            margin-top: 1.5rem;
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            font-family: 'JetBrains Mono';
+            font-size: 0.85rem;
             transition: 0.3s;
         }
 
-        .card:hover {
-            border-color: var(--accent-purple);
-            transform: translateY(-5px);
+        .btn-link:hover {
+            background: white;
+            color: black;
         }
 
-        .card h3 { color: var(--accent-purple); }
+        /* ABADDON OVERLAY */
+        .abaddon-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        
+        .project-card:hover .abaddon-overlay { opacity: 1; }
+        .lock-msg { color: var(--accent-crimson); font-family: 'JetBrains Mono'; letter-spacing: 2px; }
 
         /* --- FOOTER --- */
         footer {
-            text-align: center;
-            padding: 3rem;
-            border-top: 1px solid #222;
-            opacity: 0.6;
+            padding: 4rem 10%;
+            border-top: 1px solid #111;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #020202;
         }
 
-        a { color: inherit; text-decoration: none; border-bottom: 1px dotted #666; }
-
-        /* --- ANIMATIONS --- */
-        @keyframes pulse {
-            0% { text-shadow: 0 0 20px rgba(157, 0, 255, 0.3); }
-            50% { text-shadow: 0 0 40px rgba(157, 0, 255, 0.6); }
-            100% { text-shadow: 0 0 20px rgba(157, 0, 255, 0.3); }
+        .footer-logo span { color: var(--accent-purple); }
+        
+        @keyframes pulseText {
+            from { filter: drop-shadow(0 0 10px rgba(157, 0, 255, 0.4)); }
+            to { filter: drop-shadow(0 0 25px rgba(157, 0, 255, 0.8)); }
         }
-
         @keyframes blink { 50% { opacity: 0; } }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1.glitch { font-size: 3rem; }
+            .project-grid { grid-template-columns: 1fr; }
+            footer { flex-direction: column; text-align: center; }
+        }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div class="logo">MPL_ORDER</div>
+        <div class="social-links">
+            <a href="https://github.com/hakanovski/MPL" target="_blank" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/hakanyorganci" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" title="Join the Order"><i class="fa-brands fa-discord"></i></a>
+        </div>
+    </nav>
+
     <header>
-        <h1>MPL</h1>
+        <h1 class="glitch">MPL</h1>
         <p class="tagline">Magick is not folklore. It is uncompiled code.</p>
         
         <div class="terminal-container">
-            <div class="terminal-header">
-                <div class="dot red"></div>
-                <div class="dot yellow"></div>
-                <div class="dot green"></div>
-            </div>
             <div class="terminal-code">
-                $ pip install -e .<span class="cursor"></span>
+                <span style="color: #666;">user@mpl:~$</span> pip install mpl-magick<br>
+                <span style="color: var(--accent-green);">Successfully installed. Connection established.</span><span class="cursor"></span>
             </div>
         </div>
-
-        <a href="https://github.com/hakanovski/MPL" class="cta-button">Enter the Grimoire</a>
     </header>
 
-    <section class="features">
-        <div class="card">
-            <h3>⚡ The Tesla Protocol</h3>
-            <p>Loops are linear no more. MPL utilizes 3-6-9 harmonic resonance to optimize logic execution cycles.</p>
+    <section class="foundry" id="projects">
+        <h2 class="section-title">THE <span>FOUNDRY</span></h2>
+
+        <span class="category-label">01 // Financial Sigils (TradingView)</span>
+        <div class="project-grid">
+            
+            <div class="project-card card-tradingview">
+                <div class="status-badge status-live">Live v6.0</div>
+                <div>
+                    <i class="fa-solid fa-chart-line project-icon"></i>
+                    <h3>The Abramelin Protocol</h3>
+                    <p>A technomantic trading algorithm based on dynamic entity Gematria. Utilizing Tesla's 3-6-9 harmonics and Paimon's frequency (452) to detect macro trends.</p>
+                </div>
+                <a href="https://www.tradingview.com/u/hakanovski/" target="_blank" class="btn-link">View on TradingView <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="project-card card-tradingview">
+                <div class="status-badge status-live">Legacy</div>
+                <div>
+                    <i class="fa-regular fa-eye project-icon"></i>
+                    <h3>Vassago Eye v1</h3>
+                    <p>The original experimental script. Uses static 3-6-9 harmonic reductions to identify hidden liquidity voids in the market.</p>
+                </div>
+                <a href="#" class="btn-link">Archive Access</a>
+            </div>
+
         </div>
-        <div class="card">
-            <h3>🕯️ Solomonic Ontology</h3>
-            <p>Invoke historical archetypes like <b>Vassago</b> directly from the JSON database to power your algorithms.</p>
-        </div>
-        <div class="card">
-            <h3>📈 Financial Technomancy</h3>
-            <p>Transmute esoteric intent into valid <b>Pine Script</b> strategies for TradingView automatically.</p>
+
+        <span class="category-label" style="border-color: var(--accent-crimson);">02 // Artifacts (Applications)</span>
+        <div class="project-grid">
+
+            <div class="project-card card-app">
+                <div class="status-badge status-dev">In Development</div>
+                <div>
+                    <i class="fa-brands fa-apple project-icon"></i>
+                    <h3>ABADDON [iOS]</h3>
+                    <p>Digital Banishing Tool. A mobile "Cendere" (Press) designed to visualize and execute metaphysical pressure protocols via Swift & CoreLocation.</p>
+                </div>
+                <div class="abaddon-overlay">
+                    <span class="lock-msg"><i class="fa-solid fa-lock"></i> ACCESS RESTRICTED</span>
+                </div>
+            </div>
+
+            <div class="project-card" style="border-top: 2px solid #333; opacity: 0.5;">
+                <div class="status-badge">Concept</div>
+                <div>
+                    <i class="fa-solid fa-microchip project-icon"></i>
+                    <h3>MPL Compiler</h3>
+                    <p>The core engine converting .ms (MagicScript) files into executable Python code.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <footer>
-        <p>MPL v0.9.6 - The Robust Oracle</p>
-        <p>Created by <a href="https://github.com/hakanovski">Hakan Yorganci</a></p>
-        <p><i>"Code is the modern spellbook."</i></p>
+        <div class="footer-logo">
+            <h3>MPL<span>_ORDER</span></h3>
+            <p style="font-size: 0.8rem; margin-top: 5px;">Technomancy & Algorithmic Research</p>
+        </div>
+        <div>
+            <p style="text-align: right;">System Status: <span style="color: var(--accent-green);">OPERATIONAL</span></p>
+            <p style="font-size: 0.8rem; opacity: 0.5;">© 2025 Hakan Yorganci. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
