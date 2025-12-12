@@ -1,0 +1,44 @@
+{
+    "_meta": {
+      "source": "The Book of the Sacred Magic of Abramelin the Mage",
+      "translation": "S.L. MacGregor Mathers",
+      "purpose": "Technomantic Data Structure for Market Analysis"
+    },
+    "magic_squares": {
+      "future_vision": {
+        "name": "MILON",
+        "chapter": "Book III, Chapter I",
+        "intent": "Knowing things Past and Future",
+        "matrix": [
+          ["M", "I", "L", "O", "N"],
+          ["I", "R", "A", "G", "O"],
+          ["L", "A", "M", "A", "L"],
+          ["O", "G", "A", "R", "I"],
+          ["N", "O", "L", "I", "M"]
+        ]
+      },
+      "uncertainty_solver": {
+        "name": "MEBHAER",
+        "chapter": "Book III, Chapter II",
+        "intent": "Acquiring information on doubtful propositions",
+        "matrix": [
+          ["M", "E", "B", "H", "A", "E", "R"],
+          ["E", "L", "I", "A", "I", "L", "E"],
+          ["B", "I", "K", "O", "S", "I", "A"],
+          ["H", "A", "O", "R", "O", "A", "H"],
+          ["A", "I", "S", "O", "K", "I", "B"],
+          ["E", "L", "I", "A", "I", "L", "E"],
+          ["R", "E", "A", "H", "B", "E", "M"]
+        ]
+      }
+    },
+    "spirits": {
+      "primary_hierarchy": {
+        "truth_seeker": "VASSAGO",
+        "future_knower": "ASTAROTH",
+        "secret_revealer": "PAIMON",
+        "math_master": "ASMODEUS"
+      }
+    }
+  }
+  
