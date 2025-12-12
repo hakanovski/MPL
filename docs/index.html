@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Miela Labs LLC: The Technomancy Research Institute. Creators of MPL and The Abramelin Protocol.">
+    <meta name="description" content="Miela Labs LLC: The Technomancy Research Institute. Creators of MPL and The John Dee Watchtower.">
     <title>Miela Labs | The Technomancy Hub</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +42,6 @@
             color: var(--text-primary);
             font-family: 'Space Grotesk', sans-serif;
             overflow-x: hidden;
-            /* Subtle Grid Background for that "Blueprint" feel */
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -91,7 +90,7 @@
         .social-links a { font-size: 1.2rem; color: var(--text-secondary); }
         .social-links a:hover { color: var(--accent-purple); transform: scale(1.1); }
 
-        /* --- DASHBOARD HEADER (CORPORATE TERMINAL) --- */
+        /* --- DASHBOARD HEADER --- */
         .dashboard-header {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -120,11 +119,11 @@
             opacity: 0.8;
         }
 
-        /* COMPACT TERMINAL - SYSTEM STATUS */
+        /* TERMINAL */
         .terminal-container {
             background: rgba(10, 10, 10, 0.9);
             border: 1px solid #333;
-            border-radius: 4px; /* Sharper corners for corporate feel */
+            border-radius: 4px;
             padding: 1.5rem;
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
             position: relative;
@@ -155,7 +154,7 @@
             background: var(--text-primary); animation: blink 1s step-end infinite;
         }
 
-        /* --- THE FOUNDRY (PROJECTS) --- */
+        /* --- THE FOUNDRY --- */
         .foundry-header {
             display: flex;
             justify-content: space-between;
@@ -195,6 +194,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
+        /* Card Variants */
         .card-tradingview { border-left: 3px solid var(--accent-blue); }
         .card-app { border-left: 3px solid var(--accent-crimson); }
         
@@ -209,6 +209,7 @@
             font-family: 'JetBrains Mono'; text-transform: uppercase; letter-spacing: 1px;
         }
         .status-live { background: rgba(0, 255, 65, 0.1); color: var(--accent-green); }
+        .status-new { background: rgba(0, 243, 255, 0.1); color: var(--accent-blue); border: 1px solid var(--accent-blue); }
         .status-legacy { background: rgba(136, 136, 136, 0.1); color: var(--text-secondary); }
         .status-dev { background: rgba(220, 20, 60, 0.1); color: var(--accent-crimson); }
 
@@ -236,7 +237,7 @@
         .lock-msg { color: #fff; font-family: 'JetBrains Mono'; font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
         .lock-sub { color: var(--text-secondary); font-size: 0.8rem; font-family: 'JetBrains Mono'; }
 
-        /* --- FOOTER (LEGAL) --- */
+        /* --- FOOTER --- */
         footer {
             padding: 3rem 0;
             border-top: 1px solid #222;
@@ -248,7 +249,6 @@
         }
         
         .footer-legal { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: #555; }
-        .footer-legal span { color: var(--text-secondary); }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
@@ -287,7 +287,7 @@
                 <div class="terminal-code">
                     <span class="cmd">root@miela:~$</span> init_entity --texas<br>
                     <span class="success">[OK] Miela Labs LLC Registered.</span><br>
-                    <span class="success">[OK] EIN Verification Pending...</span><br>
+                    <span class="success">[OK] Enochian Engine V2.0 Active.</span><br>
                     <span class="success">[OK] System Online.</span><span class="cursor"></span>
                 </div>
             </div>
@@ -299,6 +299,16 @@
         </div>
 
         <div class="project-grid">
+
+            <div class="project-card card-tradingview">
+                <div class="status-badge status-new">NEW V6.0</div>
+                <div>
+                    <i class="fa-solid fa-network-wired project-icon"></i>
+                    <h3 class="project-title">John Dee's Watchtower</h3>
+                    <p class="project-desc">Forecasting engine utilizing Enochian Vector (257) & Sigil Cipher (463). Projects support/resistance 21 bars into the future.</p>
+                </div>
+                <a href="https://www.tradingview.com/script/OsLAATJA-Miela-Labs-John-Dee-s-Watchtower-257-463/" target="_blank" class="btn-link">Access Artifact</a>
+            </div>
             
             <div class="project-card card-tradingview">
                 <div class="status-badge status-live">Live V6.0</div>
