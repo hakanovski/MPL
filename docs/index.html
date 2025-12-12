@@ -197,6 +197,8 @@
         /* Card Variants */
         .card-tradingview { border-left: 3px solid var(--accent-blue); }
         .card-app { border-left: 3px solid var(--accent-crimson); }
+        /* New Purple Card for Aethyr Scope */
+        .card-aethyr { border-left: 3px solid var(--accent-purple); } 
         
         .project-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
 
@@ -210,6 +212,7 @@
         }
         .status-live { background: rgba(0, 255, 65, 0.1); color: var(--accent-green); }
         .status-new { background: rgba(0, 243, 255, 0.1); color: var(--accent-blue); border: 1px solid var(--accent-blue); }
+        .status-beta { background: rgba(157, 0, 255, 0.1); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
         .status-legacy { background: rgba(136, 136, 136, 0.1); color: var(--text-secondary); }
         .status-dev { background: rgba(220, 20, 60, 0.1); color: var(--accent-crimson); }
 
@@ -299,6 +302,16 @@
         </div>
 
         <div class="project-grid">
+
+            <div class="project-card card-aethyr">
+                <div class="status-badge status-beta">BETA LAB</div>
+                <div>
+                    <i class="fa-solid fa-cube project-icon" style="color: var(--accent-purple);"></i>
+                    <h3 class="project-title">The Aethyr Scope</h3>
+                    <p class="project-desc">3D WebGL Visualization Engine. Projects intents into Enochian geometry (Icosahedron) in real-time.</p>
+                </div>
+                <a href="sigil.html" class="btn-link" style="border-color: var(--accent-purple);">Launch Construct</a>
+            </div>
 
             <div class="project-card card-tradingview">
                 <div class="status-badge status-new">NEW V6.0</div>
