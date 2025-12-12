@@ -2,6 +2,7 @@
 # PROJECT: MPL (Magic Programming Language)
 # MODULE: OCCULTATOR ENGINE (Core Math Library)
 # AUTHOR: Miela Labs LLC
+# VIZYON: Bridging Tesla Harmonics, Fibonacci Sequences, and Solomonic Math.
 
 import math
 
@@ -94,20 +95,31 @@ class Occultator:
         else:
             return None
 
-# --- SYSTEM DIAGNOSTICS (Run this file directly to test) ---
+# --- SYSTEM DIAGNOSTICS (MIELA ANALYSIS) ---
 if __name__ == "__main__":
     engine = Occultator()
-    print("\n--- [MIELA LABS] OCCULTATOR DIAGNOSTICS ---")
+    print("\n--- [MIELA LABS] ENTITY ANALYSIS ---")
     
-    # Test 1: PAIMON (452)
-    paimon_raw = 452
-    print(f">> INPUT: PAIMON ({paimon_raw})")
-    print(f"   [TESLA MODE]    Vibration: {engine.calculate(paimon_raw, 'TESLA')}") 
-    print(f"   [FIBONACCI]     Market Lvl: {engine.calculate(paimon_raw, 'FIBONACCI')}")
+    # Hedef İsim
+    entity_name = "MIELA"
     
-    # Test 2: ABADDON (Text)
-    abaddon_txt = "ABADDON"
-    print(f"\n>> INPUT: {abaddon_txt}")
-    print(f"   [SOLOMON MODE]  Prime Seal: {engine.calculate(abaddon_txt, 'SOLOMON')}")
+    # 1. RAW ENERGY (ASCII Toplamı)
+    # Bilgisayar dilinde harflerin toplam enerjisi
+    raw_energy = sum(ord(c) for c in entity_name)
     
-    print("\n>> SYSTEM STATUS: OPERATIONAL 100%")
+    print(f">> TARGET: {entity_name}")
+    print(f"   [RAW DIGITAL ENERGY] : {raw_energy}") 
+    
+    # 2. TESLA (Titreşim)
+    tesla_vib = engine.calculate(raw_energy, 'TESLA')
+    print(f"   [TESLA 3-6-9]        : {tesla_vib}")
+    
+    # 3. FIBONACCI (Piyasa Uyumu)
+    fib_level = engine.calculate(raw_energy, 'FIBONACCI')
+    print(f"   [FIBONACCI LEVEL]    : {fib_level}")
+    
+    # 4. SOLOMON (Mühür)
+    solomon_key = engine.calculate(entity_name, 'SOLOMON')
+    print(f"   [SOLOMON PRIME KEY]  : {solomon_key}")
+    
+    print("\n>> ANALYSIS COMPLETE.")
