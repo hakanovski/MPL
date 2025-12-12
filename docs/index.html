@@ -23,7 +23,7 @@
             /* BRAND COLORS */
             --accent-purple: #9d00ff;
             --accent-green: #00ff41;
-            --accent-crimson: #dc143c; /* Added for ABADDON */
+            --accent-crimson: #dc143c;
             --accent-blue: #00f3ff;
             
             /* UI EFFECTS */
@@ -40,129 +40,126 @@
             padding: 0;
             background-color: var(--bg-color);
             color: var(--text-primary);
-            font-family: 'Space Grotesk', sans-serif; /* Modern Headers */
+            font-family: 'Space Grotesk', sans-serif;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 50%, rgba(157, 0, 255, 0.05), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(0, 255, 65, 0.05), transparent 25%);
+                radial-gradient(circle at 10% 10%, rgba(157, 0, 255, 0.08), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 65, 0.05), transparent 30%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: -1px; }
-        p { line-height: 1.6; color: var(--text-secondary); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        /* --- LAYOUT CONTAINER --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
 
         /* --- NAVIGATION --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 10;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
         }
 
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent-purple); font-family: 'JetBrains Mono'; }
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            color: var(--accent-purple); 
+            font-family: 'JetBrains Mono'; 
+            letter-spacing: -1px;
+        }
         
         .social-links { display: flex; gap: 1.5rem; }
+        .social-links a { font-size: 1.2rem; color: var(--text-secondary); }
         .social-links a:hover { color: var(--accent-purple); transform: scale(1.1); }
+        
+        /* Non-clickable discord link style */
+        .discord-disabled { cursor: default; opacity: 0.7; }
+        .discord-disabled:hover { color: var(--text-secondary) !important; transform: none !important; }
 
-        /* --- HERO SECTION --- */
-        header {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        /* --- DASHBOARD HEADER (COMPACT) --- */
+        .dashboard-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             align-items: center;
-            text-align: center;
-            padding: 0 1rem;
+            margin-bottom: 3rem;
         }
 
+        .header-content { text-align: left; }
+
         h1.glitch {
-            font-size: clamp(3rem, 10vw, 6rem);
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
             background: linear-gradient(90deg, #fff, var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
             animation: pulseText 4s infinite alternate;
         }
 
         .tagline {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            max-width: 600px;
-            color: var(--text-primary);
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono';
+            margin-bottom: 1.5rem;
         }
 
-        /* --- TERMINAL BOX --- */
+        /* COMPACT TERMINAL */
         .terminal-container {
-            margin-top: 3rem;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.6);
             border: var(--border);
             border-radius: 8px;
             padding: 1rem;
-            width: 100%;
-            max-width: 480px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
             position: relative;
-            overflow: hidden;
         }
 
         .terminal-container::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 2px;
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
             background: linear-gradient(90deg, var(--accent-purple), var(--accent-green));
         }
 
         .terminal-code {
             color: var(--accent-green);
             font-family: 'JetBrains Mono', monospace;
-            text-align: left;
+            font-size: 0.9rem;
         }
 
         .cursor {
-            display: inline-block;
-            width: 8px;
-            height: 15px;
-            background: var(--accent-green);
-            animation: blink 1s step-end infinite;
+            display: inline-block; width: 6px; height: 12px;
+            background: var(--accent-green); animation: blink 1s step-end infinite;
         }
 
-        /* --- PROJECT SECTION (THE FOUNDRY) --- */
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
+        /* --- THE FOUNDRY (PROJECTS) --- */
+        .foundry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 0.5rem;
         }
+
+        .section-title { font-size: 1.5rem; color: var(--text-primary); }
         .section-title span { color: var(--accent-purple); }
+        .section-subtitle { font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--text-secondary); }
 
-        .foundry {
-            padding: 5rem 10%;
-            background: linear-gradient(to bottom, var(--bg-color), #080808);
-        }
-
-        /* CATEGORY LABELS */
-        .category-label {
-            font-family: 'JetBrains Mono';
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-            display: block;
-            border-left: 2px solid var(--accent-purple);
-            padding-left: 10px;
-        }
-
-        /* BENTO GRID LAYOUT */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
             margin-bottom: 4rem;
         }
 
@@ -170,193 +167,157 @@
             background: var(--glass);
             border: var(--border);
             border-radius: 12px;
-            padding: 2rem;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 1.5rem;
+            transition: 0.3s;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 280px;
+            min-height: 240px;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: var(--accent-purple);
-            box-shadow: var(--glow);
             background: rgba(255, 255, 255, 0.05);
         }
 
-        /* SPECIFIC CARD STYLES */
         .card-tradingview { border-top: 2px solid var(--accent-blue); }
         .card-app { border-top: 2px solid var(--accent-crimson); }
         
-        .project-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .project-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
         .card-tradingview .project-icon { color: var(--accent-blue); }
         .card-app .project-icon { color: var(--accent-crimson); }
 
-        .status-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 0.7rem;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono';
-            text-transform: uppercase;
-        }
+        .project-title { font-size: 1.2rem; margin: 0 0 0.5rem 0; }
+        .project-desc { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
 
-        .status-live { background: rgba(0, 255, 65, 0.1); color: var(--accent-green); border: 1px solid var(--accent-green); }
-        .status-dev { background: rgba(220, 20, 60, 0.1); color: var(--accent-crimson); border: 1px solid var(--accent-crimson); }
+        .status-badge {
+            position: absolute; top: 1rem; right: 1rem;
+            font-size: 0.65rem; padding: 3px 6px; border-radius: 4px;
+            font-family: 'JetBrains Mono'; text-transform: uppercase;
+        }
+        .status-live { border: 1px solid var(--accent-green); color: var(--accent-green); }
+        .status-legacy { border: 1px solid var(--text-secondary); color: var(--text-secondary); }
+        .status-dev { border: 1px solid var(--accent-crimson); color: var(--accent-crimson); }
 
         .btn-link {
             margin-top: 1.5rem;
             display: inline-block;
-            padding: 0.8rem 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 6px;
             font-family: 'JetBrains Mono';
-            font-size: 0.85rem;
-            transition: 0.3s;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            opacity: 0.8;
+            border-bottom: 1px dotted var(--text-secondary);
         }
+        .btn-link:hover { opacity: 1; color: var(--accent-purple); border-color: var(--accent-purple); }
 
-        .btn-link:hover {
-            background: white;
-            color: black;
-        }
-
-        /* ABADDON OVERLAY */
+        /* ABADDON LOCK */
         .abaddon-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: 0.3s;
-            backdrop-filter: blur(5px);
+            position: absolute; inset: 0; background: rgba(0,0,0,0.85);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: 0.3s; backdrop-filter: blur(4px);
         }
-        
         .project-card:hover .abaddon-overlay { opacity: 1; }
-        .lock-msg { color: var(--accent-crimson); font-family: 'JetBrains Mono'; letter-spacing: 2px; }
+        .lock-msg { color: var(--accent-crimson); font-family: 'JetBrains Mono'; font-size: 0.9rem; letter-spacing: 1px; }
 
         /* --- FOOTER --- */
         footer {
-            padding: 4rem 10%;
+            padding: 2rem 0;
             border-top: 1px solid #111;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            background: #020202;
+            text-align: center;
+            font-family: 'JetBrains Mono';
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: auto;
         }
-
-        .footer-logo span { color: var(--accent-purple); }
-        
-        @keyframes pulseText {
-            from { filter: drop-shadow(0 0 10px rgba(157, 0, 255, 0.4)); }
-            to { filter: drop-shadow(0 0 25px rgba(157, 0, 255, 0.8)); }
-        }
-        @keyframes blink { 50% { opacity: 0; } }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
+            .dashboard-header { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+            .header-content { text-align: center; }
             h1.glitch { font-size: 3rem; }
-            .project-grid { grid-template-columns: 1fr; }
-            footer { flex-direction: column; text-align: center; }
         }
+
+        @keyframes pulseText { from { filter: drop-shadow(0 0 10px rgba(157, 0, 255, 0.2)); } to { filter: drop-shadow(0 0 20px rgba(157, 0, 255, 0.6)); } }
+        @keyframes blink { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">MPL_ORDER</div>
-        <div class="social-links">
-            <a href="https://github.com/hakanovski/MPL" target="_blank" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/hakanyorganci" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" title="Join the Order"><i class="fa-brands fa-discord"></i></a>
-        </div>
-    </nav>
-
-    <header>
-        <h1 class="glitch">MPL</h1>
-        <p class="tagline">Magick is not folklore. It is uncompiled code.</p>
+    <div class="container">
         
-        <div class="terminal-container">
-            <div class="terminal-code">
-                <span style="color: #666;">user@mpl:~$</span> pip install mpl-magick<br>
-                <span style="color: var(--accent-green);">Successfully installed. Connection established.</span><span class="cursor"></span>
+        <nav>
+            <div class="logo">MPL_ORDER</div>
+            <div class="social-links">
+                <a href="https://github.com/hakanovski/MPL" target="_blank" title="GitHub Source"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/hakanyorganci" target="_blank" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="discord-disabled" title="Discord: The MPL Order"><i class="fa-brands fa-discord"></i></a>
             </div>
+        </nav>
+
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1 class="glitch">MPL</h1>
+                <p class="tagline">Magick is uncompiled code.</p>
+            </div>
+            
+            <div class="terminal-container">
+                <div class="terminal-code">
+                    <span style="color: #666;">user@mpl:~$</span> init_protocol --v2<br>
+                    <span style="color: var(--accent-green);">[OK] Abramelin Matrix Loaded.</span><br>
+                    <span style="color: var(--accent-green);">[OK] System Online.</span><span class="cursor"></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="foundry-header">
+            <h2 class="section-title">THE <span>FOUNDRY</span></h2>
+            <span class="section-subtitle">ACTIVE ARTIFACTS</span>
         </div>
-    </header>
 
-    <section class="foundry" id="projects">
-        <h2 class="section-title">THE <span>FOUNDRY</span></h2>
-
-        <span class="category-label">01 // Financial Sigils (TradingView)</span>
         <div class="project-grid">
             
             <div class="project-card card-tradingview">
-                <div class="status-badge status-live">Live v6.0</div>
+                <div class="status-badge status-live">Live V6.0</div>
                 <div>
                     <i class="fa-solid fa-chart-line project-icon"></i>
-                    <h3>The Abramelin Protocol</h3>
-                    <p>A technomantic trading algorithm based on dynamic entity Gematria. Utilizing Tesla's 3-6-9 harmonics and Paimon's frequency (452) to detect macro trends.</p>
+                    <h3 class="project-title">The Abramelin Protocol</h3>
+                    <p class="project-desc">Technomantic trend analysis using Paimon (452) & Astaroth (204) frequencies with MILON gate filtering.</p>
                 </div>
-                <a href="https://www.tradingview.com/u/hakanovski/" target="_blank" class="btn-link">View on TradingView <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="https://www.tradingview.com/script/j48rS8W9-The-Abramelin-Protocol-MPL/" target="_blank" class="btn-link">Access Script <i class="fa-solid fa-arrow-right"></i></a>
             </div>
 
             <div class="project-card card-tradingview">
-                <div class="status-badge status-live">Legacy</div>
+                <div class="status-badge status-legacy">Legacy V1.0</div>
                 <div>
                     <i class="fa-regular fa-eye project-icon"></i>
-                    <h3>Vassago Eye v1</h3>
-                    <p>The original experimental script. Uses static 3-6-9 harmonic reductions to identify hidden liquidity voids in the market.</p>
+                    <h3 class="project-title">Vassago Eye</h3>
+                    <p class="project-desc">The original prototype using Tesla's static 3-6-9 harmonics. Retired but functional.</p>
                 </div>
-                <a href="#" class="btn-link">Archive Access</a>
+                <a href="https://www.tradingview.com/script/QOoCRPSF-Vassago-Tesla-Ex-Machina-197-45-21-Hakan-Yorganci/" target="_blank" class="btn-link">View Archive</a>
             </div>
-
-        </div>
-
-        <span class="category-label" style="border-color: var(--accent-crimson);">02 // Artifacts (Applications)</span>
-        <div class="project-grid">
 
             <div class="project-card card-app">
-                <div class="status-badge status-dev">In Development</div>
+                <div class="status-badge status-dev">Confidential</div>
                 <div>
                     <i class="fa-brands fa-apple project-icon"></i>
-                    <h3>ABADDON [iOS]</h3>
-                    <p>Digital Banishing Tool. A mobile "Cendere" (Press) designed to visualize and execute metaphysical pressure protocols via Swift & CoreLocation.</p>
+                    <h3 class="project-title">ABADDON [iOS]</h3>
+                    <p class="project-desc">Digital Banishing Tool. A Cendere (Press) mechanism for visualization and energetic projection.</p>
                 </div>
                 <div class="abaddon-overlay">
-                    <span class="lock-msg"><i class="fa-solid fa-lock"></i> ACCESS RESTRICTED</span>
-                </div>
-            </div>
-
-            <div class="project-card" style="border-top: 2px solid #333; opacity: 0.5;">
-                <div class="status-badge">Concept</div>
-                <div>
-                    <i class="fa-solid fa-microchip project-icon"></i>
-                    <h3>MPL Compiler</h3>
-                    <p>The core engine converting .ms (MagicScript) files into executable Python code.</p>
+                    <span class="lock-msg"><i class="fa-solid fa-lock"></i> RESTRICTED</span>
                 </div>
             </div>
 
         </div>
-    </section>
 
-    <footer>
-        <div class="footer-logo">
-            <h3>MPL<span>_ORDER</span></h3>
-            <p style="font-size: 0.8rem; margin-top: 5px;">Technomancy & Algorithmic Research</p>
-        </div>
-        <div>
-            <p style="text-align: right;">System Status: <span style="color: var(--accent-green);">OPERATIONAL</span></p>
-            <p style="font-size: 0.8rem; opacity: 0.5;">© 2025 Hakan Yorganci. All rights reserved.</p>
-        </div>
-    </footer>
+        <footer>
+            <p>MPL // TECHNOMANCY RESEARCH DIVISION © 2025</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
