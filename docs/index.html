@@ -14,12 +14,12 @@
     <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- THREE.JS & GSAP (ANIMASYON MOTORLARI) -->
+    <!-- THREE.JS & GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
     <style>
-        /* --- 1. CORE VARIABLES & THEME --- */
+        /* --- 1. CORE VARIABLES --- */
         :root {
             --bg-dark: #030303;
             --bg-panel: #0a0a0a;
@@ -71,17 +71,16 @@
         .hero-title { font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95; margin-bottom: 1.5rem; background: linear-gradient(to right, #fff, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glitch-wrapper:hover { animation: glitch-anim 0.3s infinite; color: var(--neon-purple); }
 
-        /* --- 6. MANIFESTO SECTION (UPDATED FOR 3D) --- */
+        /* --- 6. MANIFESTO SECTION (FIXED) --- */
         .manifesto-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0; /* Gap removed to merge visuals */
-            align-items: stretch;
             background: var(--bg-panel);
             border: var(--border-dim);
             position: relative;
             overflow: hidden;
-            min-height: 500px; /* Yükseklik verildi */
+            /* Yükseklik sorunu için min-height */
+            min-height: 500px; 
         }
         .manifesto-grid::before {
             content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
@@ -89,22 +88,33 @@
         }
         .manifesto-content { padding: 3rem; z-index: 2; position: relative; background: rgba(10,10,10,0.8); }
         
-        /* 3D CANVAS CONTAINER */
+        /* 3D CANVAS CONTAINER FIX */
         .manifesto-visual {
             position: relative;
             width: 100%;
             height: 100%;
-            min-height: 400px;
+            min-height: 500px; /* Mobilde de yer kaplaması için */
             background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
             cursor: pointer;
             overflow: hidden;
         }
-        #canvas-container { width: 100%; height: 100%; display: block; }
+        
+        #canvas-container { 
+            position: absolute; /* Kesin pozisyon */
+            top: 0; left: 0;
+            width: 100%; 
+            height: 100%; 
+            display: block; 
+            z-index: 1; /* En altta ama background üstünde */
+        }
         
         .click-hint {
             position: absolute; bottom: 20px; right: 20px;
             font-family: 'JetBrains Mono'; font-size: 0.7rem; color: var(--neon-purple);
-            opacity: 0.7; pointer-events: none; animation: pulse 2s infinite;
+            opacity: 0.7; 
+            pointer-events: none; /* Tıklamayı engellemesin diye */
+            animation: pulse 2s infinite;
+            z-index: 5;
         }
 
         /* --- 7. MPL & PROJECTS --- */
@@ -113,17 +123,22 @@
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .project-card { background: rgba(20, 20, 20, 0.6); border: var(--border-dim); padding: 2rem; transition: 0.4s; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; min-height: 320px; }
         .project-card:hover { transform: translateY(-5px); border-color: var(--neon-purple); box-shadow: var(--shadow-glow); }
-        .card-aethyr { border-left: 3px solid var(--neon-purple); }
+        
+        /* Card Variants */
+        .card-codepen { border-left: 3px solid #fff; }
         .card-fintech { border-left: 3px solid var(--neon-blue); }
         .card-app { border-left: 3px solid var(--neon-crimson); }
+        .card-legacy { border-left: 3px solid #555; }
+
+        .project-icon { font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-main); }
+        .project-title { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .project-desc { font-size: 0.9rem; color: var(--text-muted); }
+        
         .btn-link { margin-top: 2rem; display: inline-block; font-size: 0.8rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px; border: var(--border-dim); padding: 0.8rem 1.5rem; transition: 0.3s; }
         .btn-link:hover { background: var(--text-main); color: #000; }
+        
         .abaddon-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.95); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transition: 0.4s; backdrop-filter: blur(5px); }
         .project-card:hover .abaddon-overlay { opacity: 1; }
-
-        /* --- 8. CODEPEN --- */
-        .codepen-banner { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(90deg, #0f0f0f 0%, #1a1a1a 100%); border: var(--border-dim); border-left: 3px solid #fff; padding: 2.5rem; margin-top: 2rem; cursor: pointer; }
-        .codepen-banner:hover { border-color: #fff; transform: scale(1.01); }
 
         /* --- FOOTER --- */
         footer { margin-top: 6rem; padding: 3rem 0; border-top: var(--border-dim); display: flex; justify-content: space-between; font-size: 0.8rem; color: #555; }
@@ -131,7 +146,12 @@
         @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
         @keyframes glitch-anim { 0% { transform: translate(0); } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(-2px, -2px); } 60% { transform: translate(2px, 2px); } 80% { transform: translate(2px, -2px); } 100% { transform: translate(0); } }
         
-        @media (max-width: 768px) { .manifesto-grid { grid-template-columns: 1fr; } .hero-title { font-size: 3rem; } .codepen-banner { flex-direction: column; gap: 1.5rem; text-align: center; } footer { flex-direction: column; gap: 1rem; text-align: center; } }
+        @media (max-width: 768px) { 
+            .manifesto-grid { grid-template-columns: 1fr; } 
+            .manifesto-visual { height: 400px; min-height: 400px; } /* Mobilde yükseklik zorunlu */
+            .hero-title { font-size: 3rem; } 
+            footer { flex-direction: column; gap: 1rem; text-align: center; } 
+        }
     </style>
 </head>
 <body>
@@ -206,33 +226,66 @@
             </div>
 
             <div class="project-grid">
-                <div class="project-card card-aethyr">
-                    <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:var(--neon-purple);">BETA</div>
-                    <div><i class="fa-solid fa-cube project-icon"></i><h3 class="project-title">The Aethyr Scope</h3><p class="project-desc">3D WebGL Visualization Engine. Projects intents into Enochian geometry.</p></div>
-                    <a href="sigil.html" class="btn-link">Launch Construct</a>
+                
+                <!-- 1. CodePen Portfolio (Requested Replacement) -->
+                <div class="project-card card-codepen">
+                    <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:#fff;">ARCHIVE</div>
+                    <div>
+                        <i class="fa-brands fa-codepen project-icon"></i>
+                        <h3 class="project-title">The Grimoire</h3>
+                        <p class="project-desc">Public archives of raw code fragments, UI experiments, and visual spells forged in the browser.</p>
+                    </div>
+                    <a href="https://codepen.io/hknyrgnc" target="_blank" class="btn-link" style="border-color: #fff;">Access Archives</a>
                 </div>
+
+                <!-- 2. John Dee's Watchtower -->
                 <div class="project-card card-fintech">
                     <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:var(--neon-blue);">V6.0</div>
-                    <div><i class="fa-solid fa-network-wired project-icon"></i><h3 class="project-title">John Dee's Watchtower</h3><p class="project-desc">Forecasting engine utilizing Enochian Vector (257) & Sigil Cipher (463).</p></div>
+                    <div>
+                        <i class="fa-solid fa-network-wired project-icon"></i>
+                        <h3 class="project-title">John Dee's Watchtower</h3>
+                        <p class="project-desc">Forecasting engine utilizing Enochian Vector (257) & Sigil Cipher (463). Projects support/resistance 21 bars into the future.</p>
+                    </div>
                     <a href="https://www.tradingview.com/script/OsLAATJA-Miela-Labs-John-Dee-s-Watchtower-257-463/" target="_blank" class="btn-link">Access Artifact</a>
                 </div>
+
+                <!-- 3. Abramelin Protocol -->
+                <div class="project-card card-fintech">
+                    <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:var(--neon-green);">LIVE</div>
+                    <div>
+                        <i class="fa-solid fa-chart-line project-icon"></i>
+                        <h3 class="project-title">The Abramelin Protocol</h3>
+                        <p class="project-desc">Algorithmic trend analysis utilizing Paimon (452) & Astaroth (204) frequencies with MILON gate volume filtering.</p>
+                    </div>
+                    <a href="https://www.tradingview.com/script/j48rS8W9-The-Abramelin-Protocol-MPL/" target="_blank" class="btn-link">View Analysis</a>
+                </div>
+
+                <!-- 4. Vassago Eye (Legacy - Restored) -->
+                <div class="project-card card-legacy">
+                    <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:#888;">LEGACY</div>
+                    <div>
+                        <i class="fa-regular fa-eye project-icon"></i>
+                        <h3 class="project-title">Vassago Eye</h3>
+                        <p class="project-desc">Prototype logic based on static Tesla 3-6-9 harmonics. Retired but fully functional.</p>
+                    </div>
+                    <a href="https://www.tradingview.com/script/QOoCRPSF-Vassago-Tesla-Ex-Machina-197-45-21-Hakan-Yorganci/" target="_blank" class="btn-link">Archive Access</a>
+                </div>
+
+                <!-- 5. Abaddon App -->
                 <div class="project-card card-app">
                     <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:var(--neon-crimson);">DEV</div>
-                    <div><i class="fa-brands fa-apple project-icon"></i><h3 class="project-title">ABADDON [iOS]</h3><p class="project-desc">Digital Cendere. An esoteric pressure mechanism for iOS.</p></div>
-                    <div class="abaddon-overlay"><i class="fa-brands fa-app-store-ios" style="font-size: 3rem; color: #fff; margin-bottom: 1rem;"></i><span class="mono">COMING SOON</span></div>
+                    <div>
+                        <i class="fa-brands fa-apple project-icon"></i>
+                        <h3 class="project-title">ABADDON [iOS]</h3>
+                        <p class="project-desc">Digital Cendere. An esoteric pressure mechanism for iOS. Designed for energetic projection.</p>
+                    </div>
+                    <div class="abaddon-overlay">
+                        <i class="fa-brands fa-app-store-ios" style="font-size: 3rem; color: #fff; margin-bottom: 1rem;"></i>
+                        <span class="mono">COMING SOON</span>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <section>
-            <div style="margin-bottom: 2rem;"><h2 style="font-size: 1.5rem;">THE GRIMOIRE</h2><span class="mono highlight-green">RAW CONSTRUCTS // PROTOTYPES</span></div>
-            <a href="https://codepen.io/hknyrgnc" target="_blank" class="codepen-banner">
-                <div style="display: flex; align-items: center; gap: 1.5rem;">
-                    <i class="fa-brands fa-codepen" style="font-size: 3rem; color: #fff;"></i>
-                    <div><h3 style="margin-bottom: 0.5rem;">ACCESS PUBLIC ARCHIVES</h3><p style="font-size: 0.9rem; color: #888; margin: 0;">Explore raw code fragments, UI experiments, and visual spells.</p></div>
-                </div>
-                <div class="mono" style="display: flex; align-items: center; gap: 1rem;"><span>INITIATE</span><i class="fa-solid fa-arrow-right-long"></i></div>
-            </a>
+            </div>
         </section>
 
         <footer>
@@ -250,21 +303,24 @@
         document.querySelectorAll('section').forEach(section => observer.observe(section));
     </script>
 
-    <!-- HAKAN'S 3D SPHERE SCRIPT (ADAPTED) -->
+    <!-- 3D SPHERE SCRIPT (FIXED FOR MOBILE/TABLET) -->
     <script>
         // --- SAHNE KURULUMU ---
         const container = document.getElementById('canvas-container');
-        const scene = new THREE.Scene();
+        const visualContainer = document.querySelector('.manifesto-visual');
         
-        // Sis rengini panel rengine uydurduk ki kenarlar yumuşak geçsin
+        const scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2(0x0a0a0a, 0.04);
 
-        // Kamera ayarları (Kutunun boyutuna göre)
-        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-        camera.position.z = 14; // Biraz daha geriden baksın ki sığsın
+        // Boyutları container'dan al, eğer 0 gelirse (mobil hatası) varsayılan değer ata
+        let width = container.clientWidth || visualContainer.clientWidth || window.innerWidth;
+        let height = container.clientHeight || visualContainer.clientHeight || 500;
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); // Alpha true ile arka plan şeffaf
-        renderer.setSize(container.clientWidth, container.clientHeight);
+        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+        camera.position.z = 14;
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(width, height);
         renderer.setPixelRatio(window.devicePixelRatio);
         renderer.outputEncoding = THREE.sRGBEncoding;
         container.appendChild(renderer.domElement);
@@ -272,58 +328,46 @@
         // --- IŞIKLANDIRMA ---
         const ambientLight = new THREE.AmbientLight(0x222222);
         scene.add(ambientLight);
-
-        const light1 = new THREE.PointLight(0x00ffff, 2, 50); // Cyan
+        const light1 = new THREE.PointLight(0x00ffff, 2, 50);
         light1.position.set(10, 10, 10);
         scene.add(light1);
-
-        const light2 = new THREE.PointLight(0xff0055, 2, 50); // Magenta
+        const light2 = new THREE.PointLight(0xff0055, 2, 50);
         light2.position.set(-10, -10, 5);
         scene.add(light2);
 
-        // --- ANA OBJE: PARÇALANMIŞ KÜRE ---
+        // --- KÜRE ---
         const cubes = [];
         const group = new THREE.Group();
         scene.add(group);
 
         const geometry = new THREE.BoxGeometry(0.4, 0.4, 0.4);
-        const material = new THREE.MeshStandardMaterial({
-            color: 0x111111,
-            roughness: 0.1,
-            metalness: 0.9,
-        });
+        const material = new THREE.MeshStandardMaterial({ color: 0x111111, roughness: 0.1, metalness: 0.9 });
 
-        const totalCubes = 600; // Performans için sayıyı hafif azalttım (Mobil uyumu için)
-        const radius = 4.5; // Küre boyutu
+        const totalCubes = 600;
+        const radius = 4.5;
 
         for (let i = 0; i < totalCubes; i++) {
             const mesh = new THREE.Mesh(geometry, material.clone());
-            
             const phi = Math.acos(-1 + (2 * i) / totalCubes);
             const theta = Math.sqrt(totalCubes * Math.PI) * phi;
-
             const x = radius * Math.cos(theta) * Math.sin(phi);
             const y = radius * Math.sin(theta) * Math.sin(phi);
             const z = radius * Math.cos(phi);
-
             mesh.position.set(x, y, z);
             mesh.lookAt(0, 0, 0);
-
             mesh.userData = {
                 originalPos: { x, y, z },
                 originalRot: { x: mesh.rotation.x, y: mesh.rotation.y, z: mesh.rotation.z },
                 explodeFactor: Math.random() * 3 + 1.5, 
                 randomRot: { x: Math.random() * 2, y: Math.random() * 2 }
             };
-            
             const gray = Math.random() * 0.5 + 0.1;
             mesh.material.color.setRGB(gray, gray, gray);
-
             group.add(mesh);
             cubes.push(mesh);
         }
 
-        // --- YILDIZ TOZU ---
+        // --- YILDIZLAR ---
         const starsGeo = new THREE.BufferGeometry();
         const starsCount = 1000;
         const posArray = new Float32Array(starsCount * 3);
@@ -337,11 +381,9 @@
         let isExploded = false;
         let isAnimating = false;
 
-        // Sadece container'a tıklayınca çalışsın
-        container.addEventListener('mousedown', toggleExplosion);
-        container.addEventListener('touchstart', toggleExplosion, {passive: true});
-
-        function toggleExplosion() {
+        // Hem container hem de üst div'e event listener ekleyelim garanti olsun
+        function triggerExplosion(e) {
+            if(e.cancelable) e.preventDefault(); // Mobilde scroll'u engellemesin diye dikkatli olmalı ama burada sadece click
             if (isAnimating) return;
             isAnimating = true;
             isExploded = !isExploded;
@@ -351,4 +393,65 @@
                     gsap.to(cube.position, {
                         x: cube.userData.originalPos.x * cube.userData.explodeFactor,
                         y: cube.userData.originalPos.y * cube.userData.explodeFactor,
-                        z: cube.userData.origin
+                        z: cube.userData.originalPos.z * cube.userData.explodeFactor,
+                        duration: 2, ease: "power3.out", delay: i * 0.0005
+                    });
+                    gsap.to(cube.rotation, {
+                        x: cube.rotation.x + Math.random() * 5,
+                        y: cube.rotation.y + Math.random() * 5,
+                        duration: 2.5, ease: "power2.out"
+                    });
+                    gsap.to(cube.scale, { x: 0.2, y: 0.2, z: 0.2, duration: 1, onComplete: () => { if(i === totalCubes-1) isAnimating = false; }});
+                });
+                gsap.to(camera.position, { z: 20, duration: 2, ease: "power2.inOut" });
+            } else {
+                cubes.forEach((cube, i) => {
+                    gsap.to(cube.position, {
+                        x: cube.userData.originalPos.x, y: cube.userData.originalPos.y, z: cube.userData.originalPos.z,
+                        duration: 1.5, ease: "elastic.out(1, 0.5)", delay: i * 0.0005
+                    });
+                    gsap.to(cube.rotation, {
+                        x: cube.userData.originalRot.x, y: cube.userData.originalRot.y, z: cube.userData.originalRot.z,
+                        duration: 1.5, ease: "back.out(1.7)"
+                    });
+                    gsap.to(cube.scale, { x: 1, y: 1, z: 1, duration: 1, onComplete: () => { if(i === totalCubes-1) isAnimating = false; }});
+                });
+                gsap.to(camera.position, { z: 14, duration: 2, ease: "power2.inOut" });
+            }
+        }
+
+        visualContainer.addEventListener('mousedown', triggerExplosion);
+        visualContainer.addEventListener('touchstart', triggerExplosion, {passive: false});
+
+        // --- RENDER ---
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = clock.getElapsedTime();
+            group.rotation.y = time * 0.1;
+            group.rotation.x = Math.sin(time * 0.2) * 0.1;
+            starField.rotation.y = time * 0.02;
+
+            if (!isExploded && !isAnimating) {
+                cubes.forEach((cube, i) => {
+                    cube.position.x = cube.userData.originalPos.x + Math.sin(time * 2 + i) * 0.05;
+                    cube.position.y = cube.userData.originalPos.y + Math.cos(time * 2 + i) * 0.05;
+                    cube.position.z = cube.userData.originalPos.z + Math.sin(time * 3 + i) * 0.05;
+                });
+            }
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // --- RESIZE ---
+        window.addEventListener('resize', () => {
+            width = visualContainer.clientWidth;
+            height = visualContainer.clientHeight;
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+        });
+    </script>
+
+</body>
+</html>
