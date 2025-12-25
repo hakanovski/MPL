@@ -3,451 +3,532 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Miela Labs LLC: The Technomancy Research Institute. Creators of MPL and The John Dee Watchtower.">
-    <title>Miela Labs | The Technomancy Hub</title>
+    <meta name="description" content="Miela Labs LLC: The Technomancy Research Institute. Bridging Silicon Logic and Astral Reality.">
+    <meta name="keywords" content="Technomancy, MPL, Magick Programming Language, Esoteric Code, Fintech, McKinney Texas">
+    <meta name="author" content="Hakan Yorganci">
+    <title>Miela Labs | The Technomancy Institute</title>
     
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
 
+    <!-- ICONS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- CORE VARIABLES --- */
+        /* --- 1. CORE VARIABLES & THEME --- */
         :root {
-            --bg-color: #050505;
-            --card-bg: #0a0a0a;
-            --text-primary: #e0e0e0;
-            --text-secondary: #888888;
+            /* Base Colors */
+            --bg-dark: #030303;
+            --bg-panel: #0a0a0a;
+            --text-main: #e0e0e0;
+            --text-muted: #888888;
             
-            /* BRAND COLORS */
-            --accent-purple: #9d00ff;
-            --accent-green: #00ff41;
-            --accent-crimson: #dc143c;
-            --accent-blue: #00f3ff;
-            --accent-white: #ffffff;
+            /* Technomancy Palette */
+            --neon-purple: #9d00ff;
+            --neon-green: #00ff41;
+            --neon-crimson: #dc143c;
+            --neon-blue: #00f3ff;
+            --neon-gold: #ffd700;
             
-            /* UI EFFECTS */
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: 1px solid rgba(255, 255, 255, 0.1);
-            --glow: 0 0 20px rgba(157, 0, 255, 0.2);
+            /* Effects */
+            --glass: rgba(255, 255, 255, 0.02);
+            --border-dim: 1px solid rgba(255, 255, 255, 0.08);
+            --border-glow: 1px solid rgba(255, 255, 255, 0.2);
+            --shadow-glow: 0 0 30px rgba(157, 0, 255, 0.15);
         }
 
-        /* --- GLOBAL RESET --- */
-        * { box-sizing: border-box; }
+        /* --- 2. GLOBAL RESET & TYPOGRAPHY --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         
+        html { scroll-behavior: smooth; }
+
         body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             font-family: 'Space Grotesk', sans-serif;
             overflow-x: hidden;
+            /* Subtle Grid Background */
             background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            line-height: 1.6;
         }
 
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; }
+        p { font-weight: 300; opacity: 0.9; }
+        a { text-decoration: none; color: inherit; transition: 0.3s ease; }
         
-        /* --- LAYOUT CONTAINER --- */
+        /* Utility Classes */
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .highlight-purple { color: var(--neon-purple); }
+        .highlight-green { color: var(--neon-green); }
+        .highlight-blue { color: var(--neon-blue); }
+        .highlight-gold { color: var(--neon-gold); }
+
+        /* --- 3. LAYOUT --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
         }
 
-        /* --- NAVIGATION --- */
+        section {
+            padding: 6rem 0;
+            opacity: 0; /* Hidden for scroll reveal */
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        section.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- 4. NAVIGATION --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 2rem 0;
-            margin-bottom: 3rem;
+            position: relative;
+            z-index: 100;
         }
 
         .logo { 
             font-size: 1.5rem; 
             font-weight: 700; 
-            color: #fff; 
-            font-family: 'JetBrains Mono'; 
-            letter-spacing: -1px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: var(--border-dim);
             padding: 0.5rem 1rem;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
         }
         
-        .logo span { color: var(--accent-purple); }
-
         .social-links { display: flex; gap: 1.5rem; }
-        .social-links a { font-size: 1.2rem; color: var(--text-secondary); }
-        .social-links a:hover { color: var(--accent-purple); transform: scale(1.1); }
+        .social-links a:hover { color: var(--neon-purple); transform: translateY(-2px); }
 
-        /* --- DASHBOARD HEADER --- */
-        .dashboard-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 4rem;
+        /* --- 5. HERO SECTION --- */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
         }
 
-        .header-content { text-align: left; }
-
-        h1.corp-title {
-            font-size: 4.5rem;
-            line-height: 0.9;
+        .hero-overline {
+            font-size: 0.9rem;
+            color: var(--neon-green);
             margin-bottom: 1rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, #fff, #888);
+            letter-spacing: 2px;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem); /* Responsive Text */
+            line-height: 0.95;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #888);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .tagline {
-            font-size: 1.1rem;
-            color: var(--accent-green);
-            font-family: 'JetBrains Mono';
-            margin-bottom: 2rem;
-            opacity: 0.8;
+        .hero-subtitle {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
         }
 
-        /* TERMINAL */
-        .terminal-container {
-            background: rgba(10, 10, 10, 0.9);
-            border: 1px solid #333;
-            border-radius: 4px;
-            padding: 1.5rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        /* Glitch Effect on Hover */
+        .glitch-wrapper:hover {
+            animation: glitch-anim 0.3s infinite;
+            color: var(--neon-purple);
+        }
+
+        /* --- 6. MANIFESTO SECTION --- */
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: var(--bg-panel);
+            border: var(--border-dim);
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifesto-grid::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 3px; height: 100%;
+            background: var(--neon-purple);
+            box-shadow: 0 0 15px var(--neon-purple);
+        }
+
+        .manifesto-content h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .manifesto-content p { font-size: 1.1rem; margin-bottom: 1.5rem; color: #ccc; }
+
+        /* Sacred Geometry Visual (CSS Only) */
+        .sacred-geo {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .circle-outer {
+            width: 200px; height: 200px;
+            border: 1px solid var(--neon-purple);
+            border-radius: 50%;
+            position: absolute;
+            animation: spin 20s linear infinite;
+        }
+        
+        .triangle {
+            width: 0; height: 0;
+            border-left: 80px solid transparent;
+            border-right: 80px solid transparent;
+            border-bottom: 140px solid rgba(0, 255, 65, 0.2);
+            position: absolute;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        /* --- 7. MPL (THE ENGINE) SECTION --- */
+        .mpl-section {
+            text-align: center;
             position: relative;
         }
 
-        .terminal-header {
-            font-family: 'JetBrains Mono';
-            font-size: 0.7rem;
-            color: #555;
+        .mpl-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            font-size: 0.8rem;
             margin-bottom: 1rem;
-            border-bottom: 1px solid #222;
-            padding-bottom: 0.5rem;
-            display: flex;
-            justify-content: space-between;
         }
 
-        .terminal-code {
-            color: var(--text-primary);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            line-height: 1.6;
+        .code-block {
+            background: #000;
+            border: 1px solid #333;
+            padding: 2rem;
+            text-align: left;
+            max-width: 700px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
         }
 
-        .cmd { color: var(--accent-blue); }
-        .success { color: var(--accent-green); }
-        .cursor {
-            display: inline-block; width: 8px; height: 15px;
-            background: var(--text-primary); animation: blink 1s step-end infinite;
-        }
+        .code-line { display: block; margin-bottom: 0.5rem; color: #aaa; }
+        .keyword { color: var(--neon-purple); }
+        .func { color: var(--neon-blue); }
+        .string { color: var(--neon-green); }
 
-        /* --- THE FOUNDRY (PROJECTS) --- */
-        .foundry-header {
+        /* --- 8. THE FOUNDRY (PROJECTS) --- */
+        .section-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 3rem;
+            border-bottom: var(--border-dim);
             padding-bottom: 1rem;
         }
 
-        .section-title { font-size: 1.5rem; color: var(--text-primary); letter-spacing: 1px; }
-        .section-subtitle { font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--accent-purple); }
-
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 5rem;
         }
 
         .project-card {
             background: rgba(20, 20, 20, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            border: var(--border-dim);
             padding: 2rem;
-            transition: 0.3s;
+            transition: 0.4s;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 280px;
+            min-height: 320px;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-purple);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--neon-purple);
+            box-shadow: var(--shadow-glow);
         }
 
-        /* Card Variants */
-        .card-tradingview { border-left: 3px solid var(--accent-blue); }
-        .card-app { border-left: 3px solid var(--accent-crimson); }
-        .card-aethyr { border-left: 3px solid var(--accent-purple); } 
-        
-        .project-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--text-primary); }
+        /* Card Borders */
+        .card-aethyr { border-left: 3px solid var(--neon-purple); }
+        .card-fintech { border-left: 3px solid var(--neon-blue); }
+        .card-app { border-left: 3px solid var(--neon-crimson); }
 
-        .project-title { font-size: 1.4rem; margin: 0 0 0.5rem 0; font-weight: 500; }
-        .project-desc { font-size: 0.9rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
-
-        .status-badge {
-            position: absolute; top: 1rem; right: 1rem;
-            font-size: 0.65rem; padding: 4px 8px; border-radius: 2px;
-            font-family: 'JetBrains Mono'; text-transform: uppercase; letter-spacing: 1px;
-        }
-        .status-live { background: rgba(0, 255, 65, 0.1); color: var(--accent-green); }
-        .status-new { background: rgba(0, 243, 255, 0.1); color: var(--accent-blue); border: 1px solid var(--accent-blue); }
-        .status-beta { background: rgba(157, 0, 255, 0.1); color: var(--accent-purple); border: 1px solid var(--accent-purple); }
-        .status-legacy { background: rgba(136, 136, 136, 0.1); color: var(--text-secondary); }
-        .status-dev { background: rgba(220, 20, 60, 0.1); color: var(--accent-crimson); }
+        .project-icon { font-size: 2rem; margin-bottom: 1.5rem; color: var(--text-main); }
+        .project-title { font-size: 1.4rem; margin-bottom: 0.5rem; }
+        .project-desc { font-size: 0.9rem; color: var(--text-muted); }
 
         .btn-link {
             margin-top: 2rem;
             display: inline-block;
-            font-family: 'JetBrains Mono';
             font-size: 0.8rem;
-            color: var(--text-primary);
+            color: var(--text-main);
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: var(--border-dim);
             padding: 0.8rem 1.5rem;
             transition: 0.3s;
         }
-        .btn-link:hover { background: var(--text-primary); color: #000; }
+        .btn-link:hover { background: var(--text-main); color: #000; }
 
-        /* ABADDON OVERLAY */
+        /* Abaddon Overlay */
         .abaddon-overlay {
-            position: absolute; inset: 0; background: rgba(0,0,0,0.9);
+            position: absolute; inset: 0; background: rgba(0,0,0,0.95);
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             opacity: 0; transition: 0.4s; backdrop-filter: blur(5px);
         }
         .project-card:hover .abaddon-overlay { opacity: 1; }
-        .lock-msg { color: #fff; font-family: 'JetBrains Mono'; font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.5rem; }
-        .lock-sub { color: var(--text-secondary); font-size: 0.8rem; font-family: 'JetBrains Mono'; }
 
-        /* --- CODEPEN SECTION STYLES --- */
+        /* --- 9. THE GRIMOIRE (CODEPEN) --- */
         .codepen-banner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(90deg, rgba(15,15,15,1) 0%, rgba(25,25,25,1) 100%);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-left: 3px solid var(--accent-white);
-            padding: 2rem;
-            margin-bottom: 4rem;
-            transition: 0.3s;
+            background: linear-gradient(90deg, #0f0f0f 0%, #1a1a1a 100%);
+            border: var(--border-dim);
+            border-left: 3px solid #fff;
+            padding: 2.5rem;
+            margin-top: 2rem;
             cursor: pointer;
         }
-
-        .codepen-banner:hover {
-            border-color: var(--accent-white);
-            box-shadow: 0 0 20px rgba(255,255,255,0.1);
-            transform: translateY(-2px);
-        }
-
-        .codepen-content { display: flex; align-items: center; gap: 2rem; }
         
-        .codepen-icon-box {
-            font-size: 3rem;
-            color: var(--text-primary);
-            opacity: 0.8;
-        }
+        .codepen-banner:hover { border-color: #fff; transform: scale(1.01); }
 
-        .codepen-info h3 { margin: 0 0 0.5rem 0; font-size: 1.3rem; color: #fff; }
-        .codepen-info p { margin: 0 0 1rem 0; color: var(--text-secondary); font-size: 0.9rem; }
-        
-        .terminal-line {
-            font-family: 'JetBrains Mono';
-            font-size: 0.8rem;
-            background: rgba(0,0,0,0.3);
-            padding: 0.5rem;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        .path { color: var(--accent-secondary); }
-        .blink { animation: blink 1s infinite; }
-
-        .codepen-action {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-family: 'JetBrains Mono';
-            font-size: 0.8rem;
-            color: var(--text-primary);
-        }
-
-        @media (max-width: 768px) {
-            .dashboard-header { grid-template-columns: 1fr; gap: 2rem; }
-            h1.corp-title { font-size: 3rem; }
-            .codepen-banner { flex-direction: column; text-align: center; gap: 1.5rem; }
-            .codepen-content { flex-direction: column; gap: 1rem; }
-            footer { flex-direction: column; gap: 1rem; text-align: center; }
-        }
-
-        /* --- FOOTER --- */
+        /* --- 10. FOOTER --- */
         footer {
+            margin-top: 6rem;
             padding: 3rem 0;
-            border-top: 1px solid #222;
+            border-top: var(--border-dim);
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-top: auto;
+            font-size: 0.8rem;
+            color: #555;
         }
-        
-        .footer-legal { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: #555; }
 
-        @keyframes blink { 50% { opacity: 0; } }
+        /* --- ANIMATIONS --- */
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes pulse { 0%, 100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.1); } }
+        @keyframes glitch-anim {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .manifesto-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 3rem; }
+            .codepen-banner { flex-direction: column; gap: 1.5rem; text-align: center; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         
+        <!-- NAVIGATION -->
         <nav>
-            <div class="logo">MIELA // <span>LABS</span></div>
+            <div class="logo mono">MIELA // <span>LABS</span></div>
             <div class="social-links">
-                <a href="https://github.com/hakanovski/MPL" target="_blank" title="Source Code"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/hakanyorganci" target="_blank" title="Corporate Profile"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://discord.gg/RfJWGWWvC" target="_blank" title="The Order"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://github.com/hakanovski/MPL" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/hakanyorganci" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://discord.gg/RfJWGWWvC" target="_blank"><i class="fa-brands fa-discord"></i></a>
             </div>
         </nav>
 
-        <header class="dashboard-header">
-            <div class="header-content">
-                <h1 class="corp-title">TECHNOMANCY<br>INSTITUTE</h1>
-                <p class="tagline">:: Code is the modern spellbook.</p>
+        <!-- HERO SECTION -->
+        <section class="hero visible">
+            <span class="hero-overline mono">:: SYSTEM_READY // 75071_TX</span>
+            <h1 class="hero-title glitch-wrapper">CODE IS THE<br>MODERN SPELLBOOK.</h1>
+            <p class="hero-subtitle">
+                Bridging the gap between Silicon Logic and Astral Reality. 
+                We forge digital talismans to gamify the awakening of human consciousness.
+            </p>
+            <div class="mono" style="font-size: 0.8rem; color: var(--neon-green);">
+                <i class="fa-solid fa-terminal"></i> root@miela:~$ init_protocol --awakening
             </div>
-            
-            <div class="terminal-container">
-                <div class="terminal-header">
-                    <span>ROOT@MIELA_SYS</span>
-                    <span>75071_TX</span>
-                </div>
-                <div class="terminal-code">
-                    <span class="cmd">root@miela:~$</span> init_entity --texas<br>
-                    <span class="success">[OK] Miela Labs LLC Registered.</span><br>
-                    <span class="success">[OK] Enochian Engine V2.0 Active.</span><br>
-                    <span class="success">[OK] System Online.</span><span class="cursor"></span>
-                </div>
-            </div>
-        </header>
+        </section>
 
-        <!-- PRODUCTS SECTION -->
-        <div class="foundry-header">
-            <h2 class="section-title">THE FOUNDRY</h2>
-            <span class="section-subtitle">ACTIVE ARTIFACTS</span>
-        </div>
-
-        <div class="project-grid">
-
-            <div class="project-card card-aethyr">
-                <div class="status-badge status-beta">BETA LAB</div>
-                <div>
-                    <i class="fa-solid fa-cube project-icon" style="color: var(--accent-purple);"></i>
-                    <h3 class="project-title">The Aethyr Scope</h3>
-                    <p class="project-desc">3D WebGL Visualization Engine. Projects intents into Enochian geometry (Icosahedron) in real-time.</p>
+        <!-- MANIFESTO SECTION -->
+        <section class="manifesto-section">
+            <div class="manifesto-grid">
+                <div class="manifesto-content">
+                    <h2 class="mono highlight-purple">THE DOCTRINE</h2>
+                    <p>
+                        We are the architects of the invisible. Miela Labs is not just a software company; it is a <strong>Technomancy Research Institute</strong>. We believe that code is the highest form of Magick—a language that alters reality through will and syntax.
+                    </p>
+                    <p>
+                        Our mission is to bridge the <span class="highlight-blue">Silicon</span> (the logical, the tangible) with the <span class="highlight-gold">Spirit</span> (the chaotic, the real). By fusing ancient Hermetic wisdom with modern AI and Fintech algorithms, we build tools that push humanity out of the Matrix and closer to the Truth.
+                    </p>
+                    <p class="highlight-crimson mono">:: ESCAPE_THE_SIMULATION</p>
                 </div>
-                <a href="sigil.html" class="btn-link" style="border-color: var(--accent-purple);">Launch Construct</a>
-            </div>
-
-            <div class="project-card card-tradingview">
-                <div class="status-badge status-new">NEW V6.0</div>
-                <div>
-                    <i class="fa-solid fa-network-wired project-icon"></i>
-                    <h3 class="project-title">John Dee's Watchtower</h3>
-                    <p class="project-desc">Forecasting engine utilizing Enochian Vector (257) & Sigil Cipher (463). Projects support/resistance 21 bars into the future.</p>
-                </div>
-                <a href="https://www.tradingview.com/script/OsLAATJA-Miela-Labs-John-Dee-s-Watchtower-257-463/" target="_blank" class="btn-link">Access Artifact</a>
-            </div>
-            
-            <div class="project-card card-tradingview">
-                <div class="status-badge status-live">Live V6.0</div>
-                <div>
-                    <i class="fa-solid fa-chart-line project-icon"></i>
-                    <h3 class="project-title">The Abramelin Protocol</h3>
-                    <p class="project-desc">Algorithmic trend analysis utilizing Paimon (452) & Astaroth (204) frequencies with MILON gate volume filtering.</p>
-                </div>
-                <a href="https://www.tradingview.com/script/j48rS8W9-The-Abramelin-Protocol-MPL/" target="_blank" class="btn-link">View Analysis</a>
-            </div>
-
-            <div class="project-card card-tradingview">
-                <div class="status-badge status-legacy">Legacy</div>
-                <div>
-                    <i class="fa-regular fa-eye project-icon"></i>
-                    <h3 class="project-title">Vassago Eye</h3>
-                    <p class="project-desc">Prototype logic based on static Tesla 3-6-9 harmonics. Retired but fully functional.</p>
-                </div>
-                <a href="https://www.tradingview.com/script/QOoCRPSF-Vassago-Tesla-Ex-Machina-197-45-21-Hakan-Yorganci/" target="_blank" class="btn-link">Archive Access</a>
-            </div>
-
-            <div class="project-card card-app">
-                <div class="status-badge status-dev">Pre-Launch</div>
-                <div>
-                    <i class="fa-brands fa-apple project-icon"></i>
-                    <h3 class="project-title">ABADDON [iOS]</h3>
-                    <p class="project-desc">Digital Cendere. An esoteric pressure mechanism for iOS. Designed for energetic projection.</p>
-                </div>
-                <div class="abaddon-overlay">
-                    <i class="fa-brands fa-app-store-ios" style="font-size: 3rem; color: #fff; margin-bottom: 1rem;"></i>
-                    <span class="lock-msg">COMING SOON</span>
-                    <span class="lock-sub">Pending App Store Review</span>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- CODEPEN / PORTFOLIO SECTION -->
-        <div class="foundry-header">
-            <h2 class="section-title">THE GRIMOIRE</h2>
-            <span class="section-subtitle">RAW CONSTRUCTS // PROTOTYPES</span>
-        </div>
-
-        <a href="https://codepen.io/hknyrgnc" target="_blank" class="codepen-banner">
-            <div class="codepen-content">
-                <div class="codepen-icon-box">
-                    <i class="fa-brands fa-codepen"></i>
-                </div>
-                <div class="codepen-info">
-                    <h3>ACCESS PUBLIC ARCHIVES</h3>
-                    <p>Explore raw code fragments, UI experiments, and visual spells forged in the browser.</p>
-                    <div class="terminal-line">
-                        <span class="cmd">sys_link</span> <span class="path">/ext/codepen/hknyrgnc</span> <span class="blink">_</span>
+                <div class="manifesto-visual">
+                    <div class="sacred-geo">
+                        <div class="circle-outer"></div>
+                        <div class="triangle"></div>
+                        <i class="fa-solid fa-eye" style="font-size: 3rem; color: #fff; z-index: 2;"></i>
                     </div>
                 </div>
             </div>
-            <div class="codepen-action">
-                <span>INITIATE</span>
-                <i class="fa-solid fa-arrow-right-long"></i>
-            </div>
-        </a>
+        </section>
 
+        <!-- MPL ENGINE SECTION -->
+        <section class="mpl-section">
+            <span class="mpl-badge mono">PROPRIETARY TECHNOLOGY</span>
+            <h2>THE ENGINE: MPL</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem auto; color: #888;">
+                Magick Programming Language. The syntax for the subconscious. Compiling human intent into digital execution.
+            </p>
+            
+            <div class="code-block mono">
+                <span class="code-line"><span class="keyword">import</span> { Hermetic_Principles } <span class="keyword">from</span> <span class="string">'@universe/core'</span>;</span>
+                <span class="code-line"><span class="keyword">class</span> <span class="func">RealityPatch</span> <span class="keyword">extends</span> Construct {</span>
+                <span class="code-line">&nbsp;&nbsp;<span class="keyword">constructor</span>(intent) {</span>
+                <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.sigil = <span class="func">encrypt_intent</span>(intent);</span>
+                <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">this</span>.frequency = 432; <span class="comment">// Hz</span></span>
+                <span class="code-line">&nbsp;&nbsp;}</span>
+                <span class="code-line">&nbsp;&nbsp;<span class="func">manifest</span>() {</span>
+                <span class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="string">"MATRIX_BREACH_DETECTED"</span>;</span>
+                <span class="code-line">&nbsp;&nbsp;}</span>
+                <span class="code-line">}</span>
+            </div>
+        </section>
+
+        <!-- THE FOUNDRY (PROJECTS) -->
+        <section id="foundry">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">THE FOUNDRY</h2>
+                    <span class="mono highlight-purple">ACTIVE ARTIFACTS</span>
+                </div>
+            </div>
+
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card card-aethyr">
+                    <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:var(--neon-purple);">BETA</div>
+                    <div>
+                        <i class="fa-solid fa-cube project-icon"></i>
+                        <h3 class="project-title">The Aethyr Scope</h3>
+                        <p class="project-desc">3D WebGL Visualization Engine. Projects intents into Enochian geometry (Icosahedron) in real-time.</p>
+                    </div>
+                    <a href="sigil.html" class="btn-link">Launch Construct</a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card card-fintech">
+                    <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:var(--neon-blue);">V6.0</div>
+                    <div>
+                        <i class="fa-solid fa-network-wired project-icon"></i>
+                        <h3 class="project-title">John Dee's Watchtower</h3>
+                        <p class="project-desc">Forecasting engine utilizing Enochian Vector (257) & Sigil Cipher (463). Projects support/resistance 21 bars into the future.</p>
+                    </div>
+                    <a href="https://www.tradingview.com/script/OsLAATJA-Miela-Labs-John-Dee-s-Watchtower-257-463/" target="_blank" class="btn-link">Access Artifact</a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card card-fintech">
+                    <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:var(--neon-green);">LIVE</div>
+                    <div>
+                        <i class="fa-solid fa-chart-line project-icon"></i>
+                        <h3 class="project-title">The Abramelin Protocol</h3>
+                        <p class="project-desc">Algorithmic trend analysis utilizing Paimon (452) & Astaroth (204) frequencies with MILON gate volume filtering.</p>
+                    </div>
+                    <a href="https://www.tradingview.com/script/j48rS8W9-The-Abramelin-Protocol-MPL/" target="_blank" class="btn-link">View Analysis</a>
+                </div>
+
+                <!-- Project 4 (App) -->
+                <div class="project-card card-app">
+                    <div class="mono" style="position:absolute; top:1rem; right:1rem; font-size:0.7rem; color:var(--neon-crimson);">DEV</div>
+                    <div>
+                        <i class="fa-brands fa-apple project-icon"></i>
+                        <h3 class="project-title">ABADDON [iOS]</h3>
+                        <p class="project-desc">Digital Cendere. An esoteric pressure mechanism for iOS. Designed for energetic projection.</p>
+                    </div>
+                    <div class="abaddon-overlay">
+                        <i class="fa-brands fa-app-store-ios" style="font-size: 3rem; color: #fff; margin-bottom: 1rem;"></i>
+                        <span class="mono" style="letter-spacing: 2px;">COMING SOON</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THE GRIMOIRE (CODEPEN) -->
+        <section>
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">THE GRIMOIRE</h2>
+                    <span class="mono highlight-green">RAW CONSTRUCTS // PROTOTYPES</span>
+                </div>
+            </div>
+
+            <a href="https://codepen.io/hknyrgnc" target="_blank" class="codepen-banner">
+                <div style="display: flex; align-items: center; gap: 1.5rem;">
+                    <i class="fa-brands fa-codepen" style="font-size: 3rem; color: #fff;"></i>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">ACCESS PUBLIC ARCHIVES</h3>
+                        <p style="font-size: 0.9rem; color: #888; margin: 0;">Explore raw code fragments, UI experiments, and visual spells forged in the browser.</p>
+                    </div>
+                </div>
+                <div class="mono" style="display: flex; align-items: center; gap: 1rem;">
+                    <span>INITIATE</span>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+            </a>
+        </section>
+
+        <!-- FOOTER -->
         <footer>
-            <div class="footer-legal">
+            <div class="mono">
                 <span>© 2025 MIELA LABS LLC.</span><br>
                 Made in McKinney, Texas.
             </div>
-            <div class="footer-legal" style="text-align: right;">
+            <div class="mono" style="text-align: right;">
                 <span style="opacity: 0.5;">MPL-V2 // SYSTEM_READY</span>
             </div>
         </footer>
 
     </div>
+
+    <!-- JAVASCRIPT FOR SCROLL REVEAL -->
+    <script>
+        // Simple Intersection Observer to fade in sections as we scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 
 </body>
 </html>
